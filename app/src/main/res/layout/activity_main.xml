@@ -17,6 +17,7 @@
         android:text="Jouer"
         android:textSize="50dp"
         android:textColor="	#FFF2F4"
+        android:onClick="jouer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

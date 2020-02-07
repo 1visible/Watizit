@@ -15,6 +15,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void option(View view){
-        startActivity(new Intent(this, menu_options.class));
+        startActivity(new Intent(this, MenuOptions.class));
+    }
+
+    public void jouer(View view){
+        startActivity(new Intent(this, MenuJouer.class));
     }
 }

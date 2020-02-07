@@ -17,12 +17,20 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".menu_options"
+        <activity android:name=".MenuOptions"
             android:label="Menu options"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
+        </activity>
+
+        <activity android:name=".MenuJouer"
+            android:label="Menu jouer"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
         </activity>
      </application>
 
