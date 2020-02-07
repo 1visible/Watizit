@@ -48,12 +48,14 @@
         android:shadowDy="2"
         android:shadowRadius="3"
         android:text="Watizit ?"
-        android:textSize="75dp"
         android:textColor="#FED858"
+        android:textSize="75dp"
         app:layout_constraintBottom_toTopOf="@+id/jouer"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.437" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
