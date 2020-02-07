@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Watizit</string>
+    <string name="link"><a href="https://www.flaticon.com/">https://www.flaticon.com</a></string>
 </resources>
