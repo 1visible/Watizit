@@ -6,32 +6,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#FEFBE8">
+    >
 
 
     <Button
         android:id="@+id/jouer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#FED966"
         android:text="Jouer"
-        android:textSize="50dp"
-        android:textColor="	#FFF2F4"
-        android:onClick="jouer"
+        android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.288" />
 
     <Button
         android:id="@+id/options"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#FED966"
         android:text="Options"
-        android:textSize="50dp"
-        android:textColor="	#FFF2F4"
-        android:onClick="option"
+        android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -39,23 +35,19 @@
         app:layout_constraintTop_toBottomOf="@+id/jouer"
         app:layout_constraintVertical_bias="0.208" />
 
-    <TextView
-        android:id="@+id/titre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:shadowColor="#DCC47A"
-        android:shadowDx="2"
-        android:shadowDy="2"
-        android:shadowRadius="3"
-        android:text="Watizit ?"
-        android:textColor="#FED858"
-        android:textSize="75dp"
-        app:layout_constraintBottom_toTopOf="@+id/jouer"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="328dp"
+        android:layout_height="90dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.437" />
+        app:layout_constraintVertical_bias="0.11"
+        app:srcCompat="@drawable/title" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
