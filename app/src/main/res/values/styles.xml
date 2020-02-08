@@ -8,6 +8,13 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:background">@color/colorBackground</item>
         <item name="android:buttonStyle">@style/app_button</item>
+        <item name="android:textViewStyle">@style/app_textView</item>
+    </style>
+
+    <style name="app_textView">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:fontFamily">@font/app_font</item>
+        <item name="android:textSize">25dp</item>
     </style>
 
     <style name="app_button" parent="Widget.AppCompat.Button.Borderless">
