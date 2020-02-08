@@ -5,7 +5,5 @@
     <string name="options">Options</string>
     <string name="dark_theme">Mode sombre</string>
     <string name="language">Langue</string>
-    <string name="copyright">Copyright © 2020\nLAURET Nicolas, RANDRIANASOLO Rooly\n\nIcônes par Flaticon :\nhttps://www.flaticon.com</string>
-
-    <string name="link"><a href="https://www.flaticon.com/">https://www.flaticon.com</a></string>
+    <string name="copyright">Copyright © 2020\nLAURET Nicolas, RANDRIANASOLO Rooly\n\nIcônes par Flaticon :\n<a href="https://www.flaticon.com/">https://www.flaticon.com</a></string>
 </resources>
