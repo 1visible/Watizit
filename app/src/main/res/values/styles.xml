@@ -24,4 +24,18 @@
         <item name="android:fontFamily">@font/app_font</item>
     </style>
 
+    <style name="green_button" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:background">@drawable/green_button</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/colorBackground</item>
+        <item name="android:fontFamily">@font/app_font</item>
+    </style>
+
+    <style name="red_button" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:background">@drawable/red_button</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/colorBackground</item>
+        <item name="android:fontFamily">@font/app_font</item>
+    </style>
+
 </resources>

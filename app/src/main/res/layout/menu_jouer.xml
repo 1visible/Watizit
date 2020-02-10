@@ -17,32 +17,50 @@
         android:text="H"
         android:textColor="#3D3D3D"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="82dp"
-        tools:layout_editor_absoluteY="97dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/niveau" />
 
     <Button
         android:id="@+id/niveau"
+        style="@style/green_button"
         android:layout_width="162dp"
         android:layout_height="37dp"
         android:text="Niveau"
-        tools:layout_editor_absoluteX="110dp"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/help"
+        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintStart_toEndOf="@+id/retour"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.037" />
 
     <Button
         android:id="@+id/retour"
+        style="@style/red_button"
         android:layout_width="36dp"
         android:layout_height="38dp"
-        android:text="<"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="25dp" />
+        android:text=""
+        android:fontFamily="@font/icons"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.036" />
 
     <Button
         android:id="@+id/help"
         android:layout_width="36dp"
         android:layout_height="38dp"
-        android:text="@drawable/help"
-        tools:layout_editor_absoluteX="346dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:fontFamily="@font/icons"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.036" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
