@@ -66,6 +66,7 @@
         android:layout_marginEnd="60dp"
         android:layout_marginRight="60dp"
         android:text=""
+        android:theme="@style/app_switch"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

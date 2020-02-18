@@ -24,6 +24,12 @@
         <item name="android:fontFamily">@font/app_font</item>
     </style>
 
+    <style name="app_switch" parent="@style/Widget.AppCompat.CompoundButton.Switch">
+        <item name="android:textColorPrimaryDisableOnly">#D5D5D5</item>
+        <item name="colorControlActivated">#3DD042</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat</item>
+    </style>
+
     <style name="green_button" parent="Widget.AppCompat.Button.Borderless">
         <item name="android:background">@drawable/green_button</item>
         <item name="android:textAllCaps">false</item>
