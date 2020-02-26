@@ -30,9 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
         bouton_jouer.setText(string);
 
-
-
-
     }
 
 

@@ -2,6 +2,7 @@ package com.example.watizit;
 
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,5 +15,9 @@ public class MenuOptions extends AppCompatActivity {
         setContentView(R.layout.menu_options);
         textView = findViewById(R.id.copyright);
         textView.setMovementMethod(LinkMovementMethod.getInstance());
+    }
+
+    public void retour(View view){
+        finish();
     }
 }
