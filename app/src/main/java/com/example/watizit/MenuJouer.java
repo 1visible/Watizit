@@ -1,5 +1,6 @@
 package com.example.watizit;
 
+import android.app.Dialog;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -92,7 +93,14 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
 
                 n.setEnabled(false);
                 n.setValue(n.getValue());
+                openDialog();
             }
     }
 
+    public void openDialog()  {
+        final Dialog dialog = new Dialog(this); // Context, this, etc.
+        dialog.setContentView(R.layout.popup);
+        dialog.setTitle("test");
+        dialog.show();
+    }
 }
