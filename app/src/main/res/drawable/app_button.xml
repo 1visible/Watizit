@@ -7,11 +7,11 @@
                 android:radius="6dp"
                 />
             <solid
-                android:color="#e14043"
+                android:color="#CFCFCF"
                 />
             <size
                 android:width="220dp"
-                android:height="73dp"
+                android:height="30dp"
                 />
             <padding
                 android:bottom="6dp"
@@ -25,7 +25,7 @@
                 android:radius="6dp"
                 />
             <solid
-                android:color="#ed5153"
+                android:color="#FFFFFF"
                 />
             <size
                 android:width="220dp"

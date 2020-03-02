@@ -1,16 +1,11 @@
 package com.example.watizit;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.text.SpannableStringBuilder;
-import android.text.Spanned;
-import android.text.style.RelativeSizeSpan;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.res.ResourcesCompat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,14 +16,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button bouton_jouer = findViewById(R.id.jouer);
+        Button bouton_options = findViewById(R.id.options);
 
-        SpannableStringBuilder string = new SpannableStringBuilder(bouton_jouer.getText());
-        Typeface typeface = ResourcesCompat.getFont(this, R.font.icons_font);
+        WatizUtil.setButtonIcon(this, bouton_jouer, 0.75F, true);
+        WatizUtil.setButtonIcon(this, bouton_options, 0.75F, true);
 
-        string.setSpan(new CustomTypefaceSpan("", typeface), 0, 1, Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
-        string.setSpan(new RelativeSizeSpan(0.75f), 0, 1, Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
-
-        bouton_jouer.setText(string);
+        WatizUtil.setBackgroundColor(this, bouton_jouer, R.color.COLOR_BLUE);
+        WatizUtil.setBackgroundColor(this, bouton_options, R.color.COLOR_GRAY);
 
     }
 
@@ -40,4 +34,5 @@ public class MainActivity extends AppCompatActivity {
     public void jouer(View view){
         startActivity(new Intent(this, MenuJouer.class));
     }
+
 }

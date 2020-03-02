@@ -7,12 +7,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
+    <TextView
         android:id="@+id/niveau"
-        style="@style/green_button"
-        android:layout_width="162dp"
-        android:layout_height="37dp"
-        android:text="Niveau"
+        style="@style/app_button"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:text="Niveau 1"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/help"
         app:layout_constraintHorizontal_bias="0.551"
@@ -23,10 +24,11 @@
     <Button
         android:id="@+id/retour"
         android:onClick="retour"
-        style="@style/red_button"
-        android:layout_width="36dp"
-        android:layout_height="38dp"
+        style="@style/app_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:text=""
+        android:textSize="18dp"
         android:fontFamily="@font/icons"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
@@ -63,7 +65,7 @@
 
     <LinearLayout
         android:id="@+id/layout"
-        android:layout_width="409dp"
+        android:layout_width="370dp"
         android:layout_height="200dp"
         android:gravity="center"
         android:layout_marginTop="1dp"

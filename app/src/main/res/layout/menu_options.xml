@@ -7,12 +7,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
+    <TextView
         android:id="@+id/options"
         style="@style/app_button"
-        android:layout_width="162dp"
-        android:layout_height="37dp"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
         android:text="Options"
+        android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/copyright"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.352"
@@ -22,14 +23,15 @@
 
     <Button
         android:id="@+id/retour"
-        style="@style/red_button"
-        android:onClick="retour"
-        android:layout_width="36dp"
-        android:layout_height="38dp"
+        style="@style/app_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:text=""
         android:fontFamily="@font/icons"
+        android:onClick="retour"
+        android:text=""
+        android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/mode"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

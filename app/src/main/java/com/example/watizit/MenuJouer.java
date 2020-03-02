@@ -4,12 +4,12 @@ import android.app.Dialog;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import java.util.Random;
 
@@ -22,16 +22,28 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_jouer);
 
+        Button bouton_retour = findViewById(R.id.retour);
+        TextView texte_niveau = findViewById(R.id.niveau);
+        Button bouton_aide = findViewById(R.id.help);
+
+        WatizUtil.setButtonIcon(this, bouton_retour, 1F, false);
+
+        WatizUtil.setBackgroundColor(this, bouton_retour, R.color.COLOR_RED);
+        WatizUtil.setBackgroundColor(this, texte_niveau, R.color.COLOR_GREEN);
+        WatizUtil.setBackgroundColor(this, bouton_aide, R.color.COLOR_GOLD);
+
         LinearLayout layout = findViewById(R.id.layout);
         Random random = new Random();
         maxLetters = 5; // Total of 5 when adding the word char
-        word = "CONFUS"; // Word to find
+        word = "DOG"; // Word to find
 
         // Create one letter picker per char in the word
         for(int i = 0; i < word.length(); i++) {
-            NumberPicker np = createLetterPicker(i, random);
+            NumberPicker np = createLetterPicker(layout, i, random);
             layout.addView(np);
         }
+
+        setText(getText());
 
     }
 
@@ -45,7 +57,7 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
         return false;
     }
 
-    private NumberPicker createLetterPicker(int id, Random random) {
+    private NumberPicker createLetterPicker(LinearLayout layout, int id, Random random) {
         NumberPicker np = new NumberPicker(this);
         String[] values = new String[maxLetters];
 
@@ -54,8 +66,12 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
 
         np.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
         np.setId(id);
-        // TODO: A changer
-        np.setBackground(ContextCompat.getDrawable(this, R.drawable.app_button));
+
+        // Adjust width to fit screen
+        LinearLayout.LayoutParams lp =
+                new LinearLayout.LayoutParams(layout.getLayoutParams().width/word.length(), LinearLayout.LayoutParams.MATCH_PARENT);
+        np.setLayoutParams(lp);
+
 
         // Fill the rest with random unique letters
         for(int j = 0; j < maxLetters; j++) {
@@ -79,22 +95,34 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
     }
 
     public void onValueChange(NumberPicker np, int oldVal, int newVal) {
-        TextView textView = findViewById(R.id.textView);
+        String text = getText();
+        setText(text);
+        if(word.equals(text)) disableLetterPickers();
+    }
+
+    private String getText() {
         String text = "";
         for(int i = 0; i < word.length(); i++) {
             NumberPicker n = findViewById(R.id.layout).findViewById(i);
             text += n.getDisplayedValues()[n.getValue()];
         }
+        return text;
+    }
+
+    private void setText(String text) {
+        TextView textView = findViewById(R.id.textView);
         textView.setText(text);
         textView.setTextColor(word.equals(text) ? Color.GREEN : Color.BLACK);
-        if(word.equals(text))
-            for(int i = 0; i < word.length(); i++) {
-                NumberPicker n = findViewById(R.id.layout).findViewById(i);
+    }
 
-                n.setEnabled(false);
-                n.setValue(n.getValue());
-                openDialog();
-            }
+    private void disableLetterPickers() {
+        for(int i = 0; i < word.length(); i++) {
+            NumberPicker n = findViewById(R.id.layout).findViewById(i);
+
+            n.setEnabled(false);
+            n.setValue(n.getValue());
+            openDialog();
+        }
     }
 
     public void openDialog()  {
