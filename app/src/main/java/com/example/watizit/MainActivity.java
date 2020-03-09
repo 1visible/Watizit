@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
         WatizUtil.setBackgroundColor(this, bouton_options, R.color.COLOR_GRAY);
 
     }
-
 
     public void option(View view){
         startActivity(new Intent(this, MenuOptions.class));
