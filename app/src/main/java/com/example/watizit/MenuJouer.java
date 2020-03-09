@@ -10,6 +10,7 @@ import android.widget.NumberPicker;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import java.util.Random;
 
@@ -121,14 +122,22 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
 
             n.setEnabled(false);
             n.setValue(n.getValue());
-            openDialog();
+            openPopup();
         }
     }
 
-    public void openDialog()  {
+
+    public void openPopup()  {
         final Dialog dialog = new Dialog(this); // Context, this, etc.
+        ConstraintLayout layout = findViewById(R.id.popup);
+      /*  Button bouton_retour =  layout.findViewById(R.id.retour);
+        Button bouton_suivant = layout.findViewById(R.id.next);
+        WatizUtil.setBackgroundColor(this, bouton_retour, R.color.COLOR_RED);
+        WatizUtil.setBackgroundColor(this, bouton_suivant, R.color.COLOR_RED);*/
         dialog.setContentView(R.layout.popup);
         dialog.setTitle("test");
         dialog.show();
+
+
     }
 }

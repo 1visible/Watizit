@@ -1,35 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:id="@+id/popup">
+
+
+    <ImageView
+        android:id="@+id/star3"
+        android:layout_width="88dp"
+        android:layout_height="89dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.77"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/star"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/star" />
+
+    <ImageView
+        android:id="@+id/star2"
+        android:layout_width="88dp"
+        android:layout_height="89dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.226"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/star"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/star" />
+
+    <Button
+        android:id="@+id/next"
+
+        android:layout_width="151dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:fontFamily="@font/icons"
+        android:onClick="next"
+        android:text="NIveau suivant"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.777"
+        app:layout_constraintStart_toEndOf="@+id/retour"
+        app:layout_constraintTop_toBottomOf="@+id/star3"
+        app:layout_constraintVertical_bias="0.131" />
+
+    <Button
+        android:id="@+id/retour"
+
+        android:layout_width="151dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:fontFamily="@font/icons"
+        android:onClick="retour"
+        android:text="Retour"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/star2"
+        app:layout_constraintVertical_bias="0.131" />
 
     <TextView
-        android:id="@+id/message"
-        android:layout_width="match_parent"
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="Félicitation vous avez gagnez !"/>
+        android:text="Félicitation vous avez gagné !"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.047" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_below="@id/message">
+    <ImageView
+        android:id="@+id/star"
+        android:layout_width="88dp"
+        android:layout_height="89dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.048"
+        app:srcCompat="@drawable/star" />
 
-        <Button
-            android:id="@+id/back"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.50"
 
-            android:text="Retour"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
-        <Button
-            android:id="@+id/next"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.50"
-
-            android:text="Niveau suivant"/>
-    </LinearLayout>
-</RelativeLayout>

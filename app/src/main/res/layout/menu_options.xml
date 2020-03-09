@@ -7,6 +7,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="56dp"
+        android:layout_height="55dp"
+        app:srcCompat="@drawable/flag"
+        tools:layout_editor_absoluteX="274dp"
+        tools:layout_editor_absoluteY="188dp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="56dp"
+        android:layout_height="55dp"
+        app:srcCompat="@drawable/flag"
+        tools:layout_editor_absoluteX="274dp"
+        tools:layout_editor_absoluteY="188dp" />
+
     <TextView
         android:id="@+id/options"
         style="@style/app_button"
@@ -87,6 +103,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="56dp"
+        android:layout_height="55dp"
+        app:srcCompat="@drawable/uk"
+        tools:layout_editor_absoluteX="339dp"
+        tools:layout_editor_absoluteY="188dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
