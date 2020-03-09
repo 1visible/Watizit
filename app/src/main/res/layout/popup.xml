@@ -35,14 +35,13 @@
 
     <Button
         android:id="@+id/next"
-
         android:layout_width="151dp"
         android:layout_height="60dp"
         android:layout_marginEnd="28dp"
         android:layout_marginRight="28dp"
-        android:fontFamily="@font/icons"
         android:onClick="next"
-        android:text="NIveau suivant"
+        android:textSize="20dp"
+        android:text="Niveau suivant"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.777"
@@ -52,13 +51,12 @@
 
     <Button
         android:id="@+id/retour"
-
         android:layout_width="151dp"
         android:layout_height="60dp"
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
-        android:fontFamily="@font/icons"
         android:onClick="retour"
+        android:textSize="20dp"
         android:text="Retour"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +67,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Félicitation vous avez gagné !"
+        android:text="Félicitations vous avez gagné !"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"

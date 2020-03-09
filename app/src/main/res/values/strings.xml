@@ -1,12 +1,17 @@
 <resources>
-    <string name="app_name">Watizit</string>
 
+    <string name="app_name">Watizit</string>
+    <!-- Main menu -->
     <string name="play">\uF04B Play</string>
     <string name="options">\uF013 Options</string>
+    <!-- Options menu -->
     <string name="dark_theme">Dark mode</string>
-    <string name="language">Langue</string>
+    <string name="language">Language</string>
     <string name="copyright">
-        Copyright © 2020\nLAURET Nicolas, RANDRIANASOLO Rooly\n\nIcônes par Flaticon :\n
+        Copyright © 2020\nLAURET Nicolas, RANDRIANASOLO Rooly\n\nIcons by Flaticon :\n
         <a href="https://www.flaticon.com/">https://www.flaticon.com</a>
     </string>
+    <!-- Level -->
+    <string name="level">Level</string>
+
 </resources>

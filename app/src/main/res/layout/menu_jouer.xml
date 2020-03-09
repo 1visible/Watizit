@@ -12,7 +12,7 @@
         style="@style/app_button"
         android:layout_width="160dp"
         android:layout_height="40dp"
-        android:text="Niveau 1"
+        android:text="@string/level"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/help"
