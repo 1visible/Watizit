@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">Watizit</string>
-
+    <!-- Main menu -->
     <string name="play">\uF04B Jouer</string>
     <string name="options">\uF013 Options</string>
+    <!-- Options menu -->
     <string name="dark_theme">Mode sombre</string>
     <string name="language">Langue</string>
     <string name="copyright">
@@ -10,4 +11,7 @@
         <a href="https://www.flaticon.com/">https://www.flaticon.com</a>
     </string>
     <string name="level">Niveau</string>
+    <string name="next">\uF04B</string>
+    <string name="win_text">Félicitations, vous avez gagné!</string>
+    <string name="back">\uF104</string>
 </resources>

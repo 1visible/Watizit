@@ -12,6 +12,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if(WatizUtil.isLocaleStored(this)
+                && !WatizUtil.getLocaleStored(this).equals(WatizUtil.getLocale(this)))
+        {
+            WatizUtil.setLocale(WatizUtil.getLocaleStored(this), this);
+        }
+
         setContentView(R.layout.activity_main);
 
         Button bouton_jouer = findViewById(R.id.jouer);
