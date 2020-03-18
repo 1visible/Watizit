@@ -9,6 +9,31 @@
     android:id="@+id/popup">
 
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Félicitations vous avez gagné !"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/star"
+        android:layout_width="88dp"
+        android:layout_height="89dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.048"
+        app:srcCompat="@drawable/star" />
+
     <ImageView
         android:id="@+id/star3"
         android:layout_width="88dp"
@@ -35,57 +60,32 @@
 
     <Button
         android:id="@+id/next"
-        android:layout_width="151dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
+        android:layout_width="260px"
+        android:layout_height="90px"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
         android:onClick="next"
+        android:text="Suivant"
         android:textSize="20dp"
-        android:text="Niveau suivant"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.777"
-        app:layout_constraintStart_toEndOf="@+id/retour"
         app:layout_constraintTop_toBottomOf="@+id/star3"
-        app:layout_constraintVertical_bias="0.131" />
+        app:layout_constraintVertical_bias="0.175" />
 
     <Button
         android:id="@+id/retour"
-        android:layout_width="151dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="36dp"
+        android:layout_width="260px"
+        android:layout_height="90px"
         android:layout_marginLeft="36dp"
         android:onClick="retour"
-        android:textSize="20dp"
         android:text="Retour"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/next"
+        app:layout_constraintHorizontal_bias="0.282"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/star2"
-        app:layout_constraintVertical_bias="0.131" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Félicitations vous avez gagné !"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.047" />
-
-    <ImageView
-        android:id="@+id/star"
-        android:layout_width="88dp"
-        android:layout_height="89dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.048"
-        app:srcCompat="@drawable/star" />
+        app:layout_constraintVertical_bias="0.175" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
