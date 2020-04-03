@@ -1,4 +1,4 @@
-package com.example.watizit;
+package com.example.watizit.utils;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,6 +14,9 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.core.content.res.ResourcesCompat;
+
+import com.example.watizit.R;
+import com.example.watizit.menus.MainActivity;
 
 import java.util.Locale;
 

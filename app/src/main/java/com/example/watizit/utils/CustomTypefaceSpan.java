@@ -1,4 +1,4 @@
-package com.example.watizit;
+package com.example.watizit.utils;
 
 import android.graphics.Paint;
 import android.graphics.Typeface;

@@ -1,4 +1,4 @@
-package com.example.watizit;
+package com.example.watizit.menus;
 
 import android.app.Dialog;
 import android.graphics.Color;
@@ -11,12 +11,17 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.watizit.R;
+import com.example.watizit.database.DatabaseAccess;
+import com.example.watizit.other.Level;
+import com.example.watizit.utils.WatizUtil;
+
 import java.util.Random;
 
 public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValueChangeListener {
 
-    private int maxLetters;
-    private int level;
+    private static final int MAX_LETTERS = 5;
+    private Level level;
     private String word;
 
     protected void onCreate(Bundle savedInstanceState){
@@ -27,8 +32,12 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
         TextView texte_niveau = findViewById(R.id.niveau);
         Button bouton_aide = findViewById(R.id.help);
 
-        level = 1;
-        texte_niveau.append(" "+level);
+        DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
+        databaseAccess.open();
+        level = databaseAccess.getLevel(1);
+        databaseAccess.close();
+
+        texte_niveau.append(" "+level.getID());
 
         WatizUtil.setButtonIcon(this, bouton_retour, 1F, false);
 
@@ -38,8 +47,7 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
 
         LinearLayout layout = findViewById(R.id.layout);
         Random random = new Random();
-        maxLetters = 5; // Total of 5 when adding the word char
-        word = "DOG"; // Word to find
+        word = level.getWord(); // Word to find
 
         // Create one letter picker per char in the word
         for(int i = 0; i < word.length(); i++) {
@@ -63,10 +71,10 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
 
     private NumberPicker createLetterPicker(LinearLayout layout, int id, Random random) {
         NumberPicker np = new NumberPicker(this);
-        String[] values = new String[maxLetters];
+        String[] values = new String[MAX_LETTERS];
 
         // Add word char to possible letters
-        values[random.nextInt(maxLetters)] = Character.toString(word.charAt(id));
+        values[random.nextInt(MAX_LETTERS)] = Character.toString(word.charAt(id));
 
         np.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
         np.setId(id);
@@ -78,7 +86,7 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
 
 
         // Fill the rest with random unique letters
-        for(int j = 0; j < maxLetters; j++) {
+        for(int j = 0; j < MAX_LETTERS; j++) {
             // This is to prevent word char overwrite
             if(values[j] != null) continue;
 

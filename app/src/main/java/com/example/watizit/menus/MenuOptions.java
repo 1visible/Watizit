@@ -1,4 +1,4 @@
-package com.example.watizit;
+package com.example.watizit.menus;
 
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
@@ -7,6 +7,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.watizit.R;
+import com.example.watizit.utils.WatizUtil;
 
 public class MenuOptions extends AppCompatActivity {
     TextView textView;

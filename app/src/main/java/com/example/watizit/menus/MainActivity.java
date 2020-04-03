@@ -1,4 +1,4 @@
-package com.example.watizit;
+package com.example.watizit.menus;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,9 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.watizit.R;
+import com.example.watizit.utils.WatizUtil;
 
 public class MainActivity extends AppCompatActivity {
 
