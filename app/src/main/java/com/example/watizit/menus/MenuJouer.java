@@ -28,9 +28,22 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_jouer);
 
+
         Button bouton_retour = findViewById(R.id.retour);
         TextView texte_niveau = findViewById(R.id.niveau);
         Button bouton_aide = findViewById(R.id.help);
+
+
+
+        bouton_aide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openWinPopup();
+            }
+        });
+
+
+
 
         DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
         databaseAccess.open();
@@ -148,5 +161,12 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
         dialog.show();
 
 
+    }
+
+
+    public void openHelp(){
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.popup_help);
+        dialog.show();
     }
 }
