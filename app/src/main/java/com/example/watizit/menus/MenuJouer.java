@@ -36,7 +36,6 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
         Button bouton_aide = findViewById(R.id.help);
 
 
-
         bouton_aide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,7 +81,6 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
             if(object.equals(o)) return true;
         return false;
     }
-
     private NumberPicker createLetterPicker(LinearLayout layout, int id, Random random) {
         NumberPicker np = new NumberPicker(this);
         String[] values = new String[MAX_LETTERS];
@@ -181,4 +179,24 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
         dialog.setCanceledOnTouchOutside(false);
         dialog.show();
     }
+    public void Confirm(View v){
+        final Dialog dialog = new Dialog(this);
+        dialog.setContentView((R.layout.confirm_help));
+        Button bouton_non = dialog.getWindow().findViewById(R.id.no);
+        Button bouton_oui = dialog.getWindow().findViewById(R.id.yes);
+        WatizUtil.setBackgroundColor(this, bouton_non, R.color.COLOR_RED);
+        WatizUtil.setBackgroundColor(this, bouton_oui, R.color.COLOR_BLUE);
+        bouton_non.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+        dialog.setCancelable(false);
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.show();
+
+    }
+
+
 }

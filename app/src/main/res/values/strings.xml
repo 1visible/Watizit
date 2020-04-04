@@ -14,8 +14,20 @@
     <!-- Levels menu -->
     <string name="level">Level</string>
     <!-- Level -->
-    <string name="win_text">Congrats, you\'ve won!</string>
+    <string name="win_text">Congrats, you have won!</string>
     <string name="next">\uF04B</string>
+    <string name="back1">Back</string>
+    <string name="next1">Next</string>
     <!-- Other -->
     <string name="back">\uF104</string>
+    <!-- Popup indice -->
+    <string name="clue">Choose a clue</string>
+    <string name="clue1">5 O - View a letter</string>
+    <string name="clue2">15 O - View the image</string>
+    <string name="clue3">20 O - Find the word</string>
+    <string name="close">Close</string>
+    <!-- Popup confirm -->
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="bonus">Confirm the use of the bonus?</string>
 </resources>

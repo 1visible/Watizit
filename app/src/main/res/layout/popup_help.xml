@@ -15,10 +15,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:text="Choisissez une aide"
+        android:text="@string/clue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +27,7 @@
 
 
     <LinearLayout
-        android:id="@+id/aide1"
+        android:id="@+id/clue1"
         android:layout_width="358dp"
         android:layout_height="140dp"
         android:layout_marginStart="10dp"
@@ -35,7 +35,8 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:clickable="true"
+        android:background="@android:drawable/btn_default"
+        android:onClick="Confirm"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,25 +53,26 @@
         <TextView
             android:id="@+id/textView1"
             android:layout_width="239dp"
-            android:layout_height="82dp"
+            android:layout_height="51dp"
             android:layout_gravity="center_vertical"
             android:layout_margin="5dp"
-            android:text="5 O - Afficher une lettre" />
+            android:text="@string/clue1" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/aide2"
+        android:id="@+id/clue2"
         android:layout_width="358dp"
         android:layout_height="140dp"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
-        android:clickable="true"
+        android:background="@android:drawable/btn_default"
+        android:onClick="Confirm"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aide1">
+        app:layout_constraintTop_toBottomOf="@+id/clue1">
 
         <ImageView
             android:id="@+id/img2"
@@ -82,17 +84,17 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="238dp"
-            android:layout_height="82dp"
+            android:layout_width="222dp"
+            android:layout_height="79dp"
             android:layout_gravity="center_vertical"
             android:layout_margin="5dp"
-            android:text="15 O - Afficher l'image" />
+            android:text="@string/clue2" />
 
     </LinearLayout>
 
     <LinearLayout
 
-        android:id="@+id/aide3"
+        android:id="@+id/clue3"
         android:layout_width="358dp"
         android:layout_height="140dp"
         android:layout_marginStart="10dp"
@@ -100,11 +102,12 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:clickable="true"
+        android:background="@android:drawable/btn_default"
+        android:onClick="Confirm"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aide2">
+        app:layout_constraintTop_toBottomOf="@+id/clue2">
 
         <ImageView
             android:id="@+id/img3"
@@ -116,11 +119,11 @@
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_width="237dp"
-            android:layout_height="82dp"
+            android:layout_width="219dp"
+            android:layout_height="62dp"
             android:layout_gravity="center_vertical"
             android:layout_margin="5dp"
-            android:text="20 O - Trouver le mot" />
+            android:text="@string/clue3" />
 
     </LinearLayout>
 
@@ -130,12 +133,12 @@
         android:layout_height="120px"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="50dp"
-        android:text="Fermer"
+        android:text="@string/close"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aide3" />
+        app:layout_constraintTop_toBottomOf="@+id/clue3" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

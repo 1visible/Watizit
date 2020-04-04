@@ -10,8 +10,24 @@
         Copyright © 2020\nLAURET Nicolas, RANDRIANASOLO Rooly\n\nIcônes par Flaticon :\n
         <a href="https://www.flaticon.com/">https://www.flaticon.com</a>
     </string>
+    <!-- Levels menu -->
     <string name="level">Niveau</string>
+    <!-- Level -->
     <string name="next">\uF04B</string>
     <string name="win_text">Félicitations, vous avez gagné!</string>
+    <string name="back1">Retour</string>
+    <string name="next1">Suivant</string>
+    <!-- Other -->
     <string name="back">\uF104</string>
+    <!-- Popup Indice -->
+    <string name="clue">Choisissez un indice</string>
+    <string name="clue1">5 O - Afficher une lettre</string>
+    <string name="clue2">15 O - Afficher l\'image</string>
+    <string name="clue3">20 O - Trouver le mot</string>
+    <string name="close">Fermer</string>
+    <!-- Popup confirm -->
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+    <string name="bonus">Confirmer l\'utilisation du bonus ?</string>
+
 </resources>
