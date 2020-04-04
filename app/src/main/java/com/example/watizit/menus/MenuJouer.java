@@ -1,5 +1,6 @@
 package com.example.watizit.menus;
 
+
 import android.app.Dialog;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -29,6 +30,7 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
         setContentView(R.layout.menu_jouer);
 
 
+
         Button bouton_retour = findViewById(R.id.retour);
         TextView texte_niveau = findViewById(R.id.niveau);
         Button bouton_aide = findViewById(R.id.help);
@@ -38,10 +40,9 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
         bouton_aide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openWinPopup();
+                Help();
             }
         });
-
 
 
 
@@ -158,15 +159,26 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
         Button bouton_suivant = dialog.getWindow().findViewById(R.id.next);
         WatizUtil.setBackgroundColor(this, bouton_retour, R.color.COLOR_RED);
         WatizUtil.setBackgroundColor(this, bouton_suivant, R.color.COLOR_BLUE);
+        dialog.setCancelable(false);
+        dialog.setCanceledOnTouchOutside(false);
         dialog.show();
 
 
     }
 
-
-    public void openHelp(){
-        Dialog dialog = new Dialog(this);
+    public void Help(){
+        final Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.popup_help);
+        Button bouton_fermer =  dialog.getWindow().findViewById(R.id.close);
+        WatizUtil.setBackgroundColor(this, bouton_fermer, R.color.COLOR_RED);
+        bouton_fermer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+        dialog.setCancelable(false);
+        dialog.setCanceledOnTouchOutside(false);
         dialog.show();
     }
 }

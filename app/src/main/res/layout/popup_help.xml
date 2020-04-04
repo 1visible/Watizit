@@ -5,93 +5,135 @@
     android:id="@+id/popup_help"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="com.example.watizit.menus.MenuJouer">
 
-
-    <ImageView
-        android:id="@+id/aide1"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginBottom="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/aide2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:srcCompat="@drawable/star"
-        tools:layout_editor_absoluteX="16dp" />
 
     <TextView
-        android:id="@+id/aide_text1"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="5 O - Afficher une lettre"
-        app:layout_constraintBottom_toBottomOf="@+id/aide1"
-        app:layout_constraintStart_toEndOf="@+id/aide1"
-        app:layout_constraintTop_toTopOf="@+id/aide1"
-        app:layout_constraintVertical_bias="0.478" />
-
-    <ImageView
-        android:id="@+id/aide2"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginBottom="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/aide3"
-        app:layout_constraintEnd_toEndOf="@+id/aide1"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/aide1"
-        app:layout_constraintTop_toBottomOf="@+id/aide1"
-        app:srcCompat="@drawable/star" />
-
-    <TextView
-        android:id="@+id/aide_text2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="15 O - Afficher l'image"
-        app:layout_constraintBottom_toBottomOf="@+id/aide2"
-        app:layout_constraintStart_toEndOf="@+id/aide2"
-        app:layout_constraintTop_toTopOf="@+id/aide2" />
-
-    <ImageView
-        android:id="@+id/aide3"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginBottom="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/aide2"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/aide2"
-        app:layout_constraintTop_toBottomOf="@+id/aide2"
-        app:srcCompat="@drawable/star" />
-
-    <TextView
-        android:id="@+id/aide_text3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="20 O - Trouver le mot"
-        app:layout_constraintBottom_toBottomOf="@+id/aide3"
-        app:layout_constraintStart_toEndOf="@+id/aide3"
-        app:layout_constraintTop_toTopOf="@+id/aide3" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
         android:text="Choisissez une aide"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.007" />
+        app:layout_constraintVertical_bias="0.023" />
+
+
+    <LinearLayout
+        android:id="@+id/aide1"
+        android:layout_width="358dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:clickable="true"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <ImageView
+            android:id="@+id/img1"
+            android:layout_width="108dp"
+            android:layout_height="96dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/star" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="239dp"
+            android:layout_height="82dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:text="5 O - Afficher une lettre" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/aide2"
+        android:layout_width="358dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aide1">
+
+        <ImageView
+            android:id="@+id/img2"
+            android:layout_width="108dp"
+            android:layout_height="96dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/star" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="238dp"
+            android:layout_height="82dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:text="15 O - Afficher l'image" />
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:id="@+id/aide3"
+        android:layout_width="358dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:clickable="true"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aide2">
+
+        <ImageView
+            android:id="@+id/img3"
+            android:layout_width="108dp"
+            android:layout_height="96dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/star" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="237dp"
+            android:layout_height="82dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:text="20 O - Trouver le mot" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/close"
-        android:layout_width="260px"
-        android:layout_height="90px"
-        android:onClick="fermer"
+        android:layout_width="300px"
+        android:layout_height="120px"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="50dp"
         android:text="Fermer"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/aide3" />
 
