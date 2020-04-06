@@ -68,8 +68,6 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
 
         setText(getText());
 
-
-
     }
 
     public void retour(View view){
@@ -149,6 +147,13 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
         }
     }
 
+    private boolean hasWon() {
+        return word.equals(((TextView) findViewById(R.id.textView)).getText());
+    }
+
+    private void triggerWin() {
+
+    }
 
     public void openWinPopup()  {
         Dialog dialog = new Dialog(this);
@@ -160,7 +165,6 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
         dialog.setCancelable(false);
         dialog.setCanceledOnTouchOutside(false);
         dialog.show();
-
 
     }
 
