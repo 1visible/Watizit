@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/COLOR_GRAY"
     tools:context="com.example.watizit.menus.MenuJouer">
 
 
@@ -19,126 +20,82 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:text="@string/clue"
+        android:background="@color/COLOR_GRAY"
+        android:textColor="@color/COLOR_GOLD"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
 
-
-    <LinearLayout
+    <Button
         android:id="@+id/clue1"
-        android:layout_width="358dp"
-        android:layout_height="140dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@android:drawable/btn_default"
+        android:layout_width="760px"
+        android:layout_height="180px"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="50dp"
         android:onClick="confirm"
-        android:orientation="horizontal"
+        android:text="@string/clue1"
+        android:textColor="@color/COLOR_GRAY"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.197" />
 
-        <ImageView
-            android:id="@+id/img1"
-            android:layout_width="108dp"
-            android:layout_height="96dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="5dp"
-            android:src="@drawable/props_star" />
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="239dp"
-            android:layout_height="51dp"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="5dp"
-            android:text="@string/clue1" />
-
-    </LinearLayout>
-
-    <LinearLayout
+    <Button
         android:id="@+id/clue2"
-        android:layout_width="358dp"
-        android:layout_height="140dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:background="@android:drawable/btn_default"
+        android:layout_width="760px"
+        android:layout_height="180px"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="50dp"
         android:onClick="confirm"
-        android:orientation="horizontal"
+        android:text="@string/clue2"
+        android:textColor="@color/COLOR_GRAY"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clue1">
+        app:layout_constraintTop_toBottomOf="@+id/clue1"
+        app:layout_constraintVertical_bias="0.068" />
 
-        <ImageView
-            android:id="@+id/img2"
-            android:layout_width="108dp"
-            android:layout_height="96dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="5dp"
-            android:src="@drawable/props_star" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="222dp"
-            android:layout_height="79dp"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="5dp"
-            android:text="@string/clue2" />
-
-    </LinearLayout>
-
-    <LinearLayout
-
+    <Button
         android:id="@+id/clue3"
-        android:layout_width="358dp"
-        android:layout_height="140dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@android:drawable/btn_default"
+        android:layout_width="760px"
+        android:layout_height="180px"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="50dp"
         android:onClick="confirm"
-        android:orientation="horizontal"
+        android:text="@string/clue3"
+        android:textColor="@color/COLOR_GRAY"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clue2">
-
-        <ImageView
-            android:id="@+id/img3"
-            android:layout_width="108dp"
-            android:layout_height="96dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="5dp"
-            android:src="@drawable/props_star" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="219dp"
-            android:layout_height="62dp"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="5dp"
-            android:text="@string/clue3" />
-
-    </LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/clue2"
+        app:layout_constraintVertical_bias="0.108" />
 
     <Button
         android:id="@+id/close"
         android:layout_width="300px"
-        android:layout_height="120px"
-        android:layout_marginTop="20dp"
+        android:layout_height="150px"
         android:layout_marginBottom="50dp"
+        android:layout_marginTop="60dp"
         android:text="@string/close"
-        android:textSize="20dp"
+        android:textSize="22dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clue3" />
+        app:layout_constraintTop_toBottomOf="@+id/clue3"
+        app:layout_constraintVertical_bias="0.936" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

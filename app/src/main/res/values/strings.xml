@@ -2,8 +2,8 @@
 
     <string name="app_name">Watizit</string>
     <!-- Main menu -->
-    <string name="play">\uF04B Play</string>
-    <string name="options">\uF013 Options</string>
+    <string name="play">"\uF04B  Play"</string>
+    <string name="options">"\uF013  Options"</string>
     <!-- Options menu -->
     <string name="dark_theme">Dark mode</string>
     <string name="language">Language</string>
@@ -22,9 +22,9 @@
     <string name="back">\uF104</string>
     <!-- Popup indice -->
     <string name="clue">Choose a clue</string>
-    <string name="clue1">5 O - View a letter</string>
-    <string name="clue2">15 O - View the image</string>
-    <string name="clue3">20 O - Find the word</string>
+    <string name="clue1">"See a letter  >>  3\uf0e7"</string>
+    <string name="clue2">"Brighten the picture  >>  5\uf0e7"</string>
+    <string name="clue3">"Skip the level  >>  7\uf0e7"</string>
     <string name="close">Close</string>
     <!-- Popup confirm -->
     <string name="yes">Yes</string>

@@ -28,15 +28,15 @@ public class WatizUtil {
         view.getBackground().setColorFilter(context.getResources().getColor(color), PorterDuff.Mode.MULTIPLY);
     }
 
-    public static void setButtonIcon(Context context, Button button, float size, boolean addGap) {
+    public static void setButtonIcon(Context context, Button button, float size, boolean firstLetter) {
         SpannableStringBuilder string = new SpannableStringBuilder(button.getText());
         Typeface typeface = ResourcesCompat.getFont(context, R.font.icons_font);
 
-        string.setSpan(new CustomTypefaceSpan("", typeface), 0, 1, SPAN_INCLUSIVE_EXCLUSIVE);
-        string.setSpan(new RelativeSizeSpan(size), 0, 1, SPAN_INCLUSIVE_EXCLUSIVE);
+        int start = firstLetter ? 0: string.length()-1;
+        int end = firstLetter ? 1 : string.length();
 
-        if(addGap)
-            string.insert(1, " ");
+        string.setSpan(new CustomTypefaceSpan("", typeface), start, end, SPAN_INCLUSIVE_EXCLUSIVE);
+        string.setSpan(new RelativeSizeSpan(size), start, end, SPAN_INCLUSIVE_EXCLUSIVE);
 
         button.setText(string);
     }
