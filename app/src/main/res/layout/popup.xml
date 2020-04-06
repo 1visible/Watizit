@@ -58,7 +58,7 @@
         android:id="@+id/star2"
         android:layout_width="88dp"
         android:layout_height="89dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
         app:layout_constraintEnd_toEndOf="parent"

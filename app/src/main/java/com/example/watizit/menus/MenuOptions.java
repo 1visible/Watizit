@@ -1,5 +1,6 @@
 package com.example.watizit.menus;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
@@ -12,6 +13,7 @@ import com.example.watizit.R;
 import com.example.watizit.utils.WatizUtil;
 
 public class MenuOptions extends AppCompatActivity {
+    MediaPlayer mPlayer;
     TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -42,5 +44,6 @@ public class MenuOptions extends AppCompatActivity {
     public void en2fr(View view) {
         WatizUtil.setLocale("fr", this);
     }
+
 
 }

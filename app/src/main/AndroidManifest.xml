@@ -40,7 +40,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".menus.MainActivity"/>
         </activity>
+        <service
+            android:name=".utils.JouerMusique"
+            android:enabled="true">
+        </service>
 
-     </application>
+    </application>
 
 </manifest>
