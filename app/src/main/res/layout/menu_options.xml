@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/options"
@@ -53,13 +52,14 @@
         android:id="@+id/langue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
         android:text="@string/language"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/en2fr"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mode"
-        app:layout_constraintVertical_bias="0.055" />
+        app:layout_constraintVertical_bias="0.085" />
 
     <Switch
         android:id="@+id/switch1"
@@ -79,6 +79,7 @@
         android:layout_width="287dp"
         android:layout_height="80dp"
         android:layout_marginBottom="16dp"
+        android:gravity="center_horizontal"
         android:text="@string/copyright"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
@@ -86,14 +87,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="parent"
-        android:gravity="center_horizontal" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/fr2en"
-        android:onClick="fr2en"
         android:layout_width="56dp"
         android:layout_height="55dp"
+        android:onClick="fr2en"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.954"
@@ -104,16 +104,27 @@
 
     <ImageView
         android:id="@+id/en2fr"
-        android:onClick="en2fr"
         android:layout_width="56dp"
         android:layout_height="55dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:onClick="en2fr"
+        app:layout_constraintBottom_toBottomOf="@+id/fr2en"
         app:layout_constraintEnd_toStartOf="@+id/fr2en"
         app:layout_constraintHorizontal_bias="0.911"
         app:layout_constraintStart_toEndOf="@+id/langue"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fr2en"
         app:layout_constraintVertical_bias="0.288"
         app:srcCompat="@drawable/flag_fr" />
+
+    <TextView
+        android:id="@+id/musique"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/music"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.074"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/langue" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
