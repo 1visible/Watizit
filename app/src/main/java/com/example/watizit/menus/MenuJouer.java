@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -13,6 +14,7 @@ import android.widget.NumberPicker;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.widget.ImageViewCompat;
 
 import com.example.watizit.R;
 import com.example.watizit.database.DatabaseAccess;
@@ -21,12 +23,15 @@ import com.example.watizit.utils.WatizUtil;
 
 import java.util.Random;
 
-public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValueChangeListener {
+public class MenuJouer extends AppCompatActivity {
 
     private static final int MAX_LETTERS = 5;
     private int level_num = 1;
     private Level level;
     private String word;
+
+    ImageView image_niveau;
+    TextView texte_mot;
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -37,7 +42,8 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
         Button bouton_retour = findViewById(R.id.retour);
         TextView texte_niveau = findViewById(R.id.niveau);
         Button bouton_aide = findViewById(R.id.help);
-        ImageView image_niveau = findViewById(R.id.level_image);
+        image_niveau = findViewById(R.id.level_image);
+        texte_mot = findViewById(R.id.textView);
 
         DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
         databaseAccess.open();
@@ -51,8 +57,8 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
         WatizUtil.setButtonIcon(this, bouton_retour, 1F, false);
 
         WatizUtil.setBackgroundColor(this, bouton_retour, R.color.COLOR_RED);
-        WatizUtil.setBackgroundColor(this, texte_niveau, R.color.COLOR_GREEN);
-        WatizUtil.setBackgroundColor(this, bouton_aide, R.color.COLOR_GOLD);
+        WatizUtil.setBackgroundColor(this, texte_niveau, R.color.COLOR_BLUE);
+        WatizUtil.setBackgroundColor(this, bouton_aide, R.color.COLOR_GRAY);
 
         LinearLayout layout = findViewById(R.id.layout);
         Random random = new Random();
@@ -66,7 +72,7 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
             layout.addView(np);
         }
 
-        setText(getText());
+        texte_mot.setText(getWord());
 
     }
 
@@ -79,8 +85,10 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
             if(object.equals(o)) return true;
         return false;
     }
+
     private NumberPicker createLetterPicker(LinearLayout layout, int id, Random random) {
         NumberPicker np = new NumberPicker(this);
+        PickerListener listener = new PickerListener();
         String[] values = new String[MAX_LETTERS];
 
         // Add word char to possible letters
@@ -111,51 +119,53 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
         np.setMinValue(0);
         np.setMaxValue(values.length - 1);
         np.setDisplayedValues(values);
-        np.setOnValueChangedListener(this);
+        np.setOnScrollListener(listener);
 
         return np;
     }
 
-    public void onValueChange(NumberPicker np, int oldVal, int newVal) {
-        String text = getText();
-        setText(text);
-        if(word.equals(text)) disableLetterPickers();
+    public void updateGame() {
+        String text = getWord();
+        texte_mot.setText(text);
+        if(word.equals(text))
+            triggerWin();
     }
 
-    private String getText() {
+    private String getWord() {
         String text = "";
         for(int i = 0; i < word.length(); i++) {
-            NumberPicker n = findViewById(R.id.layout).findViewById(i);
-            text += n.getDisplayedValues()[n.getValue()];
+            NumberPicker np = findViewById(R.id.layout).findViewById(i);
+            text += np.getDisplayedValues()[np.getValue()];
         }
         return text;
     }
 
-    private void setText(String text) {
-        TextView textView = findViewById(R.id.textView);
-        textView.setText(text);
-        textView.setTextColor(word.equals(text) ? Color.GREEN : Color.BLACK);
-    }
-
     private void disableLetterPickers() {
         for(int i = 0; i < word.length(); i++) {
-            NumberPicker n = findViewById(R.id.layout).findViewById(i);
+            NumberPicker np = findViewById(R.id.layout).findViewById(i);
+            np.setEnabled(false);
+            String[] values = new String[MAX_LETTERS];
 
-            n.setEnabled(false);
-            n.setValue(n.getValue());
-            openWinPopup();
+            for(int j = 0; j < MAX_LETTERS; j++)
+                values[j] = Character.toString(word.charAt(i));
+
+            np.setDisplayedValues(values);
         }
     }
 
-    private boolean hasWon() {
-        return word.equals(((TextView) findViewById(R.id.textView)).getText());
-    }
-
     private void triggerWin() {
-
+        disableLetterPickers();
+        texte_mot.setTextColor(Color.GREEN);
+        ImageViewCompat.setImageTintList(image_niveau, null);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                openWinPopup();
+            }
+        }, 1000);
     }
 
-    public void openWinPopup()  {
+    public void openWinPopup() {
         Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.popup);
         Button bouton_retour =  dialog.getWindow().findViewById(R.id.retour);
@@ -168,11 +178,20 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
 
     }
 
-    public void help(View v){
+    public void help(View v) {
         final Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.popup_help);
         Button bouton_fermer =  dialog.getWindow().findViewById(R.id.close);
+        Button bouton_clue1 =  dialog.getWindow().findViewById(R.id.clue1);
+        Button bouton_clue2 =  dialog.getWindow().findViewById(R.id.clue2);
+        Button bouton_clue3 =  dialog.getWindow().findViewById(R.id.clue3);
         WatizUtil.setBackgroundColor(this, bouton_fermer, R.color.COLOR_RED);
+        WatizUtil.setBackgroundColor(this, bouton_clue1, R.color.COLOR_GOLD);
+        WatizUtil.setBackgroundColor(this, bouton_clue2, R.color.COLOR_GOLD);
+        WatizUtil.setBackgroundColor(this, bouton_clue3, R.color.COLOR_GOLD);
+        WatizUtil.setButtonIcon(this, bouton_clue1, 0.8F, false);
+        WatizUtil.setButtonIcon(this, bouton_clue2, 0.8F, false);
+        WatizUtil.setButtonIcon(this, bouton_clue3, 0.8F, false);
         bouton_fermer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -183,7 +202,7 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
         dialog.setCanceledOnTouchOutside(false);
         dialog.show();
     }
-    public void confirm(View v){
+    public void confirm(View v) {
         final Dialog dialog = new Dialog(this);
         dialog.setContentView((R.layout.confirm_help));
         Button bouton_non = dialog.getWindow().findViewById(R.id.no);
@@ -202,5 +221,13 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
 
     }
 
+    private class PickerListener implements NumberPicker.OnScrollListener {
+        @Override
+        public void onScrollStateChange(NumberPicker view, int scrollState) {
+            if(scrollState == SCROLL_STATE_IDLE) {
+                updateGame();
+            }
+        }
+    }
 
 }
