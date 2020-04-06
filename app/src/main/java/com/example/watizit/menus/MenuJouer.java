@@ -2,10 +2,12 @@ package com.example.watizit.menus;
 
 
 import android.app.Dialog;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.NumberPicker;
 import android.widget.TextView;
@@ -22,6 +24,7 @@ import java.util.Random;
 public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValueChangeListener {
 
     private static final int MAX_LETTERS = 5;
+    private int level_num = 1;
     private Level level;
     private String word;
 
@@ -29,26 +32,19 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_jouer);
 
-
+        Resources res = getResources();
 
         Button bouton_retour = findViewById(R.id.retour);
         TextView texte_niveau = findViewById(R.id.niveau);
         Button bouton_aide = findViewById(R.id.help);
-
-
-        bouton_aide.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Help();
-            }
-        });
-
-
+        ImageView image_niveau = findViewById(R.id.level_image);
 
         DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
         databaseAccess.open();
-        level = databaseAccess.getLevel(1);
+        level = databaseAccess.getLevel(level_num);
         databaseAccess.close();
+
+        image_niveau.setImageDrawable(res.getDrawable(res.getIdentifier("img_"+level.getWord(), "drawable", getPackageName())));
 
         texte_niveau.append(" "+level.getID());
 
@@ -60,7 +56,9 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
 
         LinearLayout layout = findViewById(R.id.layout);
         Random random = new Random();
-        word = level.getWord(); // Word to find
+
+        // Word to find
+        word = res.getString(res.getIdentifier("word_"+level.getWord(), "string", getPackageName()));
 
         // Create one letter picker per char in the word
         for(int i = 0; i < word.length(); i++) {
@@ -69,6 +67,8 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
         }
 
         setText(getText());
+
+
 
     }
 
@@ -164,7 +164,7 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
 
     }
 
-    public void Help(){
+    public void help(View v){
         final Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.popup_help);
         Button bouton_fermer =  dialog.getWindow().findViewById(R.id.close);
@@ -179,7 +179,7 @@ public class MenuJouer extends AppCompatActivity implements NumberPicker.OnValue
         dialog.setCanceledOnTouchOutside(false);
         dialog.show();
     }
-    public void Confirm(View v){
+    public void confirm(View v){
         final Dialog dialog = new Dialog(this);
         dialog.setContentView((R.layout.confirm_help));
         Button bouton_non = dialog.getWindow().findViewById(R.id.no);

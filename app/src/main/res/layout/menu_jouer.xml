@@ -52,7 +52,7 @@
         app:layout_constraintVertical_bias="0.036" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/level_image"
         android:layout_width="193dp"
         android:layout_height="260dp"
         android:layout_marginTop="36dp"
@@ -62,7 +62,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/niveau"
         app:layout_constraintVertical_bias="0.022"
-        app:srcCompat="@drawable/anxiety" />
+        android:tint="@color/colorPrimaryDark"
+        app:srcCompat="@drawable/img_dog" />
 
     <LinearLayout
         android:id="@+id/layout"
@@ -74,7 +75,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"></LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/level_image">
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textView"
@@ -85,7 +87,7 @@
         app:layout_constraintBottom_toTopOf="@+id/layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/level_image" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
