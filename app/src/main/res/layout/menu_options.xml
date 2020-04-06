@@ -86,7 +86,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center_horizontal" />
 
     <ImageView
         android:id="@+id/fr2en"
@@ -99,7 +100,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.288"
-        app:srcCompat="@drawable/uk" />
+        app:srcCompat="@drawable/flag_en" />
 
     <ImageView
         android:id="@+id/en2fr"
@@ -112,7 +113,7 @@
         app:layout_constraintStart_toEndOf="@+id/langue"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.288"
-        app:srcCompat="@drawable/flag" />
+        app:srcCompat="@drawable/flag_fr" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

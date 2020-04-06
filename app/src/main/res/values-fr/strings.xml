@@ -29,5 +29,18 @@
     <string name="yes">Oui</string>
     <string name="no">Non</string>
     <string name="bonus">Confirmer l\'utilisation du bonus ?</string>
+    <string name="word_cat">CHAT</string>
+    <string name="word_dog">CHIEN</string>
+    <string name="word_falcon">FAUCON</string>
+    <string name="word_lizard">LEZARD</string>
+    <string name="word_hotdog">HOTDOG</string>
+    <string name="word_car">VOITURE</string>
+    <string name="word_church">EGLISE</string>
+    <string name="word_croissant">CROISSANT</string>
+    <string name="word_fire">FEU</string>
+    <string name="word_house">MAISON</string>
+    <string name="word_tornado">TORNADE</string>
+    <string name="word_volcano">VOLCAN</string>
+    <string name="word_bottle">BOUTEILLE</string>
 
 </resources>

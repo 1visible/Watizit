@@ -36,7 +36,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:background="@android:drawable/btn_default"
-        android:onClick="Confirm"
+        android:onClick="confirm"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +48,7 @@
             android:layout_height="96dp"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="5dp"
-            android:src="@drawable/star" />
+            android:src="@drawable/props_star" />
 
         <TextView
             android:id="@+id/textView1"
@@ -68,7 +68,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:background="@android:drawable/btn_default"
-        android:onClick="Confirm"
+        android:onClick="confirm"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,7 +80,7 @@
             android:layout_height="96dp"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="5dp"
-            android:src="@drawable/star" />
+            android:src="@drawable/props_star" />
 
         <TextView
             android:id="@+id/textView2"
@@ -103,7 +103,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:background="@android:drawable/btn_default"
-        android:onClick="Confirm"
+        android:onClick="confirm"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -115,7 +115,7 @@
             android:layout_height="96dp"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="5dp"
-            android:src="@drawable/star" />
+            android:src="@drawable/props_star" />
 
         <TextView
             android:id="@+id/textView3"

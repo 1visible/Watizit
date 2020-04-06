@@ -39,7 +39,7 @@
         app:layout_constraintStart_toEndOf="@+id/star3"
         app:layout_constraintTop_toTopOf="@+id/star2"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/star" />
+        app:srcCompat="@drawable/props_star" />
 
     <ImageView
         android:id="@+id/star3"
@@ -52,7 +52,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/star"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/star" />
+        app:srcCompat="@drawable/props_star" />
 
     <ImageView
         android:id="@+id/star2"
@@ -63,7 +63,7 @@
         android:layout_marginRight="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/star" />
+        app:srcCompat="@drawable/props_star" />
 
     <Button
         android:id="@+id/next"

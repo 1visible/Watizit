@@ -30,4 +30,18 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="bonus">Confirm the use of the bonus?</string>
+    <!-- Game words -->
+    <string name="word_cat">CAT</string>
+    <string name="word_dog">DOG</string>
+    <string name="word_falcon">FALCON</string>
+    <string name="word_lizard">LIZARD</string>
+    <string name="word_hotdog">HOTDOG</string>
+    <string name="word_car">CAR</string>
+    <string name="word_church">CHURCH</string>
+    <string name="word_croissant">CROISSANT</string>
+    <string name="word_fire">FIRE</string>
+    <string name="word_house">HOUSE</string>
+    <string name="word_tornado">TORNADO</string>
+    <string name="word_volcano">VOLCANO</string>
+    <string name="word_bottle">BOTTLE</string>
 </resources>
