@@ -50,7 +50,7 @@ public class MenuOptions extends AppCompatActivity {
         luminosityseekBar = findViewById(R.id.light);
         luminosityseekBar.setMax(255);
         luminosityseekBar.setProgress(getLuminosite());
-        //getPermission();
+        getPermission();
 
         luminosityseekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -73,6 +73,39 @@ public class MenuOptions extends AppCompatActivity {
             }
         });
 
+        /*int cLuminosite = Settings.System.getInt(getContentResolver(),Settings.System.SCREEN_BRIGHTNESS,0);
+        luminosityseekBar.setProgress(cLuminosite);
+
+        luminosityseekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                Context context = getApplicationContext();
+                boolean canWrite = Settings.System.canWrite(context);
+                if(canWrite){
+                    int sLuminosite = progress*255/255;
+                    Settings.System.putInt(context.getContentResolver(),
+                            Settings.System.SCREEN_BRIGHTNESS_MODE,
+                            Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL);
+                            Settings.System.putInt(context.getContentResolver(),
+                                    Settings.System.SCREEN_BRIGHTNESS,sLuminosite);
+                }
+                else{
+                    Intent intent = new Intent((Settings.ACTION_MANAGE_WRITE_SETTINGS));
+                    context.startActivity(intent);
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });*/
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
         changeVolume();
 
@@ -120,6 +153,7 @@ public class MenuOptions extends AppCompatActivity {
                 succes = true;
             }
             else{
+                succes = true;
                 Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS);
                 intent.setData(Uri.parse("package :" + getApplicationContext().getPackageName()));
                 startActivityForResult(intent, 1000);
@@ -128,14 +162,13 @@ public class MenuOptions extends AppCompatActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultcode, Intent data){
-        if(requestCode == 1000){
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+    protected void onActivityResult(int requestCode, int resultcode, Intent data) {
+        if (requestCode == 1000) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 boolean value = Settings.System.canWrite(getApplicationContext());
-                if (value){
+                if (value) {
                     succes = true;
-                }
-                else {
+                } else {
                     toastMessage("Permission not granted");
                 }
             }
