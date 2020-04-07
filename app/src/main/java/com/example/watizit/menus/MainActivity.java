@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     HomeWatcher mHomeWatcher;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

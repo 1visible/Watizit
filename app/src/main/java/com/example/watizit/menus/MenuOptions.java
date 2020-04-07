@@ -1,7 +1,9 @@
 package com.example.watizit.menus;
 
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
+import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -22,7 +24,9 @@ public class MenuOptions extends AppCompatActivity {
 
 
     TextView textView;
-    SeekBar seekBar;
+    SeekBar luminosityseekBar;
+    SeekBar volumeseekBar;
+    AudioManager audioManager;
     boolean succes = false;
 
     @Override
@@ -43,12 +47,12 @@ public class MenuOptions extends AppCompatActivity {
         textView = findViewById(R.id.copyright);
         textView.setMovementMethod(LinkMovementMethod.getInstance());
 
-        seekBar = findViewById(R.id.light);
-        seekBar.setMax(255);
-        seekBar.setProgress(getLuminosite());
+        luminosityseekBar = findViewById(R.id.light);
+        luminosityseekBar.setMax(255);
+        luminosityseekBar.setProgress(getLuminosite());
         //getPermission();
 
-        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        luminosityseekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 if(fromUser && succes){
@@ -69,6 +73,8 @@ public class MenuOptions extends AppCompatActivity {
             }
         });
 
+        setVolumeControlStream(AudioManager.STREAM_MUSIC);
+        changeVolume();
 
 
     }
@@ -136,6 +142,34 @@ public class MenuOptions extends AppCompatActivity {
         }
     }
 
+    private  void changeVolume(){
+        try {
+            volumeseekBar = findViewById(R.id.volume);
+            audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+            volumeseekBar.setMax(audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC));
+            volumeseekBar.setProgress(audioManager.getStreamVolume(AudioManager.STREAM_MUSIC));
+            volumeseekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                @Override
+                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                    audioManager.setStreamVolume(AudioManager.STREAM_MUSIC,progress,0);
+                }
+
+                @Override
+                public void onStartTrackingTouch(SeekBar seekBar) {
+
+                }
+
+                @Override
+                public void onStopTrackingTouch(SeekBar seekBar) {
+
+                }
+            });
+
+
+        }catch (Exception e) {
+        }
+
+    }
 
     private  void toastMessage(String message){
         Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
