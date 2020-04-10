@@ -14,7 +14,7 @@
     <string name="music">Music</string>
     <string name="brightness">Brightness</string>
     <!-- Levels menu -->
-    <string name="level">Level</string>
+    <string name="level">Level %d</string>
     <!-- Level -->
     <string name="win_text">Congrats, you have won!</string>
     <string name="next">\uF04B</string>

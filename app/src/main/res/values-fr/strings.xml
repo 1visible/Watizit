@@ -13,7 +13,7 @@
     <string name="music">Musique</string>
     <string name="brightness">Luminosité</string>
     <!-- Levels menu -->
-    <string name="level">Niveau</string>
+    <string name="level">Niveau %d</string>
     <!-- Level -->
     <string name="next">\uF04B</string>
     <string name="win_text">Félicitations, vous avez gagné!</string>

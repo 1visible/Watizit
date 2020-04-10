@@ -4,9 +4,11 @@
     <color name="colorPrimary">#FFFFFF</color>
     <color name="colorPrimaryDark">#3B3838</color>
     <color name="colorAccent">#CACACA</color>
+    <color name="transparent">#00000000</color>
 
     <color name="COLOR_BACKGROUND">#ECECEC</color>
     <color name="COLOR_BLACK">#262626</color>
+    <color name="COLOR_SEMIDARK">#F03B3838</color>
 
     <color name="COLOR_GOLD">#FED148</color>
     <color name="COLOR_GREEN">#92D050</color>
