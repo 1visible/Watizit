@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void jouer(View view){
-        startActivity(new Intent(this, MenuJouer.class));
+        startActivity(new Intent(this, MenuNiveaux.class));
     }
 
     private boolean mIsBound = false;

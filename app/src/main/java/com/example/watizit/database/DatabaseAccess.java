@@ -5,10 +5,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.example.watizit.other.Level;
+import com.example.watizit.objects.Level;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class DatabaseAccess {
     private SQLiteOpenHelper openHelper;
@@ -46,8 +45,8 @@ public class DatabaseAccess {
         return level;
     }
 
-    public List<Level> getLevels() {
-        List<Level> list = new ArrayList<>();
+    public ArrayList<Level> getLevels() {
+        ArrayList<Level> list = new ArrayList<>();
         Cursor cursor = database.rawQuery("SELECT * FROM levels", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {

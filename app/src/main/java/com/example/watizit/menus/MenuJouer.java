@@ -2,6 +2,7 @@ package com.example.watizit.menus;
 
 
 import android.app.Dialog;
+import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -14,11 +15,13 @@ import android.widget.NumberPicker;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.widget.ImageViewCompat;
 
 import com.example.watizit.R;
 import com.example.watizit.database.DatabaseAccess;
-import com.example.watizit.other.Level;
+import com.example.watizit.objects.LetterPicker;
+import com.example.watizit.objects.Level;
 import com.example.watizit.utils.WatizUtil;
 
 import java.util.Random;
@@ -26,7 +29,7 @@ import java.util.Random;
 public class MenuJouer extends AppCompatActivity {
 
     private static final int MAX_LETTERS = 5;
-    private int level_num = 1;
+    private int level_num;
     private Level level;
     private String word;
 
@@ -36,6 +39,10 @@ public class MenuJouer extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_jouer);
+
+        level_num = getIntent().getIntExtra("EXTRA_ID", -1);
+
+        //TODO : Si l'ID est -1, on fait rien et on retourne directement à MenuNiveaux
 
         Resources res = getResources();
 
@@ -52,7 +59,10 @@ public class MenuJouer extends AppCompatActivity {
 
         image_niveau.setImageDrawable(res.getDrawable(res.getIdentifier("img_"+level.getWord(), "drawable", getPackageName())));
 
-        texte_niveau.append(" "+level.getID());
+        ColorStateList csl = AppCompatResources.getColorStateList(this, R.color.COLOR_SEMIDARK);
+        ImageViewCompat.setImageTintList(image_niveau, csl);
+
+        texte_niveau.setText(texte_niveau.getText().toString().replace("%d", String.valueOf(level.getID())));
 
         WatizUtil.setButtonIcon(this, bouton_retour, 1F, false);
 
@@ -68,8 +78,8 @@ public class MenuJouer extends AppCompatActivity {
 
         // Create one letter picker per char in the word
         for(int i = 0; i < word.length(); i++) {
-            NumberPicker np = createLetterPicker(layout, i, random);
-            layout.addView(np);
+            LetterPicker lpicker = createLetterPicker(layout, i, random);
+            layout.addView(lpicker);
         }
 
         texte_mot.setText(getWord());
@@ -86,22 +96,10 @@ public class MenuJouer extends AppCompatActivity {
         return false;
     }
 
-    private NumberPicker createLetterPicker(LinearLayout layout, int id, Random random) {
-        NumberPicker np = new NumberPicker(this);
-        PickerListener listener = new PickerListener();
+    private LetterPicker createLetterPicker(LinearLayout layout, int id, Random random) {
         String[] values = new String[MAX_LETTERS];
-
         // Add word char to possible letters
         values[random.nextInt(MAX_LETTERS)] = Character.toString(word.charAt(id));
-
-        np.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
-        np.setId(id);
-
-        // Adjust width to fit screen
-        LinearLayout.LayoutParams lp =
-                new LinearLayout.LayoutParams(layout.getLayoutParams().width/word.length(), LinearLayout.LayoutParams.MATCH_PARENT);
-        np.setLayoutParams(lp);
-
 
         // Fill the rest with random unique letters
         for(int j = 0; j < MAX_LETTERS; j++) {
@@ -116,12 +114,15 @@ public class MenuJouer extends AppCompatActivity {
             values[j] = letter;
         }
 
-        np.setMinValue(0);
-        np.setMaxValue(values.length - 1);
-        np.setDisplayedValues(values);
-        np.setOnScrollListener(listener);
+        LetterPicker lpicker = new LetterPicker(this, id, values);
+        PickerListener listener = new PickerListener();
+        // Adjust width to fit screen
+        LinearLayout.LayoutParams lp =
+                new LinearLayout.LayoutParams(layout.getLayoutParams().width/word.length(), LinearLayout.LayoutParams.MATCH_PARENT);
+        lpicker.setLayoutParams(lp);
+        lpicker.setOnScrollListener(listener);
 
-        return np;
+        return lpicker;
     }
 
     public void updateGame() {
