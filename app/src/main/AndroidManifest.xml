@@ -8,10 +8,11 @@
         android:allowBackup="true"
         android:icon="@mipmap/icone"
         android:label="@string/app_name"
+        android:name=".classes.App"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name=".menus.MainActivity" >
+        <activity android:name=".menus.MainMenu" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,31 +20,32 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".menus.MenuOptions"
-            android:label="Menu options"
-            android:parentActivityName=".menus.MainActivity">
+        <activity android:name=".menus.OptionsMenu"
+            android:label="Options menu"
+            android:parentActivityName=".menus.MainMenu">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".menus.MainActivity" />
+                android:value=".menus.MainMenu" />
         </activity>
 
-        <activity android:name=".menus.MenuJouer"
-            android:label="Menu jouer"
-            android:parentActivityName=".menus.MainActivity">
+        <activity android:name=".menus.LevelMenu"
+            android:label="Level menu"
+            android:parentActivityName=".menus.LevelsListMenu">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".menus.MainActivity"/>
+                android:value=".menus.LevelsListMenu"/>
         </activity>
 
-        <activity android:name=".menus.MenuNiveaux"
-            android:label="Menu niveaux"
-            android:parentActivityName=".menus.MainActivity">
+        <activity android:name=".menus.LevelsListMenu"
+            android:label="Levels list menu"
+            android:parentActivityName=".menus.MainMenu">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".menus.MainActivity"/>
+                android:value=".menus.MainMenu"/>
         </activity>
+
         <service
-            android:name=".utils.JouerMusique"
+            android:name=".classes.JouerMusique"
             android:enabled="true">
         </service>
 

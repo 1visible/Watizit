@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/popup"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/congratsText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -26,7 +24,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:id="@+id/star"
+        android:id="@+id/starImage1"
         android:layout_width="88dp"
         android:layout_height="89dp"
         android:layout_marginStart="5dp"
@@ -34,39 +32,42 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
-        app:layout_constraintBottom_toBottomOf="@+id/star2"
-        app:layout_constraintEnd_toStartOf="@+id/star2"
-        app:layout_constraintStart_toEndOf="@+id/star3"
-        app:layout_constraintTop_toTopOf="@+id/star2"
+        android:tint="@color/COLOR_BACKGROUND_DARKER"
+        app:layout_constraintBottom_toBottomOf="@+id/starImage2"
+        app:layout_constraintEnd_toStartOf="@+id/starImage3"
+        app:layout_constraintStart_toEndOf="@+id/starImage3"
+        app:layout_constraintTop_toTopOf="@+id/starImage2"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/props_star" />
 
     <ImageView
-        android:id="@+id/star3"
+        android:id="@+id/starImage2"
         android:layout_width="88dp"
         android:layout_height="89dp"
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="60dp"
-        app:layout_constraintBottom_toBottomOf="@+id/star"
+        android:tint="@color/COLOR_BACKGROUND_DARKER"
+        app:layout_constraintBottom_toBottomOf="@+id/starImage1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/star"
+        app:layout_constraintTop_toTopOf="@+id/starImage1"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/props_star" />
 
     <ImageView
-        android:id="@+id/star2"
+        android:id="@+id/starImage3"
         android:layout_width="88dp"
         android:layout_height="89dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
+        android:tint="@color/COLOR_BACKGROUND_DARKER"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/congratsText"
         app:srcCompat="@drawable/props_star" />
 
     <Button
-        android:id="@+id/next"
+        android:id="@+id/nextLevelButton"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginTop="40dp"
@@ -78,10 +79,10 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/star" />
+        app:layout_constraintTop_toBottomOf="@+id/starImage1" />
 
     <Button
-        android:id="@+id/retour"
+        android:id="@+id/backButton3"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginStart="40dp"
@@ -90,14 +91,13 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="30dp"
-        android:onClick="retour"
         android:text="@string/back1"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/next"
+        app:layout_constraintEnd_toStartOf="@+id/nextLevelButton"
         app:layout_constraintHorizontal_bias="0.142"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/star" />
+        app:layout_constraintTop_toBottomOf="@+id/starImage1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

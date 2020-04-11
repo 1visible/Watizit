@@ -1,29 +1,30 @@
 <resources>
 
-    <string name="app_name">Watizit</string>
+    <string name="app_name" translatable="false">Watizit</string>
+    <string name="sp_key" translatable="false">watizit-7bcd-11ea-bc55</string>
     <!-- Main menu -->
-    <string name="play">"\uF04B  Play"</string>
-    <string name="options">"\uF013  Options"</string>
+    <string name="play_with_icon">"\uF04B  Play"</string>
+    <string name="options_with_icon">"\uF013  Options"</string>
     <!-- Options menu -->
+    <string name="options">Options</string>
     <string name="dark_theme">Dark mode</string>
     <string name="language">Language</string>
     <string name="copyright">
         Copyright © 2020\nLAURET Nicolas, RANDRIANASOLO Rooly\n\nIcons by Flaticon :\n
         <a href="https://www.flaticon.com/">https://www.flaticon.com</a>
     </string>
-    <string name="music">Music</string>
-    <string name="brightness">Brightness</string>
+    <string name="volume">Volume</string>
     <!-- Levels menu -->
     <string name="level">Level %d</string>
     <!-- Level -->
     <string name="win_text">Congrats, you have won!</string>
-    <string name="next">\uF04B</string>
+    <string name="next" translatable="false">\uF04B</string>
     <string name="back1">Back</string>
     <string name="next1">Next</string>
     <!-- Other -->
-    <string name="back">\uF104</string>
+    <string name="back" translatable="false">\uF104</string>
     <!-- Popup indice -->
-    <string name="clue">Choose a clue</string>
+    <string name="clue">Choose a clue   (%d\uf0e7)</string>
     <string name="clue1">"See a letter  >>  3\uf0e7"</string>
     <string name="clue2">"Brighten the picture  >>  5\uf0e7"</string>
     <string name="clue3">"Skip the level  >>  7\uf0e7"</string>

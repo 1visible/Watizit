@@ -13,35 +13,48 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.watizit.R;
-import com.example.watizit.utils.HomeWatcher;
-import com.example.watizit.utils.JouerMusique;
-import com.example.watizit.utils.WatizUtil;
+import com.example.watizit.utils.DesignUtil;
+import com.example.watizit.classes.HomeWatcher;
+import com.example.watizit.classes.JouerMusique;
+import com.example.watizit.utils.LocaleUtil;
 
-public class MainActivity extends AppCompatActivity {
+public class MainMenu extends AppCompatActivity {
 
     HomeWatcher mHomeWatcher;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if(WatizUtil.isLocaleStored(this)
-                && !WatizUtil.getLocaleStored(this).equals(WatizUtil.getLocale(this)))
+        if(LocaleUtil.isLocaleStored()
+                && !LocaleUtil.getLocaleStored().equals(LocaleUtil.getLocale()))
         {
-            WatizUtil.setLocale(WatizUtil.getLocaleStored(this), this);
+            LocaleUtil.setLocale(LocaleUtil.getLocaleStored());
         }
 
         setContentView(R.layout.activity_main);
 
-        Button bouton_jouer = findViewById(R.id.jouer);
-        Button bouton_options = findViewById(R.id.options);
+        Button playButton = findViewById(R.id.playButton);
+        Button optionsButton = findViewById(R.id.optionsButton);
+        final Intent levelsListMenuIntent = new Intent(this, LevelsListMenu.class);
+        final Intent optionsMenuIntent = new Intent(this, OptionsMenu.class);
 
-        WatizUtil.setButtonIcon(this, bouton_jouer, 0.75F, true);
-        WatizUtil.setButtonIcon(this, bouton_options, 0.75F, true);
+        DesignUtil.setBgColor(playButton, R.color.COLOR_BLUE);
+        DesignUtil.setBgColor(optionsButton, R.color.COLOR_GRAY);
 
-        WatizUtil.setBackgroundColor(this, bouton_jouer, R.color.COLOR_BLUE);
-        WatizUtil.setBackgroundColor(this, bouton_options, R.color.COLOR_GRAY);
+        playButton.setText(DesignUtil.applyIcons(playButton.getText(), 0.75F));
+        optionsButton.setText(DesignUtil.applyIcons(optionsButton.getText(), 0.75F));
+
+        playButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { startActivity(levelsListMenuIntent);
+            }
+        });
+        optionsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { startActivity(optionsMenuIntent);
+            }
+        });
 
         doBindService();
         Intent music = new Intent();
@@ -65,14 +78,6 @@ public class MainActivity extends AppCompatActivity {
         });
         mHomeWatcher.startWatch();
 
-    }
-
-    public void option(View view){
-        startActivity(new Intent(this, MenuOptions.class));
-    }
-
-    public void jouer(View view){
-        startActivity(new Intent(this, MenuNiveaux.class));
     }
 
     private boolean mIsBound = false;

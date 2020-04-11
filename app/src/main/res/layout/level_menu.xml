@@ -2,33 +2,31 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/niveau"
+        android:id="@+id/levelNumberText"
         style="@style/app_button"
         android:layout_width="160dp"
         android:layout_height="40dp"
         android:text="@string/level"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/help"
+        app:layout_constraintEnd_toStartOf="@+id/hintsButton"
         app:layout_constraintHorizontal_bias="0.551"
-        app:layout_constraintStart_toEndOf="@+id/retour"
+        app:layout_constraintStart_toEndOf="@+id/backButton2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.037" />
 
     <Button
-        android:id="@+id/retour"
-        android:onClick="retour"
+        android:id="@+id/backButton2"
         style="@style/app_button"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:text=""
-        android:textSize="18dp"
+        android:textSize="18sp"
         android:fontFamily="@font/icons"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
@@ -38,15 +36,14 @@
         app:layout_constraintVertical_bias="0.036" />
 
     <Button
-        android:id="@+id/help"
+        android:id="@+id/hintsButton"
         android:layout_width="36dp"
         android:layout_height="38dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:textColor="@color/COLOR_GOLD"
         android:fontFamily="@font/icons"
-        android:textSize="18dp"
-        android:onClick="help"
+        android:textSize="18sp"
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,7 +51,7 @@
         app:layout_constraintVertical_bias="0.036" />
 
     <ImageView
-        android:id="@+id/level_image"
+        android:id="@+id/levelImage"
         android:layout_width="193dp"
         android:layout_height="260dp"
         android:layout_marginTop="36dp"
@@ -62,34 +59,37 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.532"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/niveau"
+        app:layout_constraintTop_toBottomOf="@+id/levelNumberText"
         app:layout_constraintVertical_bias="0.022"
         android:tint="@color/colorPrimaryDark"
         app:srcCompat="@drawable/img_cat" />
 
     <LinearLayout
-        android:id="@+id/layout"
+        android:id="@+id/letterPickerLayout"
         android:layout_width="370dp"
         android:layout_height="200dp"
-        android:gravity="center"
         android:layout_marginTop="1dp"
+        android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/level_image">
-    </LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/levelImage"
+        app:layout_constraintVertical_bias="0.662"></LinearLayout>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/levelText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="31dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/layout"
+        android:text="SAMPLE"
+        app:layout_constraintBottom_toTopOf="@+id/letterPickerLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/level_image" />
+        app:layout_constraintTop_toBottomOf="@+id/levelImage"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,57 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/options"
+        android:id="@+id/optionsText"
         style="@style/app_button"
         android:layout_width="160dp"
         android:layout_height="40dp"
-        android:text="Options"
+        android:text="@string/options"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/copyright"
+        app:layout_constraintBottom_toTopOf="@+id/copyrightText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.352"
-        app:layout_constraintStart_toEndOf="@+id/retour"
+        app:layout_constraintStart_toEndOf="@+id/backButton1"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.049" />
 
     <Button
-        android:id="@+id/retour"
+        android:id="@+id/backButton1"
         style="@style/app_button"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:fontFamily="@font/icons"
-        android:onClick="retour"
         android:text=""
         android:textSize="18dp"
-        app:layout_constraintBottom_toTopOf="@+id/mode"
+        app:layout_constraintBottom_toTopOf="@+id/darkModeText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.266" />
 
     <TextView
-        android:id="@+id/mode"
+        android:id="@+id/darkModeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
         android:text="@string/dark_theme"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/switch1"
+        app:layout_constraintEnd_toStartOf="@+id/darkModeSwitch"
         app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.21" />
 
     <TextView
-        android:id="@+id/langue"
+        android:id="@+id/languageText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
@@ -62,16 +60,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.081"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mode"
+        app:layout_constraintTop_toBottomOf="@+id/darkModeText"
         app:layout_constraintVertical_bias="0.0" />
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/darkModeSwitch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="60dp"
         android:layout_marginRight="60dp"
-        android:text=""
         android:theme="@style/app_switch"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -79,27 +76,25 @@
         app:layout_constraintVertical_bias="0.201" />
 
     <TextView
-        android:id="@+id/copyright"
+        android:id="@+id/copyrightText"
         android:layout_width="287dp"
         android:layout_height="80dp"
         android:layout_marginBottom="16dp"
         android:gravity="center_horizontal"
         android:text="@string/copyright"
         android:textAlignment="center"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="15dp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/fr2en"
+        android:id="@+id/ENFlagImage"
         android:layout_width="56dp"
         android:layout_height="55dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:onClick="fr2en"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -107,42 +102,41 @@
         app:srcCompat="@drawable/flag_en" />
 
     <ImageView
-        android:id="@+id/en2fr"
+        android:id="@+id/FRFlagImage"
         android:layout_width="56dp"
         android:layout_height="55dp"
-        android:onClick="en2fr"
-        app:layout_constraintBottom_toBottomOf="@+id/fr2en"
-        app:layout_constraintEnd_toStartOf="@+id/fr2en"
+        app:layout_constraintBottom_toBottomOf="@+id/ENFlagImage"
+        app:layout_constraintEnd_toStartOf="@+id/ENFlagImage"
         app:layout_constraintHorizontal_bias="0.85"
-        app:layout_constraintStart_toEndOf="@+id/langue"
-        app:layout_constraintTop_toTopOf="@+id/fr2en"
+        app:layout_constraintStart_toEndOf="@+id/languageText"
+        app:layout_constraintTop_toTopOf="@+id/ENFlagImage"
         app:layout_constraintVertical_bias="0.288"
         app:srcCompat="@drawable/flag_fr" />
 
     <TextView
-        android:id="@+id/musique"
+        android:id="@+id/volumeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="36dp"
-        android:text="@string/music"
+        android:text="@string/volume"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/volume"
+        app:layout_constraintEnd_toStartOf="@+id/volumeSeekbar"
         app:layout_constraintHorizontal_bias="0.119"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/langue"
+        app:layout_constraintTop_toBottomOf="@+id/languageText"
         app:layout_constraintVertical_bias="0.021" />
 
     <SeekBar
-        android:id="@+id/volume"
+        android:id="@+id/volumeSeekbar"
         android:layout_width="127dp"
         android:layout_height="24dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/musique"
+        app:layout_constraintBottom_toBottomOf="@+id/volumeText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/musique"
+        app:layout_constraintTop_toTopOf="@+id/volumeText"
         app:layout_constraintVertical_bias="0.417" />
 
 

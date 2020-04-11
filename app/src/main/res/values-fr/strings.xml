@@ -1,26 +1,23 @@
 <resources>
-    <string name="app_name">Watizit</string>
     <!-- Main menu -->
-    <string name="play">\uF04B Jouer</string>
-    <string name="options">\uF013 Options</string>
+    <string name="play_with_icon">\uF04B Jouer</string>
+    <string name="options_with_icon">\uF013 Options</string>
     <!-- Options menu -->
+    <string name="options">Options</string>
     <string name="dark_theme">Mode sombre</string>
     <string name="language">Langue</string>
     <string name="copyright">
         Copyright © 2020\nLAURET Nicolas, RANDRIANASOLO Rooly\n\nIcônes par Flaticon :\n
         <a href="https://www.flaticon.com/">https://www.flaticon.com</a>
     </string>
-    <string name="music">Musique</string>
-    <string name="brightness">Luminosité</string>
+    <string name="volume">Volume</string>
     <!-- Levels menu -->
     <string name="level">Niveau %d</string>
     <!-- Level -->
-    <string name="next">\uF04B</string>
     <string name="win_text">Félicitations, vous avez gagné!</string>
     <string name="back1">Retour</string>
     <string name="next1">Suivant</string>
     <!-- Other -->
-    <string name="back">\uF104</string>
     <!-- Popup Indice -->
     <string name="clue">Choisissez un indice</string>
     <string name="clue1">5 O - Afficher une lettre</string>

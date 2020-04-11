@@ -5,40 +5,38 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".menus.MainActivity"
+    tools:context=".menus.MainMenu"
     >
 
 
     <Button
-        android:id="@+id/jouer"
+        android:id="@+id/playButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/play"
-        android:textSize="36dp"
-        android:onClick="jouer"
+        android:text="@string/play_with_icon"
+        android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/titleImage"
         app:layout_constraintVertical_bias="0.288" />
 
     <Button
-        android:id="@+id/options"
+        android:id="@+id/optionsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/options"
-        android:textSize="36dp"
-        android:onClick="option"
+        android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jouer"
+        app:layout_constraintTop_toBottomOf="@+id/playButton"
         app:layout_constraintVertical_bias="0.208" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/titleImage"
         android:layout_width="328dp"
         android:layout_height="90dp"
         android:adjustViewBounds="true"

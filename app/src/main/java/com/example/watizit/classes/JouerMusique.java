@@ -1,4 +1,4 @@
-package com.example.watizit.utils;
+package com.example.watizit.classes;
 
 import android.app.Service;
 import android.content.Intent;
