@@ -147,31 +147,5 @@
         app:layout_constraintTop_toTopOf="@+id/musique"
         app:layout_constraintVertical_bias="0.417" />
 
-    <TextView
-        android:id="@+id/luminosite"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="36dp"
-        android:text="@string/brightness"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/light"
-        app:layout_constraintHorizontal_bias="0.155"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/musique"
-        app:layout_constraintVertical_bias="0.023" />
-
-    <SeekBar
-        android:id="@+id/light"
-        android:layout_width="127dp"
-        android:layout_height="24dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/luminosite"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/luminosite"
-        app:layout_constraintVertical_bias="0.52" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
