@@ -15,8 +15,9 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/copyright"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.352"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/retour"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.049" />
 
@@ -25,37 +26,37 @@
         style="@style/app_button"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
         android:fontFamily="@font/icons"
         android:onClick="retour"
         android:text=""
         android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/mode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.101"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.266" />
+        app:layout_constraintVertical_bias="0.432" />
 
     <TextView
         android:id="@+id/mode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:text="@string/dark_theme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/switch1"
-        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.21" />
+        app:layout_constraintVertical_bias="0.201" />
 
     <TextView
         android:id="@+id/langue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="36dp"
         android:text="@string/language"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -73,9 +74,9 @@
         android:layout_marginRight="60dp"
         android:text=""
         android:theme="@style/app_switch"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/mode"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/mode"
         app:layout_constraintVertical_bias="0.201" />
 
     <TextView
@@ -97,13 +98,15 @@
         android:id="@+id/fr2en"
         android:layout_width="56dp"
         android:layout_height="55dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
         android:onClick="fr2en"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.966"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.288"
+        app:layout_constraintVertical_bias="0.345"
         app:srcCompat="@drawable/flag_en" />
 
     <ImageView
@@ -113,26 +116,26 @@
         android:onClick="en2fr"
         app:layout_constraintBottom_toBottomOf="@+id/fr2en"
         app:layout_constraintEnd_toStartOf="@+id/fr2en"
-        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintHorizontal_bias="0.926"
         app:layout_constraintStart_toEndOf="@+id/langue"
         app:layout_constraintTop_toTopOf="@+id/fr2en"
-        app:layout_constraintVertical_bias="0.288"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/flag_fr" />
 
     <TextView
         android:id="@+id/musique"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="36dp"
         android:text="@string/music"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/volume"
-        app:layout_constraintHorizontal_bias="0.119"
+        app:layout_constraintHorizontal_bias="0.097"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/langue"
-        app:layout_constraintVertical_bias="0.021" />
+        app:layout_constraintVertical_bias="0.034" />
 
     <SeekBar
         android:id="@+id/volume"
