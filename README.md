@@ -1,15 +1,15 @@
 <br />
 <p align="center">
-  <h3 align="center">Watizit</h3>
+  <img src="app/src/main/res/drawable-v24/title.png" width=300></img>
 
   <p align="center">
     A University game project for Android !
     <br />
-    <a href="https://github.com/1visible/Watizit">View Demo</a>
-    ·
-    <a href="https://github.com/1visible/Watizit/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/1visible/Watizit/issues">Request Feature</a>
+  <a href="https://github.com/1visible/Watizit"><strong>View Demo</strong></a>
+    •
+    <a href="https://github.com/1visible/Watizit/issues"><strong>Report Bug</strong></a>
+    •
+    <a href="https://github.com/1visible/Watizit/issues"><strong>Request Feature</strong></a>
   </p>
 </p>
 
