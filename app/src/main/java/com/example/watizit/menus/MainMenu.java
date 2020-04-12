@@ -13,9 +13,9 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.watizit.R;
-import com.example.watizit.utils.DesignUtil;
 import com.example.watizit.classes.HomeWatcher;
 import com.example.watizit.classes.JouerMusique;
+import com.example.watizit.utils.DesignUtil;
 import com.example.watizit.utils.LocaleUtil;
 
 public class MainMenu extends AppCompatActivity {

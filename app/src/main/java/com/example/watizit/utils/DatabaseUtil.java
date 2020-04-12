@@ -7,11 +7,11 @@ import java.util.ArrayList;
 
 public class DatabaseUtil {
 
-    public static Level getLevel(int level_num)
+    public static Level getLevel(int id)
     {
         DatabaseAccess databaseAccess = DatabaseAccess.getInstance();
         databaseAccess.open();
-        Level level = databaseAccess.getLevel(level_num);
+        Level level = databaseAccess.getLevel(id);
         databaseAccess.close();
 
         return level;
@@ -25,6 +25,26 @@ public class DatabaseUtil {
         databaseAccess.close();
 
         return levels;
+    }
+
+    public static int updateStars(int id, int stars)
+    {
+        DatabaseAccess databaseAccess = DatabaseAccess.getInstance();
+        databaseAccess.open();
+        int state = databaseAccess.updateStars(id, stars);
+        databaseAccess.close();
+
+        return state;
+    }
+
+    public static int updateHints(int id, int hints)
+    {
+        DatabaseAccess databaseAccess = DatabaseAccess.getInstance();
+        databaseAccess.open();
+        int state = databaseAccess.updateHints(id, hints);
+        databaseAccess.close();
+
+        return state;
     }
 
 }

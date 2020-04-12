@@ -1,6 +1,7 @@
 package com.example.watizit.menus;
 
 
+import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -14,6 +15,7 @@ import android.widget.NumberPicker;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.widget.ImageViewCompat;
 
 import com.example.watizit.R;
@@ -23,19 +25,22 @@ import com.example.watizit.popups.HintsPopup;
 import com.example.watizit.popups.WinPopup;
 import com.example.watizit.utils.DatabaseUtil;
 import com.example.watizit.utils.DesignUtil;
+import com.example.watizit.utils.MoneyUtil;
 
 import java.util.Arrays;
 import java.util.Random;
 
-public class LevelMenu extends AppCompatActivity {
+public class LevelMenu extends AppCompatActivity implements HintsPopup.HintsListener {
 
-    private static final int MAX_LETTERS = 5;
-    private Level level;
-    private String word;
+    static final int MAX_LETTERS = 5;
 
+    Level level;
+    String word;
+    long startTime;
+
+    LinearLayout letterPickerLayout;
     ImageView levelImage;
     TextView levelText;
-    LinearLayout letterPickerLayout;
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -44,7 +49,7 @@ public class LevelMenu extends AppCompatActivity {
         int level_num = getIntent().getIntExtra("EXTRA_ID", -1);
 
         // If level can't be found, return to levels list
-        if(level_num == -1) {
+        if(level_num < 1) {
             finish();
             return;
         }
@@ -56,12 +61,14 @@ public class LevelMenu extends AppCompatActivity {
         levelImage = findViewById(R.id.levelImage);
         levelText = findViewById(R.id.levelText);
         Button hints_button = findViewById(R.id.hintsButton);
+        level = DatabaseUtil.getLevel(level_num);
+
         final HintsPopup hints_popup = new HintsPopup(this);
 
         hints_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                hints_popup.show();
+                hints_popup.showWith(level);
             }
         });
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -71,19 +78,9 @@ public class LevelMenu extends AppCompatActivity {
             }
         });
 
-        level = DatabaseUtil.getLevel(level_num);
-
         Drawable image = res.getDrawable(
                 res.getIdentifier("img_"+level.getWord(), "drawable", getPackageName()));
         levelImage.setImageDrawable(image);
-
-        /*
-        // TODO : Pour l'indice
-        ColorStateList csl = AppCompatResources.getColorStateList(this, R.color.COLOR_SEMIDARK);
-        ImageViewCompat.setImageTintList(image_niveau, csl);
-
-         */
-
         levelNumberText.setText(levelNumberText.getText().toString().replace("%d", String.valueOf(level.getID())));
         backButton.setText(DesignUtil.applyIcons(backButton.getText(), 1F));
 
@@ -105,6 +102,13 @@ public class LevelMenu extends AppCompatActivity {
 
         levelText.setText(getWord());
 
+        for(int i = 1; i < 3; i++)
+        {
+            if(level.isHintBought(i))
+                applyHint(i);
+        }
+
+        startTime = System.currentTimeMillis();
     }
 
     private LetterPicker createLetterPicker(LinearLayout layout, int id, Random random) {
@@ -137,7 +141,8 @@ public class LevelMenu extends AppCompatActivity {
         return lpicker;
     }
 
-    public void updateGame() {
+    private void updateGame()
+    {
         String text = getWord();
         levelText.setText(text);
         if(word.equals(text))
@@ -153,31 +158,56 @@ public class LevelMenu extends AppCompatActivity {
         return text.toString();
     }
 
-    private void disableLetterPickers() {
-        for(int i = 0; i < word.length(); i++) {
-            NumberPicker np = letterPickerLayout.findViewById(i);
-            np.setEnabled(false);
-            String[] values = new String[MAX_LETTERS];
+    private void disableLetterPicker(int id)
+    {
+        String[] values = new String[MAX_LETTERS];
+        LetterPicker letterPicker = letterPickerLayout.findViewById(id);
 
-            for(int j = 0; j < MAX_LETTERS; j++)
-                values[j] = Character.toString(word.charAt(i));
+        for(int i = 0; i < MAX_LETTERS; i++)
+            values[i] = Character.toString(word.charAt(id));
 
-            np.setDisplayedValues(values);
-        }
+        letterPicker.setEnabled(false);
+        letterPicker.setDisplayedValues(values);
     }
 
     private void triggerWin() {
         final WinPopup win_popup = new WinPopup(this, level);
+        long totalTime = System.currentTimeMillis() - startTime;
 
-        disableLetterPickers();
+        for(int i = 0; i < word.length(); i++)
+            disableLetterPicker(i);
+
+        levelText.setText(getWord());
         levelText.setTextColor(Color.GREEN);
         ImageViewCompat.setImageTintList(levelImage, null);
+        level.setStars(totalTime);
+        MoneyUtil.addMoney(level.getStars());
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 win_popup.show();
             }
         }, 1000);
+    }
+
+    @Override
+    public void applyHint(int hintNumber)
+    {
+        switch(hintNumber)
+        {
+            case 1:
+                disableLetterPicker((int) Math.ceil(word.length()/2));
+                levelText.setText(getWord());
+                break;
+            case 2:
+                ColorStateList csl = AppCompatResources.getColorStateList(this, R.color.COLOR_SEMIDARK);
+                ImageViewCompat.setImageTintList(levelImage, csl);
+                break;
+            case 3:
+                triggerWin();
+                break;
+        }
     }
 
     private class PickerListener implements NumberPicker.OnScrollListener {

@@ -24,7 +24,7 @@
     <!-- Other -->
     <string name="back" translatable="false">\uF104</string>
     <!-- Popup indice -->
-    <string name="clue">Choose a clue   (%d\uf0e7)</string>
+    <string name="clue">"Choose a clue   (%d\uf0e7)"</string>
     <string name="clue1">"See a letter  >>  3\uf0e7"</string>
     <string name="clue2">"Brighten the picture  >>  5\uf0e7"</string>
     <string name="clue3">"Skip the level  >>  7\uf0e7"</string>

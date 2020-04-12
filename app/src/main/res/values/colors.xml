@@ -9,7 +9,7 @@
     <color name="COLOR_BACKGROUND">#ECECEC</color>
     <color name="COLOR_BACKGROUND_DARKER">#DEDEDE</color>
     <color name="COLOR_BLACK">#262626</color>
-    <color name="COLOR_SEMIDARK">#F03B3838</color>
+    <color name="COLOR_SEMIDARK">#EB3B3838</color>
 
     <color name="COLOR_GOLD">#FED148</color>
     <color name="COLOR_WHITE">#FFFFFF</color>
