@@ -15,8 +15,9 @@
     </string>
     <string name="volume">Volume</string>
     <!-- Levels menu -->
-    <string name="level">Level %d</string>
+    <string name="levels">LEVELS</string>
     <!-- Level -->
+    <string name="level">Level %d</string>
     <string name="win_text">Congrats, you have won!</string>
     <string name="next" translatable="false">\uF04B</string>
     <string name="back1">Back</string>

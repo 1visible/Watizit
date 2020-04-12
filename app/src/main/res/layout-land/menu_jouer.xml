@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/niveau"
-        style="@style/app_button"
+        style="@style/app_Button"
         android:layout_width="160dp"
         android:layout_height="40dp"
         android:text="@string/level"
@@ -22,7 +22,7 @@
 
     <Button
         android:id="@+id/retour"
-        style="@style/app_button"
+        style="@style/app_Button"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"

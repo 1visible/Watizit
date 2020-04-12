@@ -63,7 +63,7 @@ public class HintsPopup extends Dialog {
             });
         }
         else
-            DesignUtil.setBgColor(clueButton1, R.color.COLOR_BACKGROUND_DARKER);
+            DesignUtil.setBgColor(clueButton1, R.color.COLOR_OVERLAY);
 
         if(level.canBuyHint(2))
         {
@@ -76,7 +76,7 @@ public class HintsPopup extends Dialog {
             });
         }
         else
-            DesignUtil.setBgColor(clueButton2, R.color.COLOR_BACKGROUND_DARKER);
+            DesignUtil.setBgColor(clueButton2, R.color.COLOR_OVERLAY);
 
         if(level.canBuyHint(3))
         {
@@ -89,7 +89,7 @@ public class HintsPopup extends Dialog {
             });
         }
         else
-            DesignUtil.setBgColor(clueButton3, R.color.COLOR_BACKGROUND_DARKER);
+            DesignUtil.setBgColor(clueButton3, R.color.COLOR_OVERLAY);
 
         closeButton.setOnClickListener(new View.OnClickListener() {
             @Override

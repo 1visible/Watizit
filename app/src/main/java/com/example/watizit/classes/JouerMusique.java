@@ -33,7 +33,7 @@ public class JouerMusique extends Service implements MediaPlayer.OnErrorListener
     public void onCreate() {
         super.onCreate();
 
-        mPlayer = MediaPlayer.create(this, R.raw.test);
+        mPlayer = MediaPlayer.create(this, R.raw.theme_music);
         mPlayer.setOnErrorListener(this);
 
         if (mPlayer != null) {

@@ -6,10 +6,12 @@
     <color name="colorAccent">#CACACA</color>
     <color name="transparent">#00000000</color>
 
-    <color name="COLOR_BACKGROUND">#ECECEC</color>
-    <color name="COLOR_BACKGROUND_DARKER">#DEDEDE</color>
-    <color name="COLOR_BLACK">#262626</color>
-    <color name="COLOR_SEMIDARK">#EB3B3838</color>
+    <color name="COLOR_TEXT">#ffffff</color>
+    <color name="COLOR_BRIGHT">#ebffffff</color>
+    <color name="COLOR_DARK">#514e61</color>
+    <color name="COLOR_BUTTON">#7961f1</color>
+    <color name="COLOR_OVERLAY">#2e2b3f</color>
+    <color name="COLOR_BACKGROUND">#221f2e</color>
 
     <color name="COLOR_GOLD">#FED148</color>
     <color name="COLOR_WHITE">#FFFFFF</color>

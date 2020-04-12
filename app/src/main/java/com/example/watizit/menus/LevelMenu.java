@@ -201,7 +201,7 @@ public class LevelMenu extends AppCompatActivity implements HintsPopup.HintsList
                 levelText.setText(getWord());
                 break;
             case 2:
-                ColorStateList csl = AppCompatResources.getColorStateList(this, R.color.COLOR_SEMIDARK);
+                ColorStateList csl = AppCompatResources.getColorStateList(this, R.color.COLOR_BRIGHT);
                 ImageViewCompat.setImageTintList(levelImage, csl);
                 break;
             case 3:

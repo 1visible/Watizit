@@ -6,33 +6,65 @@
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/panelOverlay1"
         android:layout_width="fill_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/level_button" >
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/main_button" >
 
         <ImageView
             android:id="@+id/cellImage"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="8dp"
-            android:tint="@color/colorPrimaryDark"
-            android:background="@color/transparent"
+            android:tint="@color/COLOR_TEXT"
             android:src="@drawable/img_cat" />
 
         <TextView
             android:id="@+id/cellText"
-            android:layout_width="fill_parent"
+            android:layout_width="235dp"
             android:layout_height="fill_parent"
-            android:paddingLeft="100dp"
-            android:gravity="center_vertical"
-            android:background="@color/transparent"
+            android:fontFamily="@font/app_font"
+            android:textColor="@color/COLOR_TEXT"
+            android:gravity="center"
             android:text="@string/level"
-            android:textSize="20dp" />
+            android:textSize="25sp" />
+
+        <ImageView
+            android:id="@+id/littleStarImage1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:tint="@color/COLOR_DARK"
+            android:background="@color/transparent"
+            android:src="@drawable/props_star" />
+
+        <ImageView
+            android:id="@+id/littleStarImage2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_gravity="center"
+            android:tint="@color/COLOR_DARK"
+            android:background="@color/transparent"
+            android:src="@drawable/props_star" />
+
+        <ImageView
+            android:id="@+id/littleStarImage3"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:tint="@color/COLOR_DARK"
+            android:background="@color/transparent"
+            android:src="@drawable/props_star" />
 
     </LinearLayout>
 

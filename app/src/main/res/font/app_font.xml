@@ -3,6 +3,6 @@
     <font
         android:fontStyle="normal"
         android:fontWeight="400"
-        android:font="@font/bold_font"
+        android:font="@font/main_font"
         />
 </font-family>

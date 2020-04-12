@@ -41,5 +41,6 @@
     <string name="word_tornado">TORNADE</string>
     <string name="word_volcano">VOLCAN</string>
     <string name="word_bottle">BOUTEILLE</string>
+    <string name="levels">NIVEAUX</string>
 
 </resources>
