@@ -1,6 +1,8 @@
 <br />
 <p align="center">
-  <img src="app/src/main/res/drawable-v24/title.png" width=300></img>
+  <a href="https://github.com/1visible/Watizit">
+  <img alt="Watizit" src="app/src/main/res/drawable-v24/title.png" width="300"></img>
+  </a>
 
   <p align="center">
     A University game project for Android !
