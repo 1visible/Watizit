@@ -27,33 +27,29 @@ public class LevelAdapter extends ArrayAdapter<Level> {
     public View getView(int position, View convertView, @NonNull ViewGroup parent)
     {
         Context context = App.getContext();
-        View cellView = convertView;
 
-        if (cellView == null)
+        if (convertView == null)
         {
-            LayoutInflater inflater = (LayoutInflater) context
-                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            cellView = inflater.inflate(R.layout.level_cell, parent, false);
+            convertView = LayoutInflater.from(context).inflate(R.layout.level_cell, parent, false);
         }
 
-        TextView cell_level = cellView.findViewById(R.id.cellText);
-        ImageView cell_image = cellView.findViewById(R.id.cellImage);
-
-        Resources res = context.getResources();
         Level level = getItem(position);
+        TextView cellText = convertView.findViewById(R.id.cellText);
+        ImageView cellImage = convertView.findViewById(R.id.cellImage);
+        Resources res = context.getResources();
+        String text = res.getString(R.string.level);
+
         if(level != null)
         {
-            cell_level.setText(cell_level.getText().toString().replace("%d", String.valueOf(level.getID())));
-            cell_image.setImageDrawable(
+            cellText.setText(text.replace("%d", String.valueOf(level.getID())));
+            cellImage.setImageDrawable(
                     res.getDrawable(res.getIdentifier(
                             "img_" + level.getWord(), "drawable", context.getPackageName())));
             if (level.isDone())
-            {
-                ImageViewCompat.setImageTintList(cell_image, null);
-            }
+                ImageViewCompat.setImageTintList(cellImage, null);
         }
 
-        return cellView;
+        return convertView;
     }
 
 }
