@@ -48,7 +48,7 @@
             android:id="@+id/FRFlagImage"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/flag_fr" />
+            android:src="@drawable/props_flag_fr" />
 
         <ImageView
             android:id="@+id/ENFlagImage"
@@ -56,13 +56,13 @@
             android:layout_marginRight="10dp"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/flag_en" />
+            android:src="@drawable/props_flag_en" />
 
         <ImageView
             android:id="@+id/SPFlagImage"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/flag_sp" />
+            android:src="@drawable/props_flag_sp" />
 
     </LinearLayout>
 

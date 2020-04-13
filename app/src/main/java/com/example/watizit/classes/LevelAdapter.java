@@ -1,6 +1,7 @@
 package com.example.watizit.classes;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,9 +12,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.content.res.AppCompatResources;
+import androidx.core.widget.ImageViewCompat;
 
 import com.example.watizit.R;
-import com.example.watizit.utils.DatabaseUtil;
 import com.example.watizit.utils.DesignUtil;
 
 import java.util.ArrayList;
@@ -47,40 +49,66 @@ public class LevelAdapter extends ArrayAdapter<Level> {
 
         if(level != null)
         {
-            Level previousLevel = DatabaseUtil.getLevel(level.getID() - 1);
-            int identifier, color;
 
-            if(previousLevel != null && !previousLevel.isDone())
+            int identifier, color;
+            ColorStateList csl = null;
+
+            if(level.isLocked())
             {
-                identifier = R.drawable.locked_level;
+                identifier = R.drawable.props_locked_level;
                 color = R.color.COLOR_DARK;
-            }
-            else if(level.isDone())
-            {
-                identifier = res.getIdentifier("img_" + level.getWord(), "drawable", context.getPackageName());
-                color = R.color.COLOR_TEXT;
             }
             else
             {
-                identifier = R.drawable.props_new_level;
+                identifier = res.getIdentifier("img_" + level.getWord(), "drawable", context.getPackageName());
                 color = R.color.COLOR_TEXT;
+                if(!level.isDone())
+                    csl = AppCompatResources.getColorStateList(context, R.color.COLOR_TEXT);
             }
 
             DesignUtil.setBgColor(panelOverlay, R.color.COLOR_OVERLAY);
             cellImage.setImageDrawable(res.getDrawable(identifier));
             cellText.setText(text.replace("%d", String.valueOf(level.getID())));
             cellText.setTextColor(res.getColor(color));
+            ImageViewCompat.setImageTintList(cellImage, csl);
 
-            switch(level.getStars())
+            ColorStateList c = AppCompatResources.getColorStateList(context, R.color.COLOR_DARK);
+
+            if(level.isDone())
             {
-                case 3:
-                    starImage3.setImageDrawable(res.getDrawable(R.drawable.props_star));
-                case 2:
-                    starImage2.setImageDrawable(res.getDrawable(R.drawable.props_star));
-                case 1:
-                    starImage1.setImageDrawable(res.getDrawable(R.drawable.props_star));
-            }
+                starImage1.setVisibility(View.VISIBLE);
+                starImage2.setVisibility(View.VISIBLE);
+                starImage3.setVisibility(View.VISIBLE);
 
+                switch(level.getStars())
+                {
+                    case 3:
+                        ImageViewCompat.setImageTintList(starImage1, null);
+                        ImageViewCompat.setImageTintList(starImage2, null);
+                        ImageViewCompat.setImageTintList(starImage3, null);
+                        break;
+                    case 2:
+                        ImageViewCompat.setImageTintList(starImage1, null);
+                        ImageViewCompat.setImageTintList(starImage2, null);
+                        ImageViewCompat.setImageTintList(starImage3, c);
+                        break;
+                    case 1:
+                        ImageViewCompat.setImageTintList(starImage1, null);
+                        ImageViewCompat.setImageTintList(starImage2, c);
+                        ImageViewCompat.setImageTintList(starImage3, c);
+                        break;
+                    default:
+                        ImageViewCompat.setImageTintList(starImage1, c);
+                        ImageViewCompat.setImageTintList(starImage2, c);
+                        ImageViewCompat.setImageTintList(starImage3, c);
+                }
+            }
+            else
+            {
+                starImage1.setVisibility(View.INVISIBLE);
+                starImage2.setVisibility(View.INVISIBLE);
+                starImage3.setVisibility(View.INVISIBLE);
+            }
         }
 
         return convertView;

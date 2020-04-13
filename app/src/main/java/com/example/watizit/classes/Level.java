@@ -99,4 +99,10 @@ public class Level {
         return getStars() > -1;
     }
 
+    public boolean isLocked()
+    {
+        Level previousLevel = DatabaseUtil.getLevel(getID() - 1);
+        return previousLevel != null && !previousLevel.isDone();
+    }
+
 }

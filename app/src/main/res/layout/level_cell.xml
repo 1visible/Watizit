@@ -24,7 +24,7 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_gravity="center"
-            android:src="@drawable/props_new_level" />
+            android:src="@drawable/props_locked_level" />
 
         <TextView
             android:id="@+id/cellText"
@@ -41,7 +41,7 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_gravity="center"
-            android:src="@drawable/props_star_dark" />
+            android:src="@drawable/props_star" />
 
         <ImageView
             android:id="@+id/littleStarImage2"
@@ -50,14 +50,14 @@
             android:layout_marginLeft="3dp"
             android:layout_marginRight="3dp"
             android:layout_gravity="center"
-            android:src="@drawable/props_star_dark" />
+            android:src="@drawable/props_star" />
 
         <ImageView
             android:id="@+id/littleStarImage3"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_gravity="center"
-            android:src="@drawable/props_star_dark" />
+            android:src="@drawable/props_star" />
 
     </LinearLayout>
 
