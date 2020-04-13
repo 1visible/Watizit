@@ -24,8 +24,7 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_gravity="center"
-            android:tint="@color/COLOR_TEXT"
-            android:src="@drawable/img_cat" />
+            android:src="@drawable/props_new_level" />
 
         <TextView
             android:id="@+id/cellText"
@@ -42,9 +41,7 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_gravity="center"
-            android:tint="@color/COLOR_DARK"
-            android:background="@color/transparent"
-            android:src="@drawable/props_star" />
+            android:src="@drawable/props_star_dark" />
 
         <ImageView
             android:id="@+id/littleStarImage2"
@@ -53,18 +50,14 @@
             android:layout_marginLeft="3dp"
             android:layout_marginRight="3dp"
             android:layout_gravity="center"
-            android:tint="@color/COLOR_DARK"
-            android:background="@color/transparent"
-            android:src="@drawable/props_star" />
+            android:src="@drawable/props_star_dark" />
 
         <ImageView
             android:id="@+id/littleStarImage3"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_gravity="center"
-            android:tint="@color/COLOR_DARK"
-            android:background="@color/transparent"
-            android:src="@drawable/props_star" />
+            android:src="@drawable/props_star_dark" />
 
     </LinearLayout>
 

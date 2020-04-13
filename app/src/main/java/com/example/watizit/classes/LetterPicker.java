@@ -1,6 +1,7 @@
 package com.example.watizit.classes;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.view.View;
 import android.widget.EditText;
@@ -24,6 +25,7 @@ public class LetterPicker extends NumberPicker {
         super(context);
         setId(id);
         setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
+        setBackgroundColor(Color.TRANSPARENT);
         setMinValue(0);
         setMaxValue(values.length - 1);
         setDisplayedValues(values);
@@ -59,6 +61,7 @@ public class LetterPicker extends NumberPicker {
         {
             ((EditText) view).setTypeface(typeface);
             ((EditText) view).setTextSize(20);
+            ((EditText) view).setTextColor(getResources().getColor(R.color.COLOR_TEXT));
         }
     }
 

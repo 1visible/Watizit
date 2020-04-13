@@ -11,7 +11,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.core.widget.ImageViewCompat;
 
 import com.example.watizit.R;
 import com.example.watizit.utils.DatabaseUtil;
@@ -56,9 +55,14 @@ public class LevelAdapter extends ArrayAdapter<Level> {
                 identifier = R.drawable.locked_level;
                 color = R.color.COLOR_DARK;
             }
-            else
+            else if(level.isDone())
             {
                 identifier = res.getIdentifier("img_" + level.getWord(), "drawable", context.getPackageName());
+                color = R.color.COLOR_TEXT;
+            }
+            else
+            {
+                identifier = R.drawable.props_new_level;
                 color = R.color.COLOR_TEXT;
             }
 
@@ -70,15 +74,13 @@ public class LevelAdapter extends ArrayAdapter<Level> {
             switch(level.getStars())
             {
                 case 3:
-                    ImageViewCompat.setImageTintList(starImage3, null);
+                    starImage3.setImageDrawable(res.getDrawable(R.drawable.props_star));
                 case 2:
-                    ImageViewCompat.setImageTintList(starImage2, null);
+                    starImage2.setImageDrawable(res.getDrawable(R.drawable.props_star));
                 case 1:
-                    ImageViewCompat.setImageTintList(starImage1, null);
+                    starImage1.setImageDrawable(res.getDrawable(R.drawable.props_star));
             }
 
-            if(level.isDone() || previousLevel != null && !previousLevel.isDone())
-                ImageViewCompat.setImageTintList(cellImage, null);
         }
 
         return convertView;

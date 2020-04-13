@@ -3,7 +3,6 @@ package com.example.watizit.menus;
 
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -60,21 +59,22 @@ public class LevelMenu extends AppCompatActivity implements HintsPopup.HintsList
         TextView levelNumberText = findViewById(R.id.levelNumberText);
         levelImage = findViewById(R.id.levelImage);
         levelText = findViewById(R.id.levelText);
-        Button hints_button = findViewById(R.id.hintsButton);
+        letterPickerLayout = findViewById(R.id.letterPickerLayout);
+        Button hintsButton = findViewById(R.id.hintsButton);
         level = DatabaseUtil.getLevel(level_num);
 
         final HintsPopup hints_popup = new HintsPopup(this);
 
-        hints_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                hints_popup.showWith(level);
-            }
-        });
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+        hintsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hints_popup.showWith(level);
             }
         });
 
@@ -85,10 +85,10 @@ public class LevelMenu extends AppCompatActivity implements HintsPopup.HintsList
         backButton.setText(DesignUtil.applyIcons(backButton.getText(), 1F));
 
         DesignUtil.setBgColor(backButton, R.color.COLOR_RED);
-        DesignUtil.setBgColor(levelNumberText, R.color.COLOR_BLUE);
-        DesignUtil.setBgColor(hints_button, R.color.COLOR_GRAY);
+        DesignUtil.setBgColor(levelNumberText, R.color.COLOR_PRIMARY);
+        DesignUtil.setBgColor(hintsButton, R.color.COLOR_OVERLAY);
+        DesignUtil.setBgColor(letterPickerLayout, R.color.COLOR_OVERLAY);
 
-        letterPickerLayout = findViewById(R.id.letterPickerLayout);
         Random random = new Random();
 
         // Word to find
@@ -96,7 +96,7 @@ public class LevelMenu extends AppCompatActivity implements HintsPopup.HintsList
 
         // Create one letter picker per char in the word
         for(int i = 0; i < word.length(); i++) {
-            LetterPicker lpicker = createLetterPicker(letterPickerLayout, i, random);
+            LetterPicker lpicker = createLetterPicker(i, random);
             letterPickerLayout.addView(lpicker);
         }
 
@@ -111,13 +111,14 @@ public class LevelMenu extends AppCompatActivity implements HintsPopup.HintsList
         startTime = System.currentTimeMillis();
     }
 
-    private LetterPicker createLetterPicker(LinearLayout layout, int id, Random random) {
+    private LetterPicker createLetterPicker(int id, Random random) {
         String[] values = new String[MAX_LETTERS];
         // Add word char to possible letters
         values[random.nextInt(MAX_LETTERS)] = Character.toString(word.charAt(id));
 
         // Fill the rest with random unique letters
-        for(int j = 0; j < MAX_LETTERS; j++) {
+        for(int j = 0; j < MAX_LETTERS; j++)
+        {
             // This is to prevent word char overwrite
             if(values[j] != null) continue;
 
@@ -133,7 +134,7 @@ public class LevelMenu extends AppCompatActivity implements HintsPopup.HintsList
         PickerListener listener = new PickerListener();
         // Adjust width to fit screen
         LinearLayout.LayoutParams lp =
-                new LinearLayout.LayoutParams(layout.getLayoutParams().width/word.length(),
+                new LinearLayout.LayoutParams(letterPickerLayout.getLayoutParams().width/word.length(),
                         LinearLayout.LayoutParams.MATCH_PARENT);
         lpicker.setLayoutParams(lp);
         lpicker.setOnScrollListener(listener);
@@ -171,18 +172,18 @@ public class LevelMenu extends AppCompatActivity implements HintsPopup.HintsList
     }
 
     private void triggerWin() {
-        final WinPopup win_popup = new WinPopup(this, level);
         long totalTime = System.currentTimeMillis() - startTime;
 
         for(int i = 0; i < word.length(); i++)
             disableLetterPicker(i);
 
         levelText.setText(getWord());
-        levelText.setTextColor(Color.GREEN);
+        levelText.setTextColor(getResources().getColor(R.color.COLOR_PRIMARY));
         ImageViewCompat.setImageTintList(levelImage, null);
         level.setStars(totalTime);
         MoneyUtil.addMoney(level.getStars());
 
+        final WinPopup win_popup = new WinPopup(this, level);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

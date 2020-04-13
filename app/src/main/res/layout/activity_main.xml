@@ -1,53 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".menus.MainMenu"
-    >
-
-
-    <Button
-        android:id="@+id/playButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/play_with_icon"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleImage"
-        app:layout_constraintVertical_bias="0.288" />
-
-    <Button
-        android:id="@+id/optionsButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/options_with_icon"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playButton"
-        app:layout_constraintVertical_bias="0.208" />
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/titleImage"
         android:layout_width="328dp"
         android:layout_height="90dp"
+        android:layout_marginTop="65dp"
+        android:layout_marginBottom="30dp"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.11"
-        app:srcCompat="@drawable/title" />
+        android:src="@drawable/title" />
 
+    <LinearLayout
+        android:paddingTop="50dp"
+        android:paddingLeft="95dp"
+        android:paddingRight="95dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/playButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="25dp"
+            android:text="@string/play_with_icon"
+            android:textSize="36sp" />
+
+        <Button
+            android:id="@+id/optionsButton"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/options_with_icon"
+            android:textSize="36sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

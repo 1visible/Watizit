@@ -7,28 +7,29 @@
     <string name="options_with_icon">"\uF013  Options"</string>
     <!-- Options menu -->
     <string name="options">Options</string>
-    <string name="dark_theme">Dark mode</string>
     <string name="language">Language</string>
     <string name="copyright">
-        Copyright © 2020\nLAURET Nicolas, RANDRIANASOLO Rooly\n\nIcons by Flaticon :\n
-        <a href="https://www.flaticon.com/">https://www.flaticon.com</a>
+        Copyright © 2020\nLAURET Nicolas, RANDRIANASOLO Rooly\n\n
+        Images by <a href="https://www.flaticon.com/">Flaticon</a> •
+        Music by <a href="https://opengameart.org/users/horrorpen">HorrorPen</a>
     </string>
     <string name="volume">Volume</string>
     <!-- Levels menu -->
     <string name="levels">LEVELS</string>
     <!-- Level -->
     <string name="level">Level %d</string>
-    <string name="win_text">Congrats, you have won!</string>
+    <string name="win_text">LEVEL COMPLETE !</string>
     <string name="next" translatable="false">\uF04B</string>
-    <string name="back1">Back</string>
-    <string name="next1">Next</string>
+    <string name="back_to_menu">Back to menu</string>
+    <string name="next_level">Next level</string>
     <!-- Other -->
     <string name="back" translatable="false">\uF104</string>
     <!-- Popup indice -->
-    <string name="clue">"Choose a clue   (%d\uf0e7)"</string>
-    <string name="clue1">"See a letter  >>  3\uf0e7"</string>
-    <string name="clue2">"Brighten the picture  >>  5\uf0e7"</string>
-    <string name="clue3">"Skip the level  >>  7\uf0e7"</string>
+    <string name="clue">"Need help ?"</string>
+    <string name="moneyText" translatable="false">%d\uf0e7</string>
+    <string name="clue1">See a letter\n{Cost: 3\uf0e7}</string>
+    <string name="clue2">"Brighten the picture\n{Cost: 5\uf0e7}"</string>
+    <string name="clue3">"Skip the level\n{Cost: 7\uf0e7}"</string>
     <string name="close">Close</string>
     <!-- Popup confirm -->
     <string name="yes">Yes</string>

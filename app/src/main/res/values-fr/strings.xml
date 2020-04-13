@@ -15,8 +15,8 @@
     <string name="level">Niveau %d</string>
     <!-- Level -->
     <string name="win_text">Félicitations, vous avez gagné!</string>
-    <string name="back1">Retour</string>
-    <string name="next1">Suivant</string>
+    <string name="back_to_menu">Retour</string>
+    <string name="next_level">Suivant</string>
     <!-- Other -->
     <!-- Popup Indice -->
     <string name="clue">Choisissez un indice</string>

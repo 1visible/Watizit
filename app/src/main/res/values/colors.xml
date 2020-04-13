@@ -1,22 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="colorPrimary">#FFFFFF</color>
-    <color name="colorPrimaryDark">#3B3838</color>
-    <color name="colorAccent">#CACACA</color>
-    <color name="transparent">#00000000</color>
-
     <color name="COLOR_TEXT">#ffffff</color>
-    <color name="COLOR_BRIGHT">#ebffffff</color>
+    <color name="COLOR_BRIGHT">#eaffffff</color>
     <color name="COLOR_DARK">#514e61</color>
-    <color name="COLOR_BUTTON">#7961f1</color>
+    <color name="COLOR_PRIMARY">#7961f1</color>
     <color name="COLOR_OVERLAY">#2e2b3f</color>
     <color name="COLOR_BACKGROUND">#221f2e</color>
-
-    <color name="COLOR_GOLD">#FED148</color>
-    <color name="COLOR_WHITE">#FFFFFF</color>
+    <color name="COLOR_GOLD">#ffeb78</color>
     <color name="COLOR_RED">#FF5050</color>
-    <color name="COLOR_BLUE">#50AEF2</color>
-    <color name="COLOR_GRAY">#516170</color>
 
 </resources>

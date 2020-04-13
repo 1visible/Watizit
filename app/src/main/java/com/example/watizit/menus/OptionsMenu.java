@@ -3,7 +3,6 @@ package com.example.watizit.menus;
 import android.content.Context;
 import android.content.Intent;
 import android.media.AudioManager;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -38,10 +37,12 @@ public class OptionsMenu extends AppCompatActivity {
         TextView optionsText = findViewById(R.id.optionsText);
         ImageView FRFlagImage = findViewById(R.id.FRFlagImage);
         ImageView ENFlagImage = findViewById(R.id.ENFlagImage);
+        ImageView SPFlagImage = findViewById(R.id.SPFlagImage);
         TextView copyrightText = findViewById(R.id.copyrightText);
 
         DesignUtil.setBgColor(backButton, R.color.COLOR_RED);
-        DesignUtil.setBgColor(optionsText, R.color.COLOR_GRAY);
+        DesignUtil.setBgColor(optionsText, R.color.COLOR_OVERLAY);
+        DesignUtil.setBgColor(copyrightText, R.color.COLOR_OVERLAY);
 
         backButton.setText(DesignUtil.applyIcons(backButton.getText(), 1F));
 
@@ -60,31 +61,16 @@ public class OptionsMenu extends AppCompatActivity {
             public void onClick(View v) { LocaleUtil.setLocale("en");
             }
         });
+        SPFlagImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { LocaleUtil.setLocale("sp");
+            }
+        });
 
         copyrightText.setMovementMethod(LinkMovementMethod.getInstance());
 
-        getPermission();
-
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
         changeVolume();
-
-
-    }
-
-    private void getPermission(){
-        boolean value;
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
-            value = Settings.System.canWrite(getApplicationContext());
-            if(value){
-                succes = true;
-            }
-            else{
-                succes = true;
-                Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS);
-                intent.setData(Uri.parse("package :" + getApplicationContext().getPackageName()));
-                startActivityForResult(intent, 1000);
-            }
-        }
     }
 
     @Override

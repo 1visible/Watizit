@@ -17,6 +17,7 @@ import com.example.watizit.classes.HomeWatcher;
 import com.example.watizit.classes.JouerMusique;
 import com.example.watizit.utils.DesignUtil;
 import com.example.watizit.utils.LocaleUtil;
+import com.example.watizit.utils.MoneyUtil;
 
 public class MainMenu extends AppCompatActivity {
 
@@ -25,6 +26,8 @@ public class MainMenu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        MoneyUtil.addMoney(70);
 
         if(LocaleUtil.isLocaleStored()
                 && !LocaleUtil.getLocaleStored().equals(LocaleUtil.getLocale()))
@@ -39,8 +42,8 @@ public class MainMenu extends AppCompatActivity {
         final Intent levelsListMenuIntent = new Intent(this, LevelsListMenu.class);
         final Intent optionsMenuIntent = new Intent(this, OptionsMenu.class);
 
-        DesignUtil.setBgColor(playButton, R.color.COLOR_BLUE);
-        DesignUtil.setBgColor(optionsButton, R.color.COLOR_GRAY);
+        DesignUtil.setBgColor(playButton, R.color.COLOR_PRIMARY);
+        DesignUtil.setBgColor(optionsButton, R.color.COLOR_OVERLAY);
 
         playButton.setText(DesignUtil.applyIcons(playButton.getText(), 0.75F));
         optionsButton.setText(DesignUtil.applyIcons(optionsButton.getText(), 0.75F));

@@ -30,7 +30,7 @@ public class LevelsListMenu extends AppCompatActivity {
         LevelAdapter levels = new LevelAdapter(this, DatabaseUtil.getLevels());
 
         DesignUtil.setBgColor(backButton, R.color.COLOR_RED);
-        DesignUtil.setBgColor(levelsText, R.color.COLOR_BUTTON);
+        DesignUtil.setBgColor(levelsText, R.color.COLOR_PRIMARY);
         backButton.setText(DesignUtil.applyIcons(backButton.getText(), 1F));
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
