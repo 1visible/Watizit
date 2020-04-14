@@ -65,4 +65,15 @@ public class LetterPicker extends NumberPicker {
         }
     }
 
+    public void setColor(int color)
+    {
+        int count = this.getChildCount();
+        for(int i = 0; i < count; i++)
+        {
+            View child = this.getChildAt(i);
+            if (child instanceof EditText)
+                ((EditText) child).setTextColor(getResources().getColor(color));
+        }
+    }
+
 }

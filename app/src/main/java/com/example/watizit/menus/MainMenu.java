@@ -17,7 +17,6 @@ import com.example.watizit.classes.HomeWatcher;
 import com.example.watizit.classes.JouerMusique;
 import com.example.watizit.utils.DesignUtil;
 import com.example.watizit.utils.LocaleUtil;
-import com.example.watizit.utils.MoneyUtil;
 
 public class MainMenu extends AppCompatActivity {
 
@@ -26,8 +25,6 @@ public class MainMenu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        MoneyUtil.addMoney(70);
 
         if(LocaleUtil.isLocaleStored()
                 && !LocaleUtil.getLocaleStored().equals(LocaleUtil.getLocale()))
@@ -58,6 +55,9 @@ public class MainMenu extends AppCompatActivity {
             public void onClick(View v) { startActivity(optionsMenuIntent);
             }
         });
+
+        DesignUtil.startBounceIn(playButton, 0.15F);
+        DesignUtil.startBounceIn(optionsButton, 0.3F);
 
         doBindService();
         Intent music = new Intent();

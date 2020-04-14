@@ -9,11 +9,14 @@ import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 import androidx.core.content.res.ResourcesCompat;
 
 import com.example.watizit.R;
 import com.example.watizit.classes.App;
+import com.example.watizit.classes.BounceInInterpolator;
 import com.example.watizit.classes.CustomTypefaceSpan;
 
 import java.util.Arrays;
@@ -23,11 +26,18 @@ import static android.text.Spanned.SPAN_INCLUSIVE_EXCLUSIVE;
 
 public class DesignUtil {
 
+    public static void startBounceIn(View view, float startOffset)
+    {
+        Animation animation = AnimationUtils.loadAnimation(App.getContext(), R.anim.bounce_in);
+        animation.setInterpolator(new BounceInInterpolator(0.06, 18));
+        animation.setStartOffset((long) (startOffset*1000));
+        view.startAnimation(animation);
+    }
+
     public static void setBgColor(View view, int color)
     {
-        Context context = App.getContext();
         Drawable bg = view.getBackground();
-        int c = context.getResources().getColor(color);
+        int c = App.getContext().getResources().getColor(color);
 
         bg.setColorFilter(c, PorterDuff.Mode.MULTIPLY);
     }

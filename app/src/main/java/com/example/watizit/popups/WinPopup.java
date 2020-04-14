@@ -38,6 +38,10 @@ public class WinPopup extends Dialog {
         DesignUtil.setBgColor(nextLevelButton, R.color.COLOR_PRIMARY);
         DesignUtil.setBgColor(backButton, R.color.COLOR_RED);
 
+        DesignUtil.startBounceIn(starImage1, 0.4F);
+        DesignUtil.startBounceIn(starImage2, 0.8F);
+        DesignUtil.startBounceIn(starImage3, 1.2F);
+
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

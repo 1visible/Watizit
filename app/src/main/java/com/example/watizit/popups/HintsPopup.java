@@ -58,6 +58,10 @@ public class HintsPopup extends Dialog {
         DesignUtil.setBgColor(clueButton3, R.color.COLOR_OVERLAY);
         DesignUtil.setBgColor(closeButton, R.color.COLOR_RED);
 
+        DesignUtil.startBounceIn(clueButton1, 0.15F);
+        DesignUtil.startBounceIn(clueButton2, 0.3F);
+        DesignUtil.startBounceIn(clueButton3, 0.45F);
+
         if(level.canBuyHint(1))
         {
             clueButton1.setText(DesignUtil.applyIcons(clueButton1.getText(), 0.8F, R.color.COLOR_GOLD));

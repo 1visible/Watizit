@@ -198,7 +198,10 @@ public class LevelMenu extends AppCompatActivity implements HintsPopup.HintsList
         switch(hintNumber)
         {
             case 1:
-                disableLetterPicker((int) Math.ceil(word.length()/2));
+                int letterPickerId = (int) Math.ceil(word.length()/2);
+                disableLetterPicker(letterPickerId);
+                LetterPicker letterPicker = letterPickerLayout.findViewById(letterPickerId);
+                letterPicker.setColor(R.color.COLOR_GOLD);
                 levelText.setText(getWord());
                 break;
             case 2:
