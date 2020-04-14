@@ -28,6 +28,7 @@
     <string name="hintsPopup_close">Close</string>
     <!-- Win popup -->
     <string name="winPopup_title">LEVEL COMPLETE !</string>
+    <string name="winPopup_moneyWon" translatable="false">+%d\uf0e7</string>
     <string name="winPopup_backToMenu">Back to menu</string>
     <string name="winPopup_nextLevel">Next level</string>
     <!-- Levels words -->

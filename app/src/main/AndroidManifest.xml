@@ -44,7 +44,7 @@
         </activity>
 
         <service
-            android:name=".classes.JouerMusique"
+            android:name=".classes.MusicService"
             android:enabled="true">
         </service>
 

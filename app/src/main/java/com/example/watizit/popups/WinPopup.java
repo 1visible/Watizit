@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.core.widget.ImageViewCompat;
 
@@ -42,6 +43,10 @@ public class WinPopup extends Dialog {
         ImageView starImage1 = getWindow().findViewById(R.id.starImage1);
         ImageView starImage2 = getWindow().findViewById(R.id.starImage2);
         ImageView starImage3 = getWindow().findViewById(R.id.starImage3);
+        TextView moneyWon = getWindow().findViewById(R.id.moneyWon);
+        String strMoneyWon = String.valueOf(level.getStars());
+
+        moneyWon.setText(DesignUtil.applyIcons(moneyWon.getText().toString().replace("%d", strMoneyWon), 0.8F));
 
         DesignUtil.setBgColor(nextLevelButton, R.color.COLOR_PRIMARY);
         DesignUtil.setBgColor(backButton, R.color.COLOR_RED);
@@ -49,6 +54,7 @@ public class WinPopup extends Dialog {
         DesignUtil.startBounceIn(starImage1, 0.4F);
         DesignUtil.startBounceIn(starImage2, 0.8F);
         DesignUtil.startBounceIn(starImage3, 1.2F);
+        DesignUtil.startBounceIn(moneyWon, 1.4F);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
