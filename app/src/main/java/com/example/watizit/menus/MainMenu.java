@@ -26,33 +26,10 @@ public class MainMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if(LocaleUtil.isLocaleStored(this)
-                && !LocaleUtil.getLocaleStored(this).equals(LocaleUtil.getLocale(this)))
-            LocaleUtil.setLocale(this, LocaleUtil.getLocaleStored(this));
-
         setContentView(R.layout.activity_main);
 
         Button playButton = findViewById(R.id.playButton);
         Button optionsButton = findViewById(R.id.optionsButton);
-        final Intent levelsListMenuIntent = new Intent(this, LevelsListMenu.class);
-        final Intent optionsMenuIntent = new Intent(this, OptionsMenu.class);
-
-        DesignUtil.setBgColor(playButton, R.color.COLOR_PRIMARY);
-        DesignUtil.setBgColor(optionsButton, R.color.COLOR_OVERLAY);
-
-        playButton.setText(DesignUtil.applyIcons(playButton.getText(), 0.75F));
-        optionsButton.setText(DesignUtil.applyIcons(optionsButton.getText(), 0.75F));
-
-        playButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { startActivity(levelsListMenuIntent);
-            }
-        });
-        optionsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { startActivity(optionsMenuIntent);
-            }
-        });
 
         DesignUtil.startBounceIn(playButton, 0.15F);
         DesignUtil.startBounceIn(optionsButton, 0.3F);
@@ -112,6 +89,32 @@ public class MainMenu extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
+        if(LocaleUtil.isLocaleStored(this)
+                && !LocaleUtil.getLocaleStored(this).equals(LocaleUtil.getLocale(this)))
+            LocaleUtil.setLocale(this, LocaleUtil.getLocaleStored(this));
+
+        Button playButton = findViewById(R.id.playButton);
+        Button optionsButton = findViewById(R.id.optionsButton);
+        final Intent levelsListMenuIntent = new Intent(this, LevelsListMenu.class);
+        final Intent optionsMenuIntent = new Intent(this, OptionsMenu.class);
+
+        DesignUtil.setBgColor(playButton, R.color.COLOR_PRIMARY);
+        DesignUtil.setBgColor(optionsButton, R.color.COLOR_OVERLAY);
+
+        playButton.setText(DesignUtil.applyIcons(playButton.getText(), 0.75F));
+        optionsButton.setText(DesignUtil.applyIcons(optionsButton.getText(), 0.75F));
+
+        playButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { startActivity(levelsListMenuIntent);
+            }
+        });
+        optionsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { startActivity(optionsMenuIntent);
+            }
+        });
 
         if (mServ != null) {
             mServ.resumeMusic();
