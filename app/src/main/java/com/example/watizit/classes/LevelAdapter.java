@@ -30,12 +30,11 @@ public class LevelAdapter extends ArrayAdapter<Level> {
     @NonNull
     public View getView(int position, View convertView, @NonNull ViewGroup parent)
     {
-        Context context = App.getContext();
+
+        Context context = super.getContext();
 
         if (convertView == null)
-        {
             convertView = LayoutInflater.from(context).inflate(R.layout.level_cell, parent, false);
-        }
 
         Level level = getItem(position);
         LinearLayout panelOverlay = convertView.findViewById(R.id.panelOverlay1);
@@ -45,7 +44,7 @@ public class LevelAdapter extends ArrayAdapter<Level> {
         ImageView starImage2 = convertView.findViewById(R.id.littleStarImage2);
         ImageView starImage3 = convertView.findViewById(R.id.littleStarImage3);
         Resources res = context.getResources();
-        String text = res.getString(R.string.level);
+        String text = res.getString(R.string.levelMenu_title);
 
         if(level != null)
         {

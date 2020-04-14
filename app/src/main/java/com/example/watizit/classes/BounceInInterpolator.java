@@ -1,8 +1,7 @@
 package com.example.watizit.classes;
 
 public class BounceInInterpolator implements android.view.animation.Interpolator {
-    double amplitude = 1;
-    double frequency = 10;
+    private double amplitude, frequency;
 
     public BounceInInterpolator(double amplitude, double frequency) {
         this.amplitude = amplitude;

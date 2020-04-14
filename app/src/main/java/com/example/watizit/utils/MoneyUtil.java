@@ -11,7 +11,7 @@ public class MoneyUtil {
     public static void addMoney(int money)
     {
         Context context = App.getContext();
-        String sp_key = context.getString(R.string.sp_key);
+        String sp_key = context.getString(R.string.UID);
         SharedPreferences pref = context.getSharedPreferences(sp_key, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
 
@@ -23,7 +23,7 @@ public class MoneyUtil {
     public static int getMoney()
     {
         Context context = App.getContext();
-        String sp_key = context.getString(R.string.sp_key);
+        String sp_key = context.getString(R.string.UID);
         SharedPreferences pref = context.getSharedPreferences(sp_key, Context.MODE_PRIVATE);
 
         return pref.getInt("money", 3);

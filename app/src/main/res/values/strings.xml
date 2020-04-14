@@ -1,41 +1,36 @@
 <resources>
-
-    <string name="app_name" translatable="false">Watizit</string>
-    <string name="sp_key" translatable="false">watizit-7bcd-11ea-bc55</string>
+    <!-- General -->
+    <string name="backIcon" translatable="false">\uF104</string>
+    <string name="UID" translatable="false">watizit-7bcd-11ea-bc55</string>
     <!-- Main menu -->
-    <string name="play_with_icon">"\uF04B  Play"</string>
-    <string name="options_with_icon">"\uF013  Options"</string>
+    <string name="mainMenu_playButton">"\uF04B  Play"</string>
+    <string name="mainMenu_optionsButton">"\uF013  Options"</string>
     <!-- Options menu -->
-    <string name="options">Options</string>
-    <string name="language">Language</string>
-    <string name="copyright">
+    <string name="optionsMenu_title">Options</string>
+    <string name="optionsMenu_language">Language</string>
+    <string name="optionsMenu_copyright">
         Copyright © 2020\nLAURET Nicolas, RANDRIANASOLO Rooly\n\n
         Images by <a href="https://www.flaticon.com/">Flaticon</a> •
         Music by <a href="https://opengameart.org/users/horrorpen">HorrorPen</a>
     </string>
     <string name="volume">Volume</string>
-    <!-- Levels menu -->
-    <string name="levels">LEVELS</string>
-    <!-- Level -->
-    <string name="level">Level %d</string>
-    <string name="win_text">LEVEL COMPLETE !</string>
-    <string name="next" translatable="false">\uF04B</string>
-    <string name="back_to_menu">Back to menu</string>
-    <string name="next_level">Next level</string>
-    <!-- Other -->
-    <string name="back" translatable="false">\uF104</string>
-    <!-- Popup indice -->
-    <string name="clue">"Need help ?"</string>
-    <string name="moneyText" translatable="false">%d\uf0e7</string>
-    <string name="clue1">See a letter\n{Cost: 3\uf0e7}</string>
-    <string name="clue2">"Brighten the picture\n{Cost: 5\uf0e7}"</string>
-    <string name="clue3">"Skip the level\n{Cost: 7\uf0e7}"</string>
-    <string name="close">Close</string>
-    <!-- Popup confirm -->
-    <string name="yes">Yes</string>
-    <string name="no">No</string>
-    <string name="bonus">Confirm the use of the bonus?</string>
-    <!-- Game words -->
+    <!-- Levels list menu -->
+    <string name="levelsListMenu_title">LEVELS</string>
+    <!-- Level menu -->
+    <string name="levelMenu_title">Level %d</string>
+    <string name="levelMenu_hintIcon" translatable="false">\uf0eb</string>
+    <!-- Hints popup -->
+    <string name="hintsPopup_title">Need help ?</string>
+    <string name="hintsPopup_account" translatable="false">%d\uf0e7</string>
+    <string name="hintsPopup_hint1">See a letter\n{Cost: 3\uf0e7}</string>
+    <string name="hintsPopup_hint2">Brighten the picture\n{Cost: 5\uf0e7}</string>
+    <string name="hintsPopup_hint3">Skip the level\n{Cost: 7\uf0e7}</string>
+    <string name="hintsPopup_close">Close</string>
+    <!-- Win popup -->
+    <string name="winPopup_title">LEVEL COMPLETE !</string>
+    <string name="winPopup_backToMenu">Back to menu</string>
+    <string name="winPopup_nextLevel">Next level</string>
+    <!-- Levels words -->
     <string name="word_cat">CAT</string>
     <string name="word_dog">DOG</string>
     <string name="word_falcon">FALCON</string>
@@ -49,4 +44,11 @@
     <string name="word_tornado">TORNADO</string>
     <string name="word_volcano">VOLCANO</string>
     <string name="word_bottle">BOTTLE</string>
+    <!-- Screen-readers -->
+    <string name="sr_appName" translatable="false">Watizit</string>
+    <string name="sr_flagFrench">French flag</string>
+    <string name="sr_flagEnglish">English flag</string>
+    <string name="sr_flagSpanish">Spanish flag</string>
+    <string name="sr_levelImage">Level image</string>
+    <string name="sr_starImage">Star image</string>
 </resources>

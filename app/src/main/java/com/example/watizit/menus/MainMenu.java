@@ -26,11 +26,9 @@ public class MainMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if(LocaleUtil.isLocaleStored()
-                && !LocaleUtil.getLocaleStored().equals(LocaleUtil.getLocale()))
-        {
-            LocaleUtil.setLocale(LocaleUtil.getLocaleStored());
-        }
+        if(LocaleUtil.isLocaleStored(this)
+                && !LocaleUtil.getLocaleStored(this).equals(LocaleUtil.getLocale(this)))
+            LocaleUtil.setLocale(this, LocaleUtil.getLocaleStored(this));
 
         setContentView(R.layout.activity_main);
 
@@ -80,7 +78,6 @@ public class MainMenu extends AppCompatActivity {
             }
         });
         mHomeWatcher.startWatch();
-
     }
 
     private boolean mIsBound = false;

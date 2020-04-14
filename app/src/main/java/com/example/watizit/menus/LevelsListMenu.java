@@ -1,7 +1,6 @@
 package com.example.watizit.menus;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -19,11 +18,10 @@ import com.example.watizit.utils.DesignUtil;
 public class LevelsListMenu extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
+    public void onResume()
     {
-        super.onCreate(savedInstanceState);
+        super.onResume();
         setContentView(R.layout.levels_list_menu);
-
         Button backButton = findViewById(R.id.backButton4);
         TextView levelsText = findViewById(R.id.levelsText);
         ListView levelsList = findViewById(R.id.levelsList);

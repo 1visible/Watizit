@@ -77,20 +77,18 @@ public class DatabaseAccess {
         return list;
     }
 
-    public int updateStars(int id, int stars)
+    public void updateStars(int id, int stars)
     {
         ContentValues values = new ContentValues();
         values.put("stars", stars);
-
-        return database.update("levels", values, "id =" + id, null);
+        database.update("levels", values, "id =" + id, null);
     }
 
-    public int updateHints(int id, int hints)
+    public void updateHints(int id, int hints)
     {
         ContentValues values = new ContentValues();
         values.put("hints", hints);
-
-        return database.update("levels", values, "id =" + id, null);
+        database.update("levels", values, "id =" + id, null);
     }
 }
 

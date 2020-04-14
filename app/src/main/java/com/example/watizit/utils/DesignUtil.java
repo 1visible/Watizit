@@ -87,7 +87,7 @@ public class DesignUtil {
                 string.setSpan(new ForegroundColorSpan(c), startBracket, endBracket - 1, SPAN_INCLUSIVE_EXCLUSIVE);
                 string.setSpan(new RelativeSizeSpan(0.85f), startBracket, endBracket - 1, Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
             }
-            catch(Exception e) {}
+            catch(Exception e) { e.printStackTrace(); }
         }
 
         for(int i = 0; i < string.length(); i++)

@@ -16,8 +16,9 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_marginRight="60dp"
+            android:layout_marginEnd="60dp"
             android:fontFamily="@font/icons"
-            android:text="@string/back"
+            android:text="@string/backIcon"
             android:textSize="20sp" />
 
         <TextView
@@ -25,7 +26,7 @@
             style="@style/app_Button"
             android:layout_width="160dp"
             android:layout_height="45dp"
-            android:text="@string/levels" />
+            android:text="@string/levelsListMenu_title" />
 
     </LinearLayout>
 

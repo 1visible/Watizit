@@ -18,8 +18,9 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_marginRight="60dp"
+            android:layout_marginEnd="60dp"
             android:fontFamily="@font/icons"
-            android:text="@string/back"
+            android:text="@string/backIcon"
             android:textSize="20sp" />
 
         <TextView
@@ -28,7 +29,7 @@
             android:textAllCaps="true"
             android:layout_width="160dp"
             android:layout_height="45dp"
-            android:text="@string/options" />
+            android:text="@string/optionsMenu_title" />
 
     </LinearLayout>
 
@@ -42,16 +43,18 @@
             android:id="@+id/languageText"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="@string/language" />
+            android:text="@string/optionsMenu_language" />
 
         <ImageView
             android:id="@+id/FRFlagImage"
+            android:contentDescription="@string/sr_flagFrench"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/props_flag_fr" />
 
         <ImageView
             android:id="@+id/ENFlagImage"
+            android:contentDescription="@string/sr_flagEnglish"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_width="50dp"
@@ -60,6 +63,7 @@
 
         <ImageView
             android:id="@+id/SPFlagImage"
+            android:contentDescription="@string/sr_flagSpanish"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/props_flag_sp" />
@@ -96,7 +100,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textColorLink="@color/COLOR_PRIMARY"
-        android:text="@string/copyright"
+        android:text="@string/optionsMenu_copyright"
         android:textSize="18sp" />
 
 </LinearLayout>

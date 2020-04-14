@@ -1,31 +1,26 @@
 package com.example.watizit.utils;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.util.DisplayMetrics;
 
 import com.example.watizit.R;
-import com.example.watizit.menus.MainMenu;
-import com.example.watizit.classes.App;
 
 import java.util.Locale;
 
 public class LocaleUtil {
 
-    public static String getLocale()
+    public static String getLocale(Context context)
     {
-        Context context = App.getContext();
         Locale language = context.getResources().getConfiguration().locale;
 
         return language.getLanguage();
     }
 
-    public static void setLocale(String locale_id)
+    public static void setLocale(Context context, String locale_id)
     {
-        Context context = App.getContext();
         Resources res = context.getResources();
         Locale locale = new Locale(locale_id);
         DisplayMetrics dm = res.getDisplayMetrics();
@@ -35,34 +30,27 @@ public class LocaleUtil {
         config.locale = locale;
         res.updateConfiguration(config, dm);
 
-        String sp_key = context.getString(R.string.sp_key);
-        SharedPreferences pref = context.getSharedPreferences(sp_key, Context.MODE_PRIVATE);
+        String UID = context.getString(R.string.UID);
+        SharedPreferences pref = context.getSharedPreferences(UID, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
-        editor.putString("language", locale_id);
+        editor.putString("lang", locale_id);
         editor.apply();
-
-        Intent refresh = new Intent(context, MainMenu.class);
-
-        refresh.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        context.startActivity(refresh);
     }
 
-    public static boolean isLocaleStored()
+    public static boolean isLocaleStored(Context context)
     {
-        Context context = App.getContext();
-        String sp_key = context.getString(R.string.sp_key);
-        SharedPreferences pref = context.getSharedPreferences(sp_key, Context.MODE_PRIVATE);
+        String UID = context.getString(R.string.UID);
+        SharedPreferences pref = context.getSharedPreferences(UID, Context.MODE_PRIVATE);
 
-        return pref.contains("language");
+        return pref.contains("lang");
     }
 
-    public static String getLocaleStored()
+    public static String getLocaleStored(Context context)
     {
-        Context context = App.getContext();
-        String sp_key = context.getString(R.string.sp_key);
-        SharedPreferences pref = context.getSharedPreferences(sp_key, Context.MODE_PRIVATE);
+        String UID = context.getString(R.string.UID);
+        SharedPreferences pref = context.getSharedPreferences(UID, Context.MODE_PRIVATE);
 
-        return pref.getString("language", null);
+        return pref.getString("lang", null);
     }
 
 }

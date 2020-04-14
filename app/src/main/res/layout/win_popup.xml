@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
-        android:text="@string/win_text" />
+        android:text="@string/winPopup_title" />
 
     <LinearLayout
         android:gravity="center"
@@ -24,6 +24,7 @@
 
         <ImageView
             android:id="@+id/starImage1"
+            android:contentDescription="@string/sr_starImage"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:tint="@color/COLOR_DARK"
@@ -31,6 +32,7 @@
 
         <ImageView
             android:id="@+id/starImage2"
+            android:contentDescription="@string/sr_starImage"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginLeft="8dp"
@@ -40,6 +42,7 @@
 
         <ImageView
             android:id="@+id/starImage3"
+            android:contentDescription="@string/sr_starImage"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:tint="@color/COLOR_DARK"
@@ -51,7 +54,7 @@
         android:id="@+id/nextLevelButton"
         android:layout_width="fill_parent"
         android:layout_height="80dp"
-        android:text="@string/next_level" />
+        android:text="@string/winPopup_nextLevel" />
 
     <Button
         android:id="@+id/backButton3"
@@ -59,7 +62,7 @@
         android:layout_marginBottom="35dp"
         android:layout_width="fill_parent"
         android:layout_height="80dp"
-        android:text="@string/back_to_menu" />
+        android:text="@string/winPopup_backToMenu" />
 
 </LinearLayout>
 

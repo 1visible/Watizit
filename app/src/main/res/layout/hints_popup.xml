@@ -18,39 +18,39 @@
         <TextView
             android:layout_width="195dp"
             android:layout_height="wrap_content"
-            android:text="@string/clue" />
+            android:text="@string/hintsPopup_title" />
 
         <TextView
             android:id="@+id/moneyText"
             android:layout_width="85dp"
             android:layout_height="wrap_content"
-            android:text="@string/moneyText"
+            android:text="@string/hintsPopup_account"
             android:gravity="end"
             android:textColor="@color/COLOR_GOLD" />
 
     </LinearLayout>
 
     <Button
-        android:id="@+id/clueButton1"
+        android:id="@+id/hintButton1"
         android:layout_width="fill_parent"
         android:layout_height="85dp"
-        android:text="@string/clue1"
+        android:text="@string/hintsPopup_hint1"
         android:textSize="22sp" />
 
     <Button
-        android:id="@+id/clueButton2"
+        android:id="@+id/hintButton2"
         android:layout_width="fill_parent"
         android:layout_height="85dp"
         android:layout_marginTop="25dp"
         android:layout_marginBottom="25dp"
-        android:text="@string/clue2"
+        android:text="@string/hintsPopup_hint2"
         android:textSize="22sp" />
 
     <Button
-        android:id="@+id/clueButton3"
+        android:id="@+id/hintButton3"
         android:layout_width="fill_parent"
         android:layout_height="85dp"
-        android:text="@string/clue3"
+        android:text="@string/hintsPopup_hint3"
         android:textSize="22sp" />
 
     <Button
@@ -59,7 +59,7 @@
         android:layout_height="80dp"
         android:layout_marginTop="60dp"
         android:layout_marginBottom="35dp"
-        android:text="@string/close" />
+        android:text="@string/hintsPopup_close" />
 
 
 </LinearLayout>

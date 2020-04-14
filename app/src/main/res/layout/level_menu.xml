@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -17,7 +16,7 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:fontFamily="@font/icons"
-            android:text="@string/back"
+            android:text="@string/backIcon"
             android:textSize="20sp" />
 
         <TextView
@@ -28,7 +27,7 @@
             android:layout_marginRight="60dp"
             android:layout_width="160dp"
             android:layout_height="45dp"
-            android:text="@string/level" />
+            android:text="@string/levelMenu_title" />
 
         <Button
             android:id="@+id/hintsButton"
@@ -36,7 +35,7 @@
             android:layout_height="45dp"
             android:textColor="@color/COLOR_GOLD"
             android:fontFamily="@font/icons"
-            android:text=""
+            android:text="@string/levelMenu_hintIcon"
             android:textSize="20sp" />
 
     </LinearLayout>
@@ -48,7 +47,8 @@
         android:layout_width="195dp"
         android:layout_height="195dp"
         android:tint="@color/COLOR_TEXT"
-        app:srcCompat="@drawable/img_cat" />
+        android:contentDescription="@string/sr_levelImage"
+        android:src="@drawable/props_locked_level" />
 
     <TextView
         android:id="@+id/levelText"
@@ -56,7 +56,7 @@
         android:layout_marginBottom="20dp"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="SAMPLE" />
+        android:text="@string/levelsListMenu_title" />
 
     <LinearLayout
         android:id="@+id/letterPickerLayout"

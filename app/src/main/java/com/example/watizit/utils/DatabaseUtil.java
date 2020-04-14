@@ -27,24 +27,20 @@ public class DatabaseUtil {
         return levels;
     }
 
-    public static int updateStars(int id, int stars)
+    public static void updateStars(int id, int stars)
     {
         DatabaseAccess databaseAccess = DatabaseAccess.getInstance();
         databaseAccess.open();
-        int state = databaseAccess.updateStars(id, stars);
+        databaseAccess.updateStars(id, stars);
         databaseAccess.close();
-
-        return state;
     }
 
-    public static int updateHints(int id, int hints)
+    public static void updateHints(int id, int hints)
     {
         DatabaseAccess databaseAccess = DatabaseAccess.getInstance();
         databaseAccess.open();
-        int state = databaseAccess.updateHints(id, hints);
+        databaseAccess.updateHints(id, hints);
         databaseAccess.close();
-
-        return state;
     }
 
 }

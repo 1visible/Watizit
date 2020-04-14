@@ -29,7 +29,7 @@ import com.example.watizit.utils.MoneyUtil;
 import java.util.Arrays;
 import java.util.Random;
 
-public class LevelMenu extends AppCompatActivity implements HintsPopup.HintsListener {
+public class LevelMenu extends AppCompatActivity implements HintsPopup.HintsListener, WinPopup.WinListener {
 
     static final int MAX_LETTERS = 5;
 
@@ -198,7 +198,7 @@ public class LevelMenu extends AppCompatActivity implements HintsPopup.HintsList
         switch(hintNumber)
         {
             case 1:
-                int letterPickerId = (int) Math.ceil(word.length()/2);
+                int letterPickerId = (int) Math.ceil((float) word.length()/2);
                 disableLetterPicker(letterPickerId);
                 LetterPicker letterPicker = letterPickerLayout.findViewById(letterPickerId);
                 letterPicker.setColor(R.color.COLOR_GOLD);
@@ -214,12 +214,14 @@ public class LevelMenu extends AppCompatActivity implements HintsPopup.HintsList
         }
     }
 
+    @Override
+    public void finishActivity() { finish(); }
+
     private class PickerListener implements NumberPicker.OnScrollListener {
         @Override
         public void onScrollStateChange(NumberPicker view, int scrollState) {
-            if(scrollState == SCROLL_STATE_IDLE) {
+            if(scrollState == SCROLL_STATE_IDLE)
                 updateGame();
-            }
         }
     }
 

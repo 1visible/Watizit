@@ -1,33 +1,31 @@
 <resources>
     <!-- Main menu -->
-    <string name="play_with_icon">\uF04B Jouer</string>
-    <string name="options_with_icon">\uF013 Options</string>
+    <string name="mainMenu_playButton">"\uF04B  Jouer"</string>
+    <string name="mainMenu_optionsButton">"\uF013  Options"</string>
     <!-- Options menu -->
-    <string name="options">Options</string>
-    <string name="dark_theme">Mode sombre</string>
-    <string name="language">Langue</string>
-    <string name="copyright">
-        Copyright © 2020\nLAURET Nicolas, RANDRIANASOLO Rooly\n\nIcônes par Flaticon :\n
-        <a href="https://www.flaticon.com/">https://www.flaticon.com</a>
+    <string name="optionsMenu_title">Options</string>
+    <string name="optionsMenu_language">Langue</string>
+    <string name="optionsMenu_copyright">
+        Copyright © 2020\nLAURET Nicolas, RANDRIANASOLO Rooly\n\n
+        Images par <a href="https://www.flaticon.com/">Flaticon</a> •
+        Musique par <a href="https://opengameart.org/users/horrorpen">HorrorPen</a>
     </string>
     <string name="volume">Volume</string>
-    <!-- Levels menu -->
-    <string name="level">Niveau %d</string>
-    <!-- Level -->
-    <string name="win_text">Félicitations, vous avez gagné!</string>
-    <string name="back_to_menu">Retour</string>
-    <string name="next_level">Suivant</string>
-    <!-- Other -->
-    <!-- Popup Indice -->
-    <string name="clue">Choisissez un indice</string>
-    <string name="clue1">5 O - Afficher une lettre</string>
-    <string name="clue2">15 O - Afficher l\'image</string>
-    <string name="clue3">20 O - Trouver le mot</string>
-    <string name="close">Fermer</string>
-    <!-- Popup confirm -->
-    <string name="yes">Oui</string>
-    <string name="no">Non</string>
-    <string name="bonus">Confirmer l\'utilisation du bonus ?</string>
+    <!-- Levels list menu -->
+    <string name="levelsListMenu_title">NIVEAUX</string>
+    <!-- Level menu -->
+    <string name="levelMenu_title">Niveau %d</string>
+    <!-- Hints popup -->
+    <string name="hintsPopup_title">Besoin d\'aide ?</string>
+    <string name="hintsPopup_hint1">Voir une lettre\n{Coût: 3\uf0e7}</string>
+    <string name="hintsPopup_hint2">Éclaircir l\'image\n{Coût: 5\uf0e7}</string>
+    <string name="hintsPopup_hint3">Passer le niveau\n{Coût: 7\uf0e7}</string>
+    <string name="hintsPopup_close">Fermer</string>
+    <!-- Win popup -->
+    <string name="winPopup_title">NIEAU TERMINÉ !</string>
+    <string name="winPopup_backToMenu">Retour au menu</string>
+    <string name="winPopup_nextLevel">Niveau suivant</string>
+    <!-- Levels words -->
     <string name="word_cat">CHAT</string>
     <string name="word_dog">CHIEN</string>
     <string name="word_falcon">FAUCON</string>
@@ -41,6 +39,10 @@
     <string name="word_tornado">TORNADE</string>
     <string name="word_volcano">VOLCAN</string>
     <string name="word_bottle">BOUTEILLE</string>
-    <string name="levels">NIVEAUX</string>
-
+    <!-- Screen-readers -->
+    <string name="sr_flagFrench">Drapeau français</string>
+    <string name="sr_flagEnglish">Drapeau anglais</string>
+    <string name="sr_flagSpanish">Drapeau espagnol</string>
+    <string name="sr_levelImage">Image de niveau</string>
+    <string name="sr_starImage">Image d\'étoile</string>
 </resources>

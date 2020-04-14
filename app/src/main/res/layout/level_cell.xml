@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/COLOR_BACKGROUND"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content" >
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/panelOverlay1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -24,6 +24,8 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/sr_levelImage"
             android:src="@drawable/props_locked_level" />
 
         <TextView
@@ -32,8 +34,9 @@
             android:layout_height="fill_parent"
             android:fontFamily="@font/app_font"
             android:textColor="@color/COLOR_TEXT"
+            android:background="@android:color/transparent"
             android:gravity="center"
-            android:text="@string/level"
+            android:text="@string/levelMenu_title"
             android:textSize="25sp" />
 
         <ImageView
@@ -41,6 +44,8 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/sr_starImage"
             android:src="@drawable/props_star" />
 
         <ImageView
@@ -50,6 +55,8 @@
             android:layout_marginLeft="3dp"
             android:layout_marginRight="3dp"
             android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/sr_starImage"
             android:src="@drawable/props_star" />
 
         <ImageView
@@ -57,6 +64,8 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/sr_starImage"
             android:src="@drawable/props_star" />
 
     </LinearLayout>

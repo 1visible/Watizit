@@ -17,15 +17,23 @@ import com.example.watizit.utils.DesignUtil;
 
 public class WinPopup extends Dialog {
 
-    Context context;
+    private WinListener listener;
 
     public WinPopup(final Context context, final Level level)
     {
         super(context);
-        this.context = context;
         setContentView(R.layout.win_popup);
         setCancelable(false);
         setCanceledOnTouchOutside(false);
+
+        try
+        {
+            listener = (WinListener) context;
+        }
+        catch (ClassCastException e)
+        {
+            throw new ClassCastException(context.toString() + "must implement HintsListener");
+        }
 
         if(getWindow() == null) return;
 
@@ -46,6 +54,7 @@ public class WinPopup extends Dialog {
             @Override
             public void onClick(View v) {
                 dismiss();
+                listener.finishActivity();
             }
         });
 
@@ -57,9 +66,11 @@ public class WinPopup extends Dialog {
             nextLevelButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(context, LevelMenu.class);
-                    intent.putExtra("EXTRA_ID", nextLevel.getID());
-                    context.startActivity(intent);
+                    dismiss();
+                    listener.finishActivity();
+                    Intent levelMenuIntent = new Intent(context, LevelMenu.class);
+                    levelMenuIntent.putExtra("EXTRA_ID", nextLevel.getID());
+                    context.startActivity(levelMenuIntent);
                 }
             });
 
@@ -74,4 +85,7 @@ public class WinPopup extends Dialog {
         }
     }
 
+    public interface WinListener {
+        void finishActivity();
+    }
 }

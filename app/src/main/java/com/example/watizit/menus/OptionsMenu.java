@@ -33,6 +33,8 @@ public class OptionsMenu extends AppCompatActivity {
 
         setContentView(R.layout.options_menu);
 
+        final Context context = this;
+        final Intent mainMenuIntent = new Intent(context, MainMenu.class);
         Button backButton = findViewById(R.id.backButton1);
         TextView optionsText = findViewById(R.id.optionsText);
         ImageView FRFlagImage = findViewById(R.id.FRFlagImage);
@@ -53,17 +55,20 @@ public class OptionsMenu extends AppCompatActivity {
         });
         FRFlagImage.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { LocaleUtil.setLocale("fr");
+            public void onClick(View v) { LocaleUtil.setLocale(context, "fr");
+            finish(); startActivity(mainMenuIntent);
             }
         });
         ENFlagImage.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { LocaleUtil.setLocale("en");
+            public void onClick(View v) { LocaleUtil.setLocale(context, "en");
+            finish(); startActivity(mainMenuIntent);
             }
         });
         SPFlagImage.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { LocaleUtil.setLocale("sp");
+            public void onClick(View v) { LocaleUtil.setLocale(context, "sp");
+            finish(); startActivity(mainMenuIntent);
             }
         });
 
@@ -82,7 +87,7 @@ public class OptionsMenu extends AppCompatActivity {
                 if (value) {
                     succes = true;
                 } else {
-                    toastMessage("Permission not granted");
+                    Toast.makeText(this, "Permission not granted", Toast.LENGTH_SHORT).show();
                 }
             }
         }
@@ -112,12 +117,7 @@ public class OptionsMenu extends AppCompatActivity {
             });
 
 
-        }catch (Exception e) {
-        }
+        }catch (Exception e) { e.printStackTrace(); }
 
-    }
-
-    private  void toastMessage(String message){
-        Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
     }
 }

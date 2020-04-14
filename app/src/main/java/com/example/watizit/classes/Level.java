@@ -28,11 +28,6 @@ public class Level {
         return word;
     }
 
-    public int getHints()
-    {
-        return hints;
-    }
-
     public void buyHint(int hintNumber)
     {
         int price = (hintNumber == 1) ? 3 : (hintNumber == 2) ? 5 : 7;
@@ -41,7 +36,7 @@ public class Level {
         {
             hints += (hintNumber == 3) ? 4 : hintNumber;
 
-            DatabaseUtil.updateHints(getID(), getHints());
+            DatabaseUtil.updateHints(getID(), hints);
             MoneyUtil.addMoney(-price);
         }
     }
@@ -55,8 +50,6 @@ public class Level {
 
     public boolean isHintBought(int hintNumber)
     {
-        int hints = getHints();
-
         switch(hintNumber)
         {
             case 1:
@@ -83,7 +76,7 @@ public class Level {
 
     public void setStars(long time)
     {
-        time += getHints()*12000; // Penalty calculation
+        time += hints*12000; // Penalty calculation
         time /= 1000; // Milliseconds to seconds
         stars =
             (time < 46) ? 3 :   // 0 <= time <= 45 seconds -> 3 stars
@@ -99,7 +92,7 @@ public class Level {
         return getStars() > -1;
     }
 
-    public boolean isLocked()
+    boolean isLocked()
     {
         Level previousLevel = DatabaseUtil.getLevel(getID() - 1);
         return previousLevel != null && !previousLevel.isDone();

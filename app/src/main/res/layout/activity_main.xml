@@ -10,6 +10,7 @@
 
     <ImageView
         android:id="@+id/titleImage"
+        android:contentDescription="@string/sr_appName"
         android:layout_width="328dp"
         android:layout_height="90dp"
         android:layout_marginTop="65dp"
@@ -37,7 +38,7 @@
             android:paddingBottom="15dp"
             android:layout_marginTop="50dp"
             android:layout_marginBottom="25dp"
-            android:text="@string/play_with_icon"
+            android:text="@string/mainMenu_playButton"
             android:textSize="36sp" />
 
         <Button
@@ -46,7 +47,7 @@
             android:paddingBottom="15dp"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="@string/options_with_icon"
+            android:text="@string/mainMenu_optionsButton"
             android:textSize="36sp" />
 
     </LinearLayout>
