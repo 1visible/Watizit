@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingLeft="50dp"
+    android:paddingRight="50dp"
+    android:gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="25dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="195dp"
+            android:layout_height="wrap_content"
+            android:text="@string/hintsPopup_title" />
+
+        <TextView
+            android:id="@+id/moneyText"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="200dp"
+            android:text="@string/hintsPopup_account"
+            android:gravity="end"
+            android:textColor="@color/COLOR_GOLD" />
+
+        <Button
+            android:id="@+id/closeButton"
+            android:layout_marginLeft="50dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:fontFamily="@font/icons"
+            android:text="@string/hintsPopup_closeIcon"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/hintButton1"
+        android:layout_width="fill_parent"
+        android:layout_height="85dp"
+        android:text="@string/hintsPopup_hint1"
+        android:textSize="22sp" />
+
+    <Button
+        android:id="@+id/hintButton2"
+        android:layout_width="fill_parent"
+        android:layout_height="85dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:text="@string/hintsPopup_hint2"
+        android:textSize="22sp" />
+
+    <Button
+        android:id="@+id/hintButton3"
+        android:layout_width="fill_parent"
+        android:layout_height="85dp"
+        android:text="@string/hintsPopup_hint3"
+        android:textSize="22sp" />
+
+</LinearLayout>
+

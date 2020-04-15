@@ -22,6 +22,7 @@
     <!-- Hints popup -->
     <string name="hintsPopup_title">Need help ?</string>
     <string name="hintsPopup_account" translatable="false">%d\uf0e7</string>
+    <string name="hintsPopup_closeIcon" translatable="false">\uf00d</string>
     <string name="hintsPopup_hint1">See a letter\n{Cost: 3\uf0e7}</string>
     <string name="hintsPopup_hint2">Brighten the picture\n{Cost: 5\uf0e7}</string>
     <string name="hintsPopup_hint3">Skip the level\n{Cost: 7\uf0e7}</string>

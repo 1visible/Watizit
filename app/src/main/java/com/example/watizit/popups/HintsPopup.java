@@ -18,7 +18,7 @@ public class HintsPopup extends Dialog {
 
     public HintsPopup(Context context)
     {
-        super(context);
+        super(context, R.style.app_Dialog);
         setContentView(R.layout.hints_popup);
         setCancelable(false);
         setCanceledOnTouchOutside(false);
