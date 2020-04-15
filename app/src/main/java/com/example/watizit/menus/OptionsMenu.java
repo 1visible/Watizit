@@ -2,7 +2,6 @@ package com.example.watizit.menus;
 
 import android.content.Context;
 import android.media.AudioManager;
-import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.Button;
@@ -23,9 +22,13 @@ public class OptionsMenu extends AppCompatActivity {
     AudioManager audioManager;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
+    protected void onResume()
     {
-        super.onCreate(savedInstanceState);
+        super.onResume();
+
+        if(LocaleUtil.isLocaleStored(this)
+                && !LocaleUtil.getLocaleStored(this).equals(LocaleUtil.getLocale(this)))
+            LocaleUtil.setLocale(this, LocaleUtil.getLocaleStored(this));
 
         setContentView(R.layout.options_menu);
 

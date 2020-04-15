@@ -50,25 +50,25 @@
         android:id="@+id/levelImage"
         android:layout_width="190dp"
         android:layout_height="190dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:contentDescription="@string/sr_levelImage"
         android:src="@drawable/props_locked_level"
         android:tint="@color/COLOR_TEXT"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/letterPickerLayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/levelNumberText" />
+        app:layout_constraintTop_toTopOf="@+id/letterPickerLayout" />
 
     <TextView
         android:id="@+id/levelText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:gravity="center"
         android:text="@string/levelsListMenu_title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/levelImage" />
+        app:layout_constraintEnd_toEndOf="@+id/letterPickerLayout"
+        app:layout_constraintStart_toStartOf="@+id/letterPickerLayout"
+        app:layout_constraintTop_toBottomOf="@+id/levelNumberText" />
 
     <LinearLayout
         android:id="@+id/letterPickerLayout"
@@ -76,8 +76,6 @@
         android:layout_width="370dp"
         android:layout_height="0dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
@@ -86,7 +84,6 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/levelText" />
 
 

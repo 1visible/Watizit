@@ -8,11 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.content.res.AppCompatResources;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.widget.ImageViewCompat;
 
 import com.example.watizit.R;
@@ -37,7 +37,7 @@ public class LevelAdapter extends ArrayAdapter<Level> {
             convertView = LayoutInflater.from(context).inflate(R.layout.level_cell, parent, false);
 
         Level level = getItem(position);
-        LinearLayout panelOverlay = convertView.findViewById(R.id.panelOverlay1);
+        ConstraintLayout panelOverlay = convertView.findViewById(R.id.panelOverlay1);
         TextView cellText = convertView.findViewById(R.id.cellText);
         ImageView cellImage = convertView.findViewById(R.id.cellImage);
         ImageView starImage1 = convertView.findViewById(R.id.littleStarImage1);

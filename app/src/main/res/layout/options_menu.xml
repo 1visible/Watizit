@@ -1,106 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:padding="20dp"
-        android:layout_marginBottom="20dp"
-        android:gravity="center_vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="90dp">
 
-        <Button
-            android:id="@+id/backButton1"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_marginRight="60dp"
-            android:layout_marginEnd="60dp"
-            android:fontFamily="@font/icons"
-            android:text="@string/backIcon"
-            android:textSize="20sp" />
+    <Button
+        android:id="@+id/backButton1"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/icons"
+        android:text="@string/backIcon"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/optionsText"
-            style="@style/app_Button"
-            android:textAllCaps="true"
-            android:layout_width="160dp"
-            android:layout_height="45dp"
-            android:text="@string/optionsMenu_title" />
 
-    </LinearLayout>
+    <TextView
+        android:id="@+id/optionsText"
+        style="@style/app_Button"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/optionsMenu_title"
+        android:textAllCaps="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:layout_margin="20dp"
-        android:gravity="center_vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/languageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="@string/optionsMenu_language"
+        app:layout_constraintStart_toStartOf="@+id/backButton1"
+        app:layout_constraintTop_toBottomOf="@+id/optionsText" />
 
-        <TextView
-            android:id="@+id/languageText"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="@string/optionsMenu_language" />
+    <ImageView
+        android:id="@+id/FRFlagImage"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:contentDescription="@string/sr_flagFrench"
+        android:src="@drawable/props_flag_fr"
+        app:layout_constraintBottom_toBottomOf="@+id/languageText"
+        app:layout_constraintEnd_toStartOf="@+id/ENFlagImage"
+        app:layout_constraintTop_toTopOf="@+id/languageText" />
 
-        <ImageView
-            android:id="@+id/FRFlagImage"
-            android:contentDescription="@string/sr_flagFrench"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/props_flag_fr" />
+    <ImageView
+        android:id="@+id/ENFlagImage"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:contentDescription="@string/sr_flagEnglish"
+        android:src="@drawable/props_flag_en"
+        app:layout_constraintEnd_toStartOf="@+id/SPFlagImage"
+        app:layout_constraintTop_toTopOf="@+id/FRFlagImage" />
 
-        <ImageView
-            android:id="@+id/ENFlagImage"
-            android:contentDescription="@string/sr_flagEnglish"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/props_flag_en" />
+    <ImageView
+        android:id="@+id/SPFlagImage"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:contentDescription="@string/sr_flagSpanish"
+        android:src="@drawable/props_flag_sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ENFlagImage" />
 
-        <ImageView
-            android:id="@+id/SPFlagImage"
-            android:contentDescription="@string/sr_flagSpanish"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/props_flag_sp" />
+    <TextView
+        android:id="@+id/volumeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="@string/volume"
+        app:layout_constraintStart_toStartOf="@+id/languageText"
+        app:layout_constraintTop_toBottomOf="@+id/languageText" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_margin="20dp"
-        android:gravity="center_vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/volumeText"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:text="@string/volume" />
-
-        <SeekBar
-            android:id="@+id/volumeSeekbar"
-            style="@style/app_SeekBar"
-            android:layout_width="fill_parent"
-            android:layout_height="25dp" />
-
-    </LinearLayout>
+    <SeekBar
+        android:id="@+id/volumeSeekbar"
+        style="@style/app_SeekBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/volumeText"
+        app:layout_constraintEnd_toEndOf="@+id/SPFlagImage"
+        app:layout_constraintStart_toStartOf="@+id/FRFlagImage"
+        app:layout_constraintTop_toTopOf="@+id/volumeText" />
 
     <TextView
         android:id="@+id/copyrightText"
         style="@style/app_Button"
-        android:layout_marginTop="100dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:padding="15dp"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColorLink="@color/COLOR_PRIMARY"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:padding="15dp"
         android:text="@string/optionsMenu_copyright"
-        android:textSize="18sp" />
+        android:textColorLink="@color/COLOR_PRIMARY"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/volumeText" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

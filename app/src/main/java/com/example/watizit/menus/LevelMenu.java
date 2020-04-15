@@ -24,6 +24,7 @@ import com.example.watizit.popups.HintsPopup;
 import com.example.watizit.popups.WinPopup;
 import com.example.watizit.utils.DatabaseUtil;
 import com.example.watizit.utils.DesignUtil;
+import com.example.watizit.utils.LocaleUtil;
 import com.example.watizit.utils.MoneyUtil;
 
 import java.util.Arrays;
@@ -44,6 +45,17 @@ public class LevelMenu extends AppCompatActivity implements HintsPopup.HintsList
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.level_menu);
+
+        startTime = System.currentTimeMillis();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if(LocaleUtil.isLocaleStored(this)
+                && !LocaleUtil.getLocaleStored(this).equals(LocaleUtil.getLocale(this)))
+            LocaleUtil.setLocale(this, LocaleUtil.getLocaleStored(this));
 
         int level_num = getIntent().getIntExtra("EXTRA_ID", -1);
 
@@ -81,7 +93,8 @@ public class LevelMenu extends AppCompatActivity implements HintsPopup.HintsList
         Drawable image = res.getDrawable(
                 res.getIdentifier("img_"+level.getWord(), "drawable", getPackageName()));
         levelImage.setImageDrawable(image);
-        levelNumberText.setText(levelNumberText.getText().toString().replace("%d", String.valueOf(level.getID())));
+        String strlevelNumberText = getResources().getString(R.string.levelMenu_title);
+        levelNumberText.setText(strlevelNumberText.replace("%d", String.valueOf(level.getID())));
         backButton.setText(DesignUtil.applyIcons(backButton.getText(), 1F));
 
         DesignUtil.setBgColor(backButton, R.color.COLOR_RED);
@@ -108,7 +121,6 @@ public class LevelMenu extends AppCompatActivity implements HintsPopup.HintsList
                 applyHint(i);
         }
 
-        startTime = System.currentTimeMillis();
     }
 
     private LetterPicker createLetterPicker(int id, Random random) {

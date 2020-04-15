@@ -22,7 +22,7 @@ public class WinPopup extends Dialog {
 
     public WinPopup(final Context context, final Level level)
     {
-        super(context);
+        super(context, R.style.app_Dialog);
         setContentView(R.layout.win_popup);
         setCancelable(false);
         setCanceledOnTouchOutside(false);

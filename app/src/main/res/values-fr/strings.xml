@@ -10,6 +10,11 @@
         Images par <a href="https://www.flaticon.com/">Flaticon</a> •
         Musique par <a href="https://opengameart.org/users/horrorpen">HorrorPen</a>
     </string>
+    <string name="optionsMenu_copyrightAlt">
+        Copyright © 2020 LAURET Nicolas, RANDRIANASOLO Rooly\n\n
+        Images par <a href="https://www.flaticon.com/">Flaticon</a> •
+        Musique par <a href="https://opengameart.org/users/horrorpen">HorrorPen</a>
+    </string>
     <string name="volume">Volume</string>
     <!-- Levels list menu -->
     <string name="levelsListMenu_title">NIVEAUX</string>

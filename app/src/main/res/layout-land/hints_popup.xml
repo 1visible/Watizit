@@ -1,67 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:paddingLeft="50dp"
-    android:paddingRight="50dp"
-    android:gravity="center_horizontal"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal">
 
-    <LinearLayout
-        android:gravity="center"
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="25dp"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        android:text="@string/hintsPopup_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:layout_width="195dp"
-            android:layout_height="wrap_content"
-            android:text="@string/hintsPopup_title" />
+    <TextView
+        android:id="@+id/moneyText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="end"
+        android:text="@string/hintsPopup_account"
+        android:textColor="@color/COLOR_GOLD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/moneyText"
-            android:layout_width="85dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="200dp"
-            android:text="@string/hintsPopup_account"
-            android:gravity="end"
-            android:textColor="@color/COLOR_GOLD" />
-
-        <Button
-            android:id="@+id/closeButton"
-            android:layout_marginLeft="50dp"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:fontFamily="@font/icons"
-            android:text="@string/hintsPopup_closeIcon"
-            android:textSize="20sp" />
-
-    </LinearLayout>
 
     <Button
         android:id="@+id/hintButton1"
-        android:layout_width="fill_parent"
-        android:layout_height="85dp"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
         android:text="@string/hintsPopup_hint1"
-        android:textSize="22sp" />
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/hintButton2"
-        android:layout_width="fill_parent"
-        android:layout_height="85dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
         android:text="@string/hintsPopup_hint2"
-        android:textSize="22sp" />
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/hintButton1" />
 
     <Button
         android:id="@+id/hintButton3"
-        android:layout_width="fill_parent"
-        android:layout_height="85dp"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="20dp"
         android:text="@string/hintsPopup_hint3"
-        android:textSize="22sp" />
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hintButton1"
+        app:layout_constraintVertical_bias="0.0" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/closeButton"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/hintsPopup_close"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/hintButton2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -13,6 +13,11 @@
         Images by <a href="https://www.flaticon.com/">Flaticon</a> •
         Music by <a href="https://opengameart.org/users/horrorpen">HorrorPen</a>
     </string>
+    <string name="optionsMenu_copyrightAlt">
+        Copyright © 2020 LAURET Nicolas, RANDRIANASOLO Rooly\n\n
+        Images by <a href="https://www.flaticon.com/">Flaticon</a> •
+        Music by <a href="https://opengameart.org/users/horrorpen">HorrorPen</a>
+    </string>
     <string name="volume">Volume</string>
     <!-- Levels list menu -->
     <string name="levelsListMenu_title">LEVELS</string>
@@ -22,7 +27,6 @@
     <!-- Hints popup -->
     <string name="hintsPopup_title">Need help ?</string>
     <string name="hintsPopup_account" translatable="false">%d\uf0e7</string>
-    <string name="hintsPopup_closeIcon" translatable="false">\uf00d</string>
     <string name="hintsPopup_hint1">See a letter\n{Cost: 3\uf0e7}</string>
     <string name="hintsPopup_hint2">Brighten the picture\n{Cost: 5\uf0e7}</string>
     <string name="hintsPopup_hint3">Skip the level\n{Cost: 7\uf0e7}</string>

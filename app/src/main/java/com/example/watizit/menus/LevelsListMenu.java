@@ -14,6 +14,7 @@ import com.example.watizit.classes.Level;
 import com.example.watizit.classes.LevelAdapter;
 import com.example.watizit.utils.DatabaseUtil;
 import com.example.watizit.utils.DesignUtil;
+import com.example.watizit.utils.LocaleUtil;
 
 public class LevelsListMenu extends AppCompatActivity {
 
@@ -21,6 +22,11 @@ public class LevelsListMenu extends AppCompatActivity {
     public void onResume()
     {
         super.onResume();
+
+        if(LocaleUtil.isLocaleStored(this)
+                && !LocaleUtil.getLocaleStored(this).equals(LocaleUtil.getLocale(this)))
+            LocaleUtil.setLocale(this, LocaleUtil.getLocaleStored(this));
+
         setContentView(R.layout.levels_list_menu);
         Button backButton = findViewById(R.id.backButton4);
         TextView levelsText = findViewById(R.id.levelsText);
