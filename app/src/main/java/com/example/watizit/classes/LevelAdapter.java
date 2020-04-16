@@ -49,15 +49,11 @@ public class LevelAdapter extends ArrayAdapter<Level> {
         if(level != null)
         {
 
-            int identifier, color;
+            int color = R.color.COLOR_DARK;;
+            int identifier = R.drawable.props_locked_level;
             ColorStateList csl = null;
 
-            if(level.isLocked())
-            {
-                identifier = R.drawable.props_locked_level;
-                color = R.color.COLOR_DARK;
-            }
-            else
+            if(!level.isLocked())
             {
                 identifier = res.getIdentifier("img_" + level.getWord(), "drawable", context.getPackageName());
                 color = R.color.COLOR_TEXT;

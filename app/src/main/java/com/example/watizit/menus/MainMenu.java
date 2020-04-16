@@ -20,6 +20,9 @@ import com.example.watizit.utils.LocaleUtil;
 
 public class MainMenu extends AppCompatActivity {
 
+    private boolean isBound = false;
+    public static MusicService musicService;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -56,9 +59,6 @@ public class MainMenu extends AppCompatActivity {
         });
         homeWatcher.startWatch();
     }
-
-    private boolean isBound = false;
-    private MusicService musicService;
 
     private ServiceConnection serviceConnection = new ServiceConnection()
     {

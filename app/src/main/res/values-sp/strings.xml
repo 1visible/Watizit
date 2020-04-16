@@ -1,0 +1,72 @@
+<resources>
+    <!-- Main menu -->
+    <string name="mainMenu_playButton">"\uF04B  Jugar"</string>
+    <string name="mainMenu_optionsButton">"\uF013  Opciones"</string>
+    <!-- Options menu -->
+    <string name="optionsMenu_title">Opciones</string>
+    <string name="optionsMenu_language">Lengua</string>
+    <string name="optionsMenu_copyright">
+        Copyright © 2020\nLAURET Nicolas, RANDRIANASOLO Rooly\n\n
+        Images par <a href="https://www.flaticon.com/">Flaticon</a> •
+        Musique par <a href="https://opengameart.org/users/horrorpen">HorrorPen</a>
+    </string>
+    <string name="optionsMenu_copyrightAlt">
+        Copyright © 2020 LAURET Nicolas, RANDRIANASOLO Rooly\n\n
+        Imágenes de <a href="https://www.flaticon.com/">Flaticon</a> •
+        Música de <a href="https://opengameart.org/users/horrorpen">HorrorPen</a>
+    </string>
+    <string name="volume">Volumen</string>
+    <!-- Levels list menu -->
+    <string name="levelsListMenu_title">NIVELES</string>
+    <!-- Level menu -->
+    <string name="levelMenu_title">Nivel %d</string>
+    <!-- Hints popup -->
+    <string name="hintsPopup_title">Necesidad de ayuda ?</string>
+    <string name="hintsPopup_hint1">Ver una letra\n{Costo: 3\uf0e7}</string>
+    <string name="hintsPopup_hint2">Alegrar la imagen\n{Costo: 5\uf0e7}</string>
+    <string name="hintsPopup_hint3">Pasar el nivel\n{Costo: 7\uf0e7}</string>
+    <string name="hintsPopup_close">Cerrar</string>
+    <!-- Win popup -->
+    <string name="winPopup_title">NIVEL COMPLETADO !</string>
+    <string name="winPopup_backToMenu">Volver al menú</string>
+    <string name="winPopup_nextLevel">Siguiente nivel</string>
+    <!-- Levels words -->
+    <string name="word_diamond">DIAMANTE</string>
+    <string name="word_fire">FUEGO</string>
+    <string name="word_cat">GATO</string>
+    <string name="word_butterfly">MARIPOSA</string>
+    <string name="word_car">COCHE</string>
+    <string name="word_lizard">LAGARTO</string>
+    <string name="word_plane">AVION</string>
+    <string name="word_dog">PERRO</string>
+    <string name="word_dinosaur">DINOSAURIO</string>
+    <string name="word_flower">FLOR</string>
+    <string name="word_cap">GORRA</string>
+    <string name="word_lamp">LAMPARA</string>
+    <string name="word_house">CASA</string>
+    <string name="word_croissant">CROISSANT</string>
+    <string name="word_bottle">BOTELLA</string>
+    <string name="word_umbrella">PARAGUAS</string>
+    <string name="word_church">IGLESIA</string>
+    <string name="word_whisk">BATIDOR</string>
+    <string name="word_necklace">COLLAR</string>
+    <string name="word_eggs">HUEVOS</string>
+    <string name="word_falcon">HALCON</string>
+    <string name="word_tornado">TORNADO</string>
+    <string name="word_trap">TRAMPA</string>
+    <string name="word_chick">POLLITO</string>
+    <string name="word_volcano">VOLCAN</string>
+    <string name="word_comb">PEINE</string>
+    <string name="word_octopus">PULPO</string>
+    <string name="word_saddle">SILLA</string>
+    <string name="word_books">LIBROS</string>
+    <string name="word_cake">PASTEL</string>
+    <string name="word_burger">HAMBURGUESA</string>
+    <string name="word_popcorn">PALOMITAS</string>
+    <!-- Screen-readers -->
+    <string name="sr_flagFrench">Bandera francesa</string>
+    <string name="sr_flagEnglish">Bandera inglesa</string>
+    <string name="sr_flagSpanish">Bandera española</string>
+    <string name="sr_levelImage">Imagen de nivel</string>
+    <string name="sr_starImage">Imagen de estrella</string>
+</resources>

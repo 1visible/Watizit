@@ -2,7 +2,7 @@
 <resources>
 
     <color name="COLOR_TEXT">#ffffff</color>
-    <color name="COLOR_BRIGHT">#eaffffff</color>
+    <color name="COLOR_BRIGHT">#b8ffffff</color>
     <color name="COLOR_DARK">#514e61</color>
     <color name="COLOR_PRIMARY">#7961f1</color>
     <color name="COLOR_OVERLAY">#2e2b3f</color>

@@ -1,7 +1,6 @@
 package com.example.watizit.menus;
 
 import android.content.Context;
-import android.media.AudioManager;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.Button;
@@ -16,10 +15,6 @@ import com.example.watizit.utils.DesignUtil;
 import com.example.watizit.utils.LocaleUtil;
 
 public class OptionsMenu extends AppCompatActivity {
-
-
-    SeekBar volumeseekBar;
-    AudioManager audioManager;
 
     @Override
     protected void onResume()
@@ -38,6 +33,7 @@ public class OptionsMenu extends AppCompatActivity {
         ImageView FRFlagImage = findViewById(R.id.FRFlagImage);
         ImageView ENFlagImage = findViewById(R.id.ENFlagImage);
         ImageView SPFlagImage = findViewById(R.id.SPFlagImage);
+        SeekBar volumeseekBar = findViewById(R.id.volumeSeekbar);
         TextView copyrightText = findViewById(R.id.copyrightText);
 
         DesignUtil.setBgColor(backButton, R.color.COLOR_RED);
@@ -72,27 +68,15 @@ public class OptionsMenu extends AppCompatActivity {
 
         copyrightText.setMovementMethod(LinkMovementMethod.getInstance());
 
-        setVolumeControlStream(AudioManager.STREAM_MUSIC);
-        changeVolume();
-    }
-
-    private void changeVolume()
-    {
-        try
+        volumeseekBar.setMax(100);
+        if(MainMenu.musicService != null)
         {
-            volumeseekBar = findViewById(R.id.volumeSeekbar);
-            audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-
-            if(audioManager == null)
-                return;
-
-            volumeseekBar.setMax(audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC));
-            volumeseekBar.setProgress(audioManager.getStreamVolume(AudioManager.STREAM_MUSIC));
+            volumeseekBar.setProgress(MainMenu.musicService.getVolume());
             volumeseekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                 @Override
                 public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser)
                 {
-                    audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, progress,0);
+                    MainMenu.musicService.setVolume(progress);
                 }
 
                 @Override
@@ -101,10 +85,16 @@ public class OptionsMenu extends AppCompatActivity {
                 @Override
                 public void onStopTrackingTouch(SeekBar seekBar) { }
             });
-
-
         }
-        catch (Exception e){ e.printStackTrace(); }
 
     }
+
+    @Override
+    protected void onStop()
+    {
+        super.onStop();
+        if(MainMenu.musicService != null)
+            MainMenu.musicService.saveVolume();
+    }
+
 }

@@ -126,7 +126,9 @@ public class LevelMenu extends AppCompatActivity implements HintsPopup.HintsList
     private LetterPicker createLetterPicker(int id, Random random) {
         String[] values = new String[MAX_LETTERS];
         // Add word char to possible letters
-        values[random.nextInt(MAX_LETTERS)] = Character.toString(word.charAt(id));
+        int min = id % 2;
+        int max = MAX_LETTERS - 1;
+        values[random.nextInt(max - min + 1) + min] = Character.toString(word.charAt(id));
 
         // Fill the rest with random unique letters
         for(int j = 0; j < MAX_LETTERS; j++)
