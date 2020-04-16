@@ -20,8 +20,17 @@ import com.example.watizit.utils.DesignUtil;
 
 import java.util.ArrayList;
 
+/**
+ * The type Level adapter.
+ */
 public class LevelAdapter extends ArrayAdapter<Level> {
 
+    /**
+     * Instantiates a new Level adapter.
+     *
+     * @param context the context
+     * @param levels  the levels
+     */
     public LevelAdapter(Context context, ArrayList<Level> levels)
     {
         super(context, R.layout.level_cell, levels);
@@ -49,7 +58,7 @@ public class LevelAdapter extends ArrayAdapter<Level> {
         if(level != null)
         {
 
-            int color = R.color.COLOR_DARK;;
+            int color = R.color.COLOR_DARK;
             int identifier = R.drawable.props_locked_level;
             ColorStateList csl = null;
 

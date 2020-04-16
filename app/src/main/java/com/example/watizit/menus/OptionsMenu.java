@@ -14,6 +14,9 @@ import com.example.watizit.R;
 import com.example.watizit.utils.DesignUtil;
 import com.example.watizit.utils.LocaleUtil;
 
+/**
+ * The type Options menu.
+ */
 public class OptionsMenu extends AppCompatActivity {
 
     @Override

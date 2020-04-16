@@ -16,10 +16,13 @@ import com.example.watizit.utils.DatabaseUtil;
 import com.example.watizit.utils.DesignUtil;
 import com.example.watizit.utils.LocaleUtil;
 
+/**
+ * The type Levels list menu.
+ */
 public class LevelsListMenu extends AppCompatActivity {
 
     @Override
-    public void onResume()
+    protected void onResume()
     {
         super.onResume();
 

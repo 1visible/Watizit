@@ -30,16 +30,40 @@ import com.example.watizit.utils.MoneyUtil;
 import java.util.Arrays;
 import java.util.Random;
 
+/**
+ * The type Level menu.
+ */
 public class LevelMenu extends AppCompatActivity implements HintsPopup.HintsListener, WinPopup.WinListener {
 
+    /**
+     * The Max letters.
+     */
     static final int MAX_LETTERS = 5;
 
+    /**
+     * The Level.
+     */
     Level level;
+    /**
+     * The Word.
+     */
     String word;
+    /**
+     * The Start time.
+     */
     long startTime;
 
+    /**
+     * The Letter picker layout.
+     */
     LinearLayout letterPickerLayout;
+    /**
+     * The Level image.
+     */
     ImageView levelImage;
+    /**
+     * The Level text.
+     */
     TextView levelText;
 
     protected void onCreate(Bundle savedInstanceState){

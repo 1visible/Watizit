@@ -7,10 +7,19 @@ import android.text.style.TypefaceSpan;
 
 import androidx.annotation.NonNull;
 
+/**
+ * The type Custom typeface span.
+ */
 public class CustomTypefaceSpan extends TypefaceSpan {
 
     private final Typeface newType;
 
+    /**
+     * Instantiates a new Custom typeface span.
+     *
+     * @param family the family
+     * @param type   the type
+     */
     public CustomTypefaceSpan(String family, Typeface type)
     {
         super(family);

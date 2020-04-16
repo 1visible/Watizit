@@ -18,9 +18,15 @@ import com.example.watizit.classes.MusicService;
 import com.example.watizit.utils.DesignUtil;
 import com.example.watizit.utils.LocaleUtil;
 
+/**
+ * The type Main menu.
+ */
 public class MainMenu extends AppCompatActivity {
 
     private boolean isBound = false;
+    /**
+     * The constant musicService.
+     */
     public static MusicService musicService;
 
     @Override
@@ -72,6 +78,9 @@ public class MainMenu extends AppCompatActivity {
         }
     };
 
+    /**
+     * Do bind service.
+     */
     void doBindService()
     {
         bindService(new Intent(this, MusicService.class),
@@ -79,6 +88,9 @@ public class MainMenu extends AppCompatActivity {
         isBound = true;
     }
 
+    /**
+     * Do unbind service.
+     */
     void doUnbindService()
     {
         if(isBound)

@@ -10,17 +10,34 @@ import android.os.IBinder;
 
 import com.example.watizit.R;
 
+/**
+ * The type Music service.
+ */
 public class MusicService extends Service {
 
     private final IBinder binder = new ServiceBinder();
+    /**
+     * The Media player.
+     */
     MediaPlayer mediaPlayer;
     private int length = 0;
     private int volume;
 
+    /**
+     * Instantiates a new Music service.
+     */
     public MusicService() { }
 
+    /**
+     * The type Service binder.
+     */
     public class ServiceBinder extends Binder
     {
+        /**
+         * Gets service.
+         *
+         * @return the service
+         */
         public MusicService getService()
         {
             return MusicService.this;
@@ -57,6 +74,9 @@ public class MusicService extends Service {
         return START_NOT_STICKY;
     }
 
+    /**
+     * Pause music.
+     */
     public void pauseMusic()
     {
         if (mediaPlayer != null && mediaPlayer.isPlaying())
@@ -66,6 +86,9 @@ public class MusicService extends Service {
         }
     }
 
+    /**
+     * Resume music.
+     */
     public void resumeMusic()
     {
         if (mediaPlayer != null && !mediaPlayer.isPlaying())
@@ -75,6 +98,11 @@ public class MusicService extends Service {
         }
     }
 
+    /**
+     * Sets volume.
+     *
+     * @param volume the volume
+     */
     public void setVolume(int volume)
     {
         this.volume = volume;
@@ -82,6 +110,11 @@ public class MusicService extends Service {
         mediaPlayer.setVolume(logVolume, logVolume);
     }
 
+    /**
+     * Gets volume.
+     *
+     * @return the volume
+     */
     public int getVolume()
     {
         Context context = App.getContext();
@@ -91,6 +124,9 @@ public class MusicService extends Service {
         return pref.getInt("volume", 25);
     }
 
+    /**
+     * Save volume.
+     */
     public void saveVolume()
     {
         Context context = App.getContext();

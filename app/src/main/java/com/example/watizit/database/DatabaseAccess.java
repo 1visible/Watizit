@@ -11,6 +11,9 @@ import com.example.watizit.classes.Level;
 
 import java.util.ArrayList;
 
+/**
+ * The type Database access.
+ */
 public class DatabaseAccess {
     private SQLiteOpenHelper openHelper;
     private SQLiteDatabase database;
@@ -22,6 +25,11 @@ public class DatabaseAccess {
         openHelper = new DatabaseOpenHelper(context);
     }
 
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
     public static DatabaseAccess getInstance()
     {
         if (instance == null)
@@ -32,11 +40,17 @@ public class DatabaseAccess {
         return instance;
     }
 
+    /**
+     * Open.
+     */
     public void open()
     {
         database = openHelper.getWritableDatabase();
     }
 
+    /**
+     * Close.
+     */
     public void close()
     {
         if (database != null)
@@ -45,6 +59,12 @@ public class DatabaseAccess {
         }
     }
 
+    /**
+     * Gets level.
+     *
+     * @param id the id
+     * @return the level
+     */
     public Level getLevel(int id)
     {
         Level level = null;
@@ -59,6 +79,11 @@ public class DatabaseAccess {
         return level;
     }
 
+    /**
+     * Gets levels.
+     *
+     * @return the levels
+     */
     public ArrayList<Level> getLevels()
     {
         ArrayList<Level> list = new ArrayList<>();
@@ -77,6 +102,12 @@ public class DatabaseAccess {
         return list;
     }
 
+    /**
+     * Update stars.
+     *
+     * @param id    the id
+     * @param stars the stars
+     */
     public void updateStars(int id, int stars)
     {
         ContentValues values = new ContentValues();
@@ -84,6 +115,12 @@ public class DatabaseAccess {
         database.update("levels", values, "id =" + id, null);
     }
 
+    /**
+     * Update hints.
+     *
+     * @param id    the id
+     * @param hints the hints
+     */
     public void updateHints(int id, int hints)
     {
         ContentValues values = new ContentValues();

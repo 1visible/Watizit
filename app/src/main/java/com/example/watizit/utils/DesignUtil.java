@@ -24,8 +24,17 @@ import java.util.List;
 
 import static android.text.Spanned.SPAN_INCLUSIVE_EXCLUSIVE;
 
+/**
+ * The type Design util.
+ */
 public class DesignUtil {
 
+    /**
+     * Start bounce in.
+     *
+     * @param view        the view
+     * @param startOffset the start offset
+     */
     public static void startBounceIn(View view, float startOffset)
     {
         Animation animation = AnimationUtils.loadAnimation(App.getContext(), R.anim.bounce_in);
@@ -34,6 +43,12 @@ public class DesignUtil {
         view.startAnimation(animation);
     }
 
+    /**
+     * Sets bg color.
+     *
+     * @param view  the view
+     * @param color the color
+     */
     public static void setBgColor(View view, int color)
     {
         Drawable bg = view.getBackground();
@@ -42,6 +57,13 @@ public class DesignUtil {
         bg.setColorFilter(c, PorterDuff.Mode.MULTIPLY);
     }
 
+    /**
+     * Apply icons spannable string builder.
+     *
+     * @param text     the text
+     * @param fontSize the font size
+     * @return the spannable string builder
+     */
     public static SpannableStringBuilder applyIcons(CharSequence text, float fontSize)
     {
         Context context = App.getContext();
@@ -63,6 +85,14 @@ public class DesignUtil {
         return string;
     }
 
+    /**
+     * Apply icons spannable string builder.
+     *
+     * @param cs       the cs
+     * @param fontSize the font size
+     * @param color    the color
+     * @return the spannable string builder
+     */
     public static SpannableStringBuilder applyIcons(CharSequence cs, float fontSize, int color)
     {
         Context context = App.getContext();

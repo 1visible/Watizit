@@ -10,8 +10,17 @@ import com.example.watizit.R;
 
 import java.util.Locale;
 
+/**
+ * The type Locale util.
+ */
 public class LocaleUtil {
 
+    /**
+     * Gets locale.
+     *
+     * @param context the context
+     * @return the locale
+     */
     public static String getLocale(Context context)
     {
         Locale language = context.getResources().getConfiguration().locale;
@@ -19,6 +28,12 @@ public class LocaleUtil {
         return language.getLanguage();
     }
 
+    /**
+     * Sets locale.
+     *
+     * @param context   the context
+     * @param locale_id the locale id
+     */
     public static void setLocale(Context context, String locale_id)
     {
         Resources res = context.getResources();
@@ -37,6 +52,12 @@ public class LocaleUtil {
         editor.apply();
     }
 
+    /**
+     * Is locale stored boolean.
+     *
+     * @param context the context
+     * @return the boolean
+     */
     public static boolean isLocaleStored(Context context)
     {
         String UID = context.getString(R.string.UID);
@@ -45,6 +66,12 @@ public class LocaleUtil {
         return pref.contains("lang");
     }
 
+    /**
+     * Gets locale stored.
+     *
+     * @param context the context
+     * @return the locale stored
+     */
     public static String getLocaleStored(Context context)
     {
         String UID = context.getString(R.string.UID);

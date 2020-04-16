@@ -11,15 +11,33 @@ import androidx.core.content.res.ResourcesCompat;
 
 import com.example.watizit.R;
 
+/**
+ * The type Letter picker.
+ */
 public class LetterPicker extends NumberPicker {
 
+    /**
+     * The Typeface.
+     */
     Typeface typeface;
 
+    /**
+     * Instantiates a new Letter picker.
+     *
+     * @param context the context
+     */
     public LetterPicker(Context context)
     {
         super(context);
     }
 
+    /**
+     * Instantiates a new Letter picker.
+     *
+     * @param context the context
+     * @param id      the id
+     * @param values  the values
+     */
     public LetterPicker(Context context, int id, String[] values)
     {
         super(context);
@@ -65,6 +83,11 @@ public class LetterPicker extends NumberPicker {
         }
     }
 
+    /**
+     * Sets color.
+     *
+     * @param color the color
+     */
     public void setColor(int color)
     {
         int count = this.getChildCount();

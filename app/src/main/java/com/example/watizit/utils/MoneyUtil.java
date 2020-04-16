@@ -6,8 +6,16 @@ import android.content.SharedPreferences;
 import com.example.watizit.R;
 import com.example.watizit.classes.App;
 
+/**
+ * The type Money util.
+ */
 public class MoneyUtil {
 
+    /**
+     * Add money.
+     *
+     * @param money the money
+     */
     public static void addMoney(int money)
     {
         Context context = App.getContext();
@@ -20,6 +28,11 @@ public class MoneyUtil {
         editor.apply();
     }
 
+    /**
+     * Gets money.
+     *
+     * @return the money
+     */
     public static int getMoney()
     {
         Context context = App.getContext();

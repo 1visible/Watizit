@@ -5,8 +5,17 @@ import com.example.watizit.classes.Level;
 
 import java.util.ArrayList;
 
+/**
+ * The type Database util.
+ */
 public class DatabaseUtil {
 
+    /**
+     * Gets level.
+     *
+     * @param id the id
+     * @return the level
+     */
     public static Level getLevel(int id)
     {
         DatabaseAccess databaseAccess = DatabaseAccess.getInstance();
@@ -17,6 +26,11 @@ public class DatabaseUtil {
         return level;
     }
 
+    /**
+     * Gets levels.
+     *
+     * @return the levels
+     */
     public static ArrayList<Level> getLevels()
     {
         DatabaseAccess databaseAccess = DatabaseAccess.getInstance();
@@ -27,6 +41,12 @@ public class DatabaseUtil {
         return levels;
     }
 
+    /**
+     * Update stars.
+     *
+     * @param id    the id
+     * @param stars the stars
+     */
     public static void updateStars(int id, int stars)
     {
         DatabaseAccess databaseAccess = DatabaseAccess.getInstance();
@@ -35,6 +55,12 @@ public class DatabaseUtil {
         databaseAccess.close();
     }
 
+    /**
+     * Update hints.
+     *
+     * @param id    the id
+     * @param hints the hints
+     */
     public static void updateHints(int id, int hints)
     {
         DatabaseAccess databaseAccess = DatabaseAccess.getInstance();

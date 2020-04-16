@@ -16,10 +16,19 @@ import com.example.watizit.menus.LevelMenu;
 import com.example.watizit.utils.DatabaseUtil;
 import com.example.watizit.utils.DesignUtil;
 
+/**
+ * The type Win popup.
+ */
 public class WinPopup extends Dialog {
 
     private WinListener listener;
 
+    /**
+     * Instantiates a new Win popup.
+     *
+     * @param context the context
+     * @param level   the level
+     */
     public WinPopup(final Context context, final Level level)
     {
         super(context, R.style.app_Dialog);
@@ -91,7 +100,13 @@ public class WinPopup extends Dialog {
         }
     }
 
+    /**
+     * The interface Win listener.
+     */
     public interface WinListener {
+        /**
+         * Finish activity.
+         */
         void finishActivity();
     }
 }

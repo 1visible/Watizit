@@ -12,10 +12,18 @@ import com.example.watizit.classes.Level;
 import com.example.watizit.utils.DesignUtil;
 import com.example.watizit.utils.MoneyUtil;
 
+/**
+ * The type Hints popup.
+ */
 public class HintsPopup extends Dialog {
 
     private HintsListener listener;
 
+    /**
+     * Instantiates a new Hints popup.
+     *
+     * @param context the context
+     */
     public HintsPopup(Context context)
     {
         super(context, R.style.app_Dialog);
@@ -33,6 +41,11 @@ public class HintsPopup extends Dialog {
         }
     }
 
+    /**
+     * Show with.
+     *
+     * @param level the level
+     */
     public void showWith(final Level level)
     {
         if (getWindow() == null) return;
@@ -126,7 +139,15 @@ public class HintsPopup extends Dialog {
         show();
     }
 
+    /**
+     * The interface Hints listener.
+     */
     public interface HintsListener {
+        /**
+         * Apply hint.
+         *
+         * @param hintNumber the hint number
+         */
         void applyHint(int hintNumber);
     }
 
