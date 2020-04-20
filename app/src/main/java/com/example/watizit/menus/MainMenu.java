@@ -19,156 +19,184 @@ import com.example.watizit.utils.DesignUtil;
 import com.example.watizit.utils.LocaleUtil;
 
 /**
- * The type Main menu.
+ * This class represents the main menu of the application where we can navigate to other
+ * menus. This class also launch the background music service and the home watcher.
  */
 public class MainMenu extends AppCompatActivity {
+    private boolean isBound = false; // boolean to check if the music service is bound or not
+    public static MusicService musicService; // background music service
 
-    private boolean isBound = false;
     /**
-     * The constant musicService.
+     * This method is used when the activity is created. It applies the main menu content to the activity
+     * and apply some animations. It also creates and bind the music service, and launches the home watcher.
+     *
+     * @param savedInstanceState the state of the saved instance
      */
-    public static MusicService musicService;
-
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main); // apply main menu layout
 
-        setContentView(R.layout.activity_main);
-
+        // Apply animations to menu buttons (only on create, not on resume)
         Button playButton = findViewById(R.id.playButton);
         Button optionsButton = findViewById(R.id.optionsButton);
-
         DesignUtil.startBounceIn(playButton, 0.15F);
         DesignUtil.startBounceIn(optionsButton, 0.3F);
 
-        doBindService();
-        Intent music = new Intent();
-        music.setClass(this, MusicService.class);
-        startService(music);
-
+        // Preparing music service and home watcher
+        Intent musicItent = new Intent();
         HomeWatcher homeWatcher = new HomeWatcher(this);
-
+        // Bind music service and start it
+        doBindService();
+        musicItent.setClass(this, MusicService.class);
+        startService(musicItent);
+        // Override home button press listener methods to pause the music when the app is not focused
         homeWatcher.setOnHomePressedListener(new HomeWatcher.OnHomePressedListener() {
             @Override
-            public void onHomePressed()
-            {
+            public void onHomePressed() {
                 if (musicService != null)
                     musicService.pauseMusic();
             }
             @Override
-            public void onHomeLongPressed()
-            {
+            public void onHomeLongPressed() {
                 if (musicService != null)
                     musicService.pauseMusic();
             }
         });
+        // Start watching for a home button press
         homeWatcher.startWatch();
     }
-
-    private ServiceConnection serviceConnection = new ServiceConnection()
-    {
-        public void onServiceConnected(ComponentName name, IBinder binder)
-        {
-            musicService = ((MusicService.ServiceBinder)binder).getService();
+    // Link bound music service to main menu
+    private ServiceConnection serviceConnection = new ServiceConnection() {
+        // Update music service in main menu on service connect (after binding)
+        public void onServiceConnected(ComponentName name, IBinder binder) {
+            musicService = ((MusicService.ServiceBinder) binder).getService();
         }
-        public void onServiceDisconnected(ComponentName name)
-        {
+        // Remove the music service on service disconnect (free memory)
+        public void onServiceDisconnected(ComponentName name) {
             musicService = null;
         }
     };
 
     /**
-     * Do bind service.
+     * This method is used to bind the music service.
      */
-    void doBindService()
-    {
+    void doBindService() {
         bindService(new Intent(this, MusicService.class),
                 serviceConnection, Context.BIND_AUTO_CREATE);
         isBound = true;
     }
 
     /**
-     * Do unbind service.
+     * This method is used to unbind the music service.
      */
-    void doUnbindService()
-    {
-        if(isBound)
-        {
+    void doUnbindService() {
+        if (isBound) {
             unbindService(serviceConnection);
             isBound = false;
         }
     }
 
+    /**
+     * This method is used when the activity start, restart or gain focus. It applies the main
+     * components to the activity such as the language, the design and the logic.
+     */
     @Override
-    protected void onResume()
-    {
+    protected void onResume() {
         super.onResume();
 
-        if(LocaleUtil.isLocaleStored(this)
+        /*                  🌍 LANGUAGE
+
+            • Compare current locale to stored locale and updating it if needed
+        */
+
+        if (LocaleUtil.isLocaleStored(this)
                 && !LocaleUtil.getLocaleStored(this).equals(LocaleUtil.getLocale(this)))
             LocaleUtil.setLocale(this, LocaleUtil.getLocaleStored(this));
 
+
+
+        /*                  📌 VARIABLES
+
+            • Retrieve views for design, click listener and/or gameplay
+            • Retrieve other objects for gameplay purposes
+        */
+
         Button playButton = findViewById(R.id.playButton);
         Button optionsButton = findViewById(R.id.optionsButton);
+
+        // Intents that will be applied to 'Play' and 'Options' buttons to go to other activities
         final Intent levelsListMenuIntent = new Intent(this, LevelsListMenu.class);
         final Intent optionsMenuIntent = new Intent(this, OptionsMenu.class);
-
+        // Retrieve texts from current locale resources
         String playButtonText = getResources().getString(R.string.mainMenu_playButton);
         String optionsButtonText = getResources().getString(R.string.mainMenu_optionsButton);
 
-        playButton.setText(DesignUtil.applyIcons(playButtonText, 0.75F));
-        optionsButton.setText(DesignUtil.applyIcons(optionsButtonText, 0.75F));
 
+
+        /*                  🎨 DESIGN & ACTIONS
+
+            • Apply background color to buttons drawable
+            • Apply icons to texts in views (if the text is made up of regular text + icons)
+            • Apply click listeners to buttons
+        */
+
+        // Apply background color to buttons
         DesignUtil.setBgColor(playButton, R.color.COLOR_PRIMARY);
         DesignUtil.setBgColor(optionsButton, R.color.COLOR_OVERLAY);
-
-        playButton.setOnClickListener(new View.OnClickListener()
-        {
+        // Apply icons to texts in buttons
+        playButton.setText(DesignUtil.applyIcons(playButtonText, 0.75F));
+        optionsButton.setText(DesignUtil.applyIcons(optionsButtonText, 0.75F));
+        // When the play button is clicked, go to levels list menu
+        playButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 startActivity(levelsListMenuIntent);
             }
         });
-        optionsButton.setOnClickListener(new View.OnClickListener()
-        {
+        // When the options button is clicked, go to options menu
+        optionsButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 startActivity(optionsMenuIntent);
             }
         });
 
+        //                      END OF BLOCKS                      //
+
+        // Play/Resume music when the app gain focus
         if (musicService != null)
             musicService.resumeMusic();
     }
 
+    /**
+     * This method is called when the activity is paused (app unfocused or app on another activity).
+     * If the activity is paused and the app is unfocused (not on screen) we pause the music.
+     */
     @Override
-    protected void onPause()
-    {
+    protected void onPause() {
         super.onPause();
-
+        boolean isScreenOn = false; // boolean that checks if the app is on screen
         PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
-        boolean isScreenOn = false;
-        
-        if(pm != null)
+        // Set isOnScreen value
+        if (pm != null)
             isScreenOn = pm.isScreenOn();
-        
+        // If the app isn't focused and the music service exists, pause it
         if (!isScreenOn && musicService != null)
             musicService.pauseMusic();
-
     }
 
+    /**
+     * This method is called when the menu is destroyed (app finish).
+     * We unbind and stop the music service to free memory.
+     */
     @Override
-    protected void onDestroy()
-    {
+    protected void onDestroy() {
         super.onDestroy();
-
+        // Unbind the music service
         doUnbindService();
         Intent music = new Intent();
         music.setClass(this, MusicService.class);
-        stopService(music);
+        stopService(music); // and stop it
     }
-
 }

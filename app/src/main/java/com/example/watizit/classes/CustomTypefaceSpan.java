@@ -8,7 +8,7 @@ import android.text.style.TypefaceSpan;
 import androidx.annotation.NonNull;
 
 /**
- * The type Custom typeface span.
+ * This class represents a custom typeface span.
  */
 public class CustomTypefaceSpan extends TypefaceSpan {
 
@@ -17,51 +17,52 @@ public class CustomTypefaceSpan extends TypefaceSpan {
     /**
      * Instantiates a new Custom typeface span.
      *
-     * @param family the family
-     * @param type   the type
+     * @param family the font family as a string
+     * @param type the typeface
      */
-    public CustomTypefaceSpan(String family, Typeface type)
-    {
+    public CustomTypefaceSpan(String family, Typeface type) {
         super(family);
         newType = type;
     }
 
+    /**
+     * @param paint a TextPaint object
+     */
     @Override
-    public void updateDrawState(@NonNull TextPaint paint)
-    {
+    public void updateDrawState(@NonNull TextPaint paint) {
         applyCustomTypeFace(paint, newType);
     }
 
+    /**
+     * @param paint a TextPaint object
+     */
     @Override
-    public void updateMeasureState(@NonNull TextPaint paint)
-    {
+    public void updateMeasureState(@NonNull TextPaint paint) {
         applyCustomTypeFace(paint, newType);
     }
 
-    private static void applyCustomTypeFace(Paint paint, Typeface tf)
-    {
+    /**
+     * @param paint a Paint object
+     * @param type the typeface
+     */
+    private static void applyCustomTypeFace(Paint paint, Typeface type) {
         int oldStyle;
         Typeface old = paint.getTypeface();
-        if (old == null)
-        {
+        if (old == null) {
             oldStyle = 0;
-        }
-        else
-        {
+        } else {
             oldStyle = old.getStyle();
         }
 
-        int fake = oldStyle & ~tf.getStyle();
-        if ((fake & Typeface.BOLD) != 0)
-        {
+        int fake = oldStyle & ~type.getStyle();
+        if ((fake & Typeface.BOLD) != 0) {
             paint.setFakeBoldText(true);
         }
 
-        if ((fake & Typeface.ITALIC) != 0)
-        {
+        if ((fake & Typeface.ITALIC) != 0) {
             paint.setTextSkewX(-0.25f);
         }
 
-        paint.setTypeface(tf);
+        paint.setTypeface(type);
     }
 }

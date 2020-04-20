@@ -61,7 +61,7 @@
     <string name="word_saddle">SILLA</string>
     <string name="word_books">LIBROS</string>
     <string name="word_cake">PASTEL</string>
-    <string name="word_burger">HAMBURGUESA</string>
+    <string name="word_meat">CARNE</string>
     <string name="word_popcorn">PALOMITAS</string>
     <!-- Screen-readers -->
     <string name="sr_flagFrench">Bandera francesa</string>

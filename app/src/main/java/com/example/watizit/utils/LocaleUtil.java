@@ -11,72 +11,74 @@ import com.example.watizit.R;
 import java.util.Locale;
 
 /**
- * The type Locale util.
+ * This util class makes it easier to manage the app locale.
  */
 public class LocaleUtil {
 
     /**
-     * Gets locale.
+     * This method gets the app locale.
      *
      * @param context the context
      * @return the locale
      */
-    public static String getLocale(Context context)
-    {
+    public static String getLocale(Context context) {
         Locale language = context.getResources().getConfiguration().locale;
-
         return language.getLanguage();
     }
 
     /**
-     * Sets locale.
+     * This method sets the app locale.
      *
-     * @param context   the context
-     * @param locale_id the locale id
+     * @param context the context
+     * @param localeId the locale id as a string ("en", "fr" or "sp")
      */
-    public static void setLocale(Context context, String locale_id)
-    {
+    public static void setLocale(Context context, String localeId) {
         Resources res = context.getResources();
-        Locale locale = new Locale(locale_id);
+        Locale locale = new Locale(localeId);
         DisplayMetrics dm = res.getDisplayMetrics();
         Configuration config = res.getConfiguration();
-
+        // Set the default locale and the configuration locale to the new locale
         Locale.setDefault(locale);
         config.locale = locale;
+        // Update the configuration with the new locale
         res.updateConfiguration(config, dm);
-
+        // Get UID key for the Shared Preferences
         String UID = context.getString(R.string.UID);
+        // Open and edit Shared Preferences
         SharedPreferences pref = context.getSharedPreferences(UID, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
-        editor.putString("lang", locale_id);
+        // And put the locale in Shared Preferences, then save
+        editor.putString("lang", localeId);
         editor.apply();
     }
 
     /**
-     * Is locale stored boolean.
+     * This method tells if there is a locale stored in Shared Preferences.
      *
      * @param context the context
-     * @return the boolean
+     * @return a boolean telling if there is a locale stored in Shared Preferences
      */
-    public static boolean isLocaleStored(Context context)
-    {
+    public static boolean isLocaleStored(Context context) {
+        // Get UID key for the Shared Preferences
         String UID = context.getString(R.string.UID);
+        // Open Shared Preferences
         SharedPreferences pref = context.getSharedPreferences(UID, Context.MODE_PRIVATE);
-
+        // Return true if there is a locale store, false otherwise
         return pref.contains("lang");
     }
 
     /**
-     * Gets locale stored.
+     * This method gets the locale stored in Shared Preferences.
      *
      * @param context the context
      * @return the locale stored
      */
-    public static String getLocaleStored(Context context)
-    {
+    public static String getLocaleStored(Context context) {
+        // Get UID key for the Shared Preferences
         String UID = context.getString(R.string.UID);
+        // Open Shared Preferences
         SharedPreferences pref = context.getSharedPreferences(UID, Context.MODE_PRIVATE);
-
+        // Return the locale stored in Shared Preferences
         return pref.getString("lang", null);
     }
 

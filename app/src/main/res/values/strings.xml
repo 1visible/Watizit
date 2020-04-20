@@ -67,7 +67,7 @@
     <string name="word_saddle">SADDLE</string>
     <string name="word_books">BOOKS</string>
     <string name="word_cake">CAKE</string>
-    <string name="word_burger">BURGER</string>
+    <string name="word_meat">MEAT</string>
     <string name="word_popcorn">POPCORN</string>
     <!-- Screen-readers -->
     <string name="sr_appName" translatable="false">Watizit</string>

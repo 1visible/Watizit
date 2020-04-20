@@ -21,7 +21,7 @@ import com.example.watizit.utils.DesignUtil;
 import java.util.ArrayList;
 
 /**
- * The type Level adapter.
+ * This class represents the level adapter for a level cell in the levels list view.
  */
 public class LevelAdapter extends ArrayAdapter<Level> {
 
@@ -29,63 +29,75 @@ public class LevelAdapter extends ArrayAdapter<Level> {
      * Instantiates a new Level adapter.
      *
      * @param context the context
-     * @param levels  the levels
+     * @param levels a list of levels
      */
-    public LevelAdapter(Context context, ArrayList<Level> levels)
-    {
-        super(context, R.layout.level_cell, levels);
+    public LevelAdapter(Context context, ArrayList<Level> levels) {
+        super(context, R.layout.level_cell, levels); // apply level cell layout
     }
 
+    /**
+     * This method creates/updates a level cell view in the levels list view.
+     *
+     * @param position the position of the view
+     * @param convertView the view
+     * @param parent  the parent of the view
+     * @return the updated the view
+     */
     @NonNull
-    public View getView(int position, View convertView, @NonNull ViewGroup parent)
-    {
-
+    public View getView(int position, View convertView, @NonNull ViewGroup parent) {
         Context context = super.getContext();
-
+        // Create a level cell if it doesn't exist
         if (convertView == null)
             convertView = LayoutInflater.from(context).inflate(R.layout.level_cell, parent, false);
 
-        Level level = getItem(position);
-        ConstraintLayout panelOverlay = convertView.findViewById(R.id.panelOverlay1);
+        /*                  📌 VARIABLES
+
+            • Retrieve views for design, click listener and/or gameplay
+            • Retrieve other objects for gameplay purposes
+        */
+
         TextView cellText = convertView.findViewById(R.id.cellText);
         ImageView cellImage = convertView.findViewById(R.id.cellImage);
         ImageView starImage1 = convertView.findViewById(R.id.littleStarImage1);
         ImageView starImage2 = convertView.findViewById(R.id.littleStarImage2);
         ImageView starImage3 = convertView.findViewById(R.id.littleStarImage3);
+        ConstraintLayout panelOverlay = convertView.findViewById(R.id.panelOverlay1);
+
         Resources res = context.getResources();
+        // Get the level associated with the cell view
+        Level level = getItem(position);
         String text = res.getString(R.string.levelMenu_title);
-
-        if(level != null)
-        {
-
+        // If the level can be found
+        if (level != null) {
+            ColorStateList c = AppCompatResources.getColorStateList(context, R.color.COLOR_DARK);
             int color = R.color.COLOR_DARK;
             int identifier = R.drawable.props_locked_level;
             ColorStateList csl = null;
-
-            if(!level.isLocked())
-            {
+            /* Set the level cell background color, image, text, text color and image tint
+            depending on the level state (available, done or locked) */
+            if (level.isLocked()) {
                 identifier = res.getIdentifier("img_" + level.getWord(), "drawable", context.getPackageName());
                 color = R.color.COLOR_TEXT;
-                if(!level.isDone())
+                if (!level.isDone())
                     csl = AppCompatResources.getColorStateList(context, R.color.COLOR_TEXT);
             }
-
+            // Apply background color to level cell
             DesignUtil.setBgColor(panelOverlay, R.color.COLOR_OVERLAY);
+            // Set level image in level cell
             cellImage.setImageDrawable(res.getDrawable(identifier));
+            // Set level text and text color in level cell
             cellText.setText(text.replace("%d", String.valueOf(level.getID())));
             cellText.setTextColor(res.getColor(color));
+            // Set level image tint (in white if the level has not been done)
             ImageViewCompat.setImageTintList(cellImage, csl);
-
-            ColorStateList c = AppCompatResources.getColorStateList(context, R.color.COLOR_DARK);
-
-            if(level.isDone())
-            {
+            // Apply stars if the level is done
+            if (level.isDone()) {
+                // Set all stars to visible
                 starImage1.setVisibility(View.VISIBLE);
                 starImage2.setVisibility(View.VISIBLE);
                 starImage3.setVisibility(View.VISIBLE);
-
-                switch(level.getStars())
-                {
+                // Remove or add the tint of stars depending on the number of won stars
+                switch (level.getStars()) {
                     case 3:
                         ImageViewCompat.setImageTintList(starImage1, null);
                         ImageViewCompat.setImageTintList(starImage2, null);
@@ -106,15 +118,13 @@ public class LevelAdapter extends ArrayAdapter<Level> {
                         ImageViewCompat.setImageTintList(starImage2, c);
                         ImageViewCompat.setImageTintList(starImage3, c);
                 }
-            }
-            else
-            {
+            } else {
+                // Else set all stars invisible (if the level is not done or is locked)
                 starImage1.setVisibility(View.INVISIBLE);
                 starImage2.setVisibility(View.INVISIBLE);
                 starImage3.setVisibility(View.INVISIBLE);
             }
         }
-
         return convertView;
     }
 

@@ -12,66 +12,63 @@ import com.example.watizit.classes.Level;
 import java.util.ArrayList;
 
 /**
- * The type Database access.
+ * This class represents the database access with all the selection and update
+ * methods associated to it.
  */
 public class DatabaseAccess {
-    private SQLiteOpenHelper openHelper;
-    private SQLiteDatabase database;
-    private static DatabaseAccess instance;
+    private SQLiteOpenHelper openHelper; // the database open helper
+    private SQLiteDatabase database; // the database object
+    private static DatabaseAccess instance; // the database access instance
 
-    private DatabaseAccess()
-    {
+    /**
+     * The constructor in which we instantiate the database open helper.
+     */
+    private DatabaseAccess() {
         Context context = App.getContext();
         openHelper = new DatabaseOpenHelper(context);
     }
 
     /**
-     * Gets instance.
+     * This methods gets the database access instance.
      *
      * @return the instance
      */
-    public static DatabaseAccess getInstance()
-    {
+    public static DatabaseAccess getInstance() {
         if (instance == null)
-        {
             instance = new DatabaseAccess();
-        }
 
         return instance;
     }
 
     /**
-     * Open.
+     * This method opens the database.
      */
-    public void open()
-    {
+    public void open() {
         database = openHelper.getWritableDatabase();
     }
 
     /**
-     * Close.
+     * This method closes the database.
      */
-    public void close()
-    {
+    public void close() {
         if (database != null)
-        {
             database.close();
-        }
     }
 
     /**
-     * Gets level.
+     * This method gets a level by id from the database.
      *
-     * @param id the id
+     * @param id the level id
      * @return the level
      */
-    public Level getLevel(int id)
-    {
+    public Level getLevel(int id) {
         Level level = null;
-        Cursor cursor = database.rawQuery("SELECT * FROM levels WHERE id = ?", new String[] { String.valueOf(id) });
+        // Database query
+        Cursor cursor = database.rawQuery("SELECT * FROM levels WHERE id = ?", new String[]{String.valueOf(id)});
 
         cursor.moveToFirst();
-        if(cursor.getCount() > 0)
+        // Get the level if it exists
+        if (cursor.getCount() > 0)
             level = new Level(cursor.getInt(0), cursor.getString(1),
                     cursor.getInt(2), cursor.getInt(3));
         cursor.close();
@@ -80,18 +77,18 @@ public class DatabaseAccess {
     }
 
     /**
-     * Gets levels.
+     * This method gets all levels from the database.
      *
      * @return the levels
      */
-    public ArrayList<Level> getLevels()
-    {
+    public ArrayList<Level> getLevels() {
         ArrayList<Level> list = new ArrayList<>();
+        // Database query
         Cursor cursor = database.rawQuery("SELECT * FROM levels", null);
 
         cursor.moveToFirst();
-        while (!cursor.isAfterLast())
-        {
+        // Add levels to list if they exist
+        while (!cursor.isAfterLast()) {
             Level level = new Level(cursor.getInt(0), cursor.getString(1),
                     cursor.getInt(2), cursor.getInt(3));
             list.add(level);
@@ -103,26 +100,24 @@ public class DatabaseAccess {
     }
 
     /**
-     * Update stars.
+     * This method updates the number of stars of a level in the database.
      *
-     * @param id    the id
-     * @param stars the stars
+     * @param id the id of the level
+     * @param stars the number of stars set in the database
      */
-    public void updateStars(int id, int stars)
-    {
+    public void updateStars(int id, int stars) {
         ContentValues values = new ContentValues();
         values.put("stars", stars);
         database.update("levels", values, "id =" + id, null);
     }
 
     /**
-     * Update hints.
+     * This method updates the hints used in a level in the database.
      *
-     * @param id    the id
-     * @param hints the hints
+     * @param id the id of the level
+     * @param hints the hints to set in the database
      */
-    public void updateHints(int id, int hints)
-    {
+    public void updateHints(int id, int hints) {
         ContentValues values = new ContentValues();
         values.put("hints", hints);
         database.update("levels", values, "id =" + id, null);
