@@ -52,6 +52,7 @@ If you want a local copy of the project, just clone the repo.
 ```sh
 git clone https://github.com/1visible/Watizit.git
 ```
+The Javadoc files can be found [here](https://1visible.github.io/Watizit/index.html).
 
 
 
