@@ -1,11 +1,13 @@
 package com.example.watizit.menus;
 
 
+import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -263,8 +265,8 @@ public class LevelMenu extends AppCompatActivity implements HintsPopup.HintsList
     }
 
     /**
-     * This method triggers the win system by revealing the solution, disabling all letter pickers
-     * and opening the Win popup.
+     * This method triggers the win system by revealing the solution, disabling all letter pickers,
+     * making the phone vibrate and opening the Win popup.
      */
     private void triggerWin() {
         // Calculate the time it took for the player to finish the level
@@ -282,6 +284,11 @@ public class LevelMenu extends AppCompatActivity implements HintsPopup.HintsList
         level.setStars(totalTime);
         // Give the player a monetary reward based on his score
         MoneyUtil.addMoney(level.getStars());
+        // Make the phone vibrate
+        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        long[] pattern = {0, 100, 50, 100};
+        if(v != null)
+            v.vibrate(pattern, -1);
         // Create the win popup
         final WinPopup win_popup = new WinPopup(this, level);
         // And show it after a 1s delay (to allow the player to have time to see the solution)

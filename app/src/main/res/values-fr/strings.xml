@@ -67,6 +67,11 @@
     <string name="sr_flagFrench">Drapeau français</string>
     <string name="sr_flagEnglish">Drapeau anglais</string>
     <string name="sr_flagSpanish">Drapeau espagnol</string>
-    <string name="sr_levelImage">Image de niveau</string>
-    <string name="sr_starImage">Image d\'étoile</string>
+    <string name="sr_levelImage">Niveau</string>
+    <string name="sr_starImage">Étoile</string>
+    <string name="sr_lockedImage">Verrouillé</string>
+    <string name="sr_playText">Jouer</string>
+    <string name="sr_optionsText">Options</string>
+    <string name="sr_backText">Retour</string>
+    <string name="sr_hintsText">Indices</string>
 </resources>

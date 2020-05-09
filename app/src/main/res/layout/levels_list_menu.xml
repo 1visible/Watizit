@@ -16,6 +16,7 @@
         android:fontFamily="@font/icons"
         android:text="@string/backIcon"
         android:textSize="20sp"
+        android:contentDescription="@string/sr_backText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

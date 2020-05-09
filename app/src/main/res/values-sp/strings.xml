@@ -67,6 +67,11 @@
     <string name="sr_flagFrench">Bandera francesa</string>
     <string name="sr_flagEnglish">Bandera inglesa</string>
     <string name="sr_flagSpanish">Bandera española</string>
-    <string name="sr_levelImage">Imagen de nivel</string>
-    <string name="sr_starImage">Imagen de estrella</string>
+    <string name="sr_levelImage">Nivel</string>
+    <string name="sr_starImage">Estrella</string>
+    <string name="sr_lockedImage">Bloqueado</string>
+    <string name="sr_playText">Jugar</string>
+    <string name="sr_optionsText">Opciones</string>
+    <string name="sr_backText">Atras</string>
+    <string name="sr_hintsText">Pistas</string>
 </resources>

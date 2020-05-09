@@ -67,19 +67,26 @@ public class LevelAdapter extends ArrayAdapter<Level> {
         // Get the level associated with the cell view
         Level level = getItem(position);
         String text = res.getString(R.string.levelMenu_title);
+
+        //                      END OF BLOCKS                      //
+
         // If the level can be found
         if (level != null) {
             ColorStateList c = AppCompatResources.getColorStateList(context, R.color.COLOR_DARK);
             int color = R.color.COLOR_DARK;
             int identifier = R.drawable.props_locked_level;
+            String description = res.getString(R.string.sr_lockedImage);
             ColorStateList csl = null;
-            /* Set the level cell background color, image, text, text color and image tint
-            depending on the level state (available, done or locked) */
-            if (level.isLocked()) {
+            /* Set the level cell background color, image, text, text color, image tint
+            and description depending on the level state (available, done or locked) */
+            if (!level.isLocked()) {
                 identifier = res.getIdentifier("img_" + level.getWord(), "drawable", context.getPackageName());
                 color = R.color.COLOR_TEXT;
-                if (!level.isDone())
+                if (!level.isDone()) {
+                    description = res.getString(R.string.sr_levelImage);
                     csl = AppCompatResources.getColorStateList(context, R.color.COLOR_TEXT);
+                }else
+                    description = level.getWord();
             }
             // Apply background color to level cell
             DesignUtil.setBgColor(panelOverlay, R.color.COLOR_OVERLAY);
@@ -90,6 +97,8 @@ public class LevelAdapter extends ArrayAdapter<Level> {
             cellText.setTextColor(res.getColor(color));
             // Set level image tint (in white if the level has not been done)
             ImageViewCompat.setImageTintList(cellImage, csl);
+            // Set level image description (for screen-readers)
+            cellImage.setContentDescription(description);
             // Apply stars if the level is done
             if (level.isDone()) {
                 // Set all stars to visible

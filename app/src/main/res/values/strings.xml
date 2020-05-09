@@ -74,6 +74,11 @@
     <string name="sr_flagFrench">French flag</string>
     <string name="sr_flagEnglish">English flag</string>
     <string name="sr_flagSpanish">Spanish flag</string>
-    <string name="sr_levelImage">Level image</string>
-    <string name="sr_starImage">Star image</string>
+    <string name="sr_levelImage">Level</string>
+    <string name="sr_starImage">Star</string>
+    <string name="sr_lockedImage">Locked</string>
+    <string name="sr_playText">Play</string>
+    <string name="sr_optionsText">Options</string>
+    <string name="sr_backText">Back</string>
+    <string name="sr_hintsText">Hints</string>
 </resources>
