@@ -1,14 +1,14 @@
 <resources>
     <!-- Main menu -->
     <string name="mainMenu_playButton">"\uF04B  Jugar"</string>
-    <string name="mainMenu_optionsButton">"\uF013  Opciones"</string>
+    <string name="mainMenu_optionsButton">"\uF013  Ajustes"</string>
     <!-- Options menu -->
-    <string name="optionsMenu_title">Opciones</string>
+    <string name="optionsMenu_title">Ajustes</string>
     <string name="optionsMenu_language">Lengua</string>
     <string name="optionsMenu_copyright">
         Copyright © 2020\nLAURET Nicolas, RANDRIANASOLO Rooly\n\n
-        Images par <a href="https://www.flaticon.com/">Flaticon</a> •
-        Musique par <a href="https://opengameart.org/users/horrorpen">HorrorPen</a>
+        Imágenes de <a href="https://www.flaticon.com/">Flaticon</a> •
+        Música de <a href="https://opengameart.org/users/horrorpen">HorrorPen</a>
     </string>
     <string name="optionsMenu_copyrightAlt">
         Copyright © 2020 LAURET Nicolas, RANDRIANASOLO Rooly\n\n
@@ -71,7 +71,7 @@
     <string name="sr_starImage">Estrella</string>
     <string name="sr_lockedImage">Bloqueado</string>
     <string name="sr_playText">Jugar</string>
-    <string name="sr_optionsText">Opciones</string>
+    <string name="sr_optionsText">Ajustes</string>
     <string name="sr_backText">Atras</string>
     <string name="sr_hintsText">Pistas</string>
 </resources>

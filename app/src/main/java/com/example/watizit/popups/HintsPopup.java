@@ -36,7 +36,7 @@ public class HintsPopup extends Dialog {
         try {
             listener = (HintsListener) context;
         } catch (ClassCastException e) {
-            throw new ClassCastException(context.toString() + "must implement HintsListener");
+            throw new ClassCastException(context.toString() + " must implement HintsListener");
         }
     }
 

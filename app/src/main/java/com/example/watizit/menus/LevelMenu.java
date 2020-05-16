@@ -286,6 +286,7 @@ public class LevelMenu extends AppCompatActivity implements HintsPopup.HintsList
         MoneyUtil.addMoney(level.getStars());
         // Make the phone vibrate
         Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        // Vibration pattern
         long[] pattern = {0, 100, 50, 100};
         if(v != null)
             v.vibrate(pattern, -1);
