@@ -1,13 +1,13 @@
 <br />
 <p align="center">
   <a href="https://github.com/1visible/Watizit">
-  <img alt="Watizit" src="app/src/main/res/drawable-v24/title.png" width="300"></img>
+  <img alt="Watizit" src="app/src/main/res/drawable/title.png" width="300"></img>
   </a>
 
   <p align="center">
     A University game project for Android !
     <br />
-  <a href="https://github.com/1visible/Watizit"><strong>View Demo</strong></a>
+  <a href="https://github.com/1visible/Watizit#usage"><strong>View Demo</strong></a>
     •
     <a href="https://github.com/1visible/Watizit/issues"><strong>Report Bug</strong></a>
     •
@@ -25,7 +25,6 @@
 * [Installation](#installation)
 * [Usage](#usage)
 * [Roadmap](#roadmap)
-* [License](#license)
 * [Contact](#contact)
 
 
@@ -33,13 +32,14 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-#TODO
+Watizit is a mobile game available on Android whose goal is to find the name of an animal or an object from its shape. This project was carried out as a team during our training in L3 Computer Science at the University of Reunion.
+If you want more details on the realization of this project, do not hesitate to consult our project report in french.
 
 ### Tools used
 We used various tools to carry out our project, from communication to design to programming. Below is the list of the main tools that have served us:
 * [Android Studio](https://developer.android.com/studio) (for programming)
 * [Github](https://github.com) (for version control and source code management)
-* [Flaticon](https://www.flaticon.com) (for the images used in the app)
+* [Figma](https://www.figma.com) (for prototyping/design)
 * [Trello](https://trello.com) (for organization and time management)
 * [Discord](https://discordapp.com) (for communication)
 
@@ -48,7 +48,7 @@ We used various tools to carry out our project, from communication to design to 
 <!-- INSTALLATION -->
 ## Installation
 
-If you want a local copy of the project, just clone the repo.
+If you want a local copy of the project, just clone the repo and open the project in Android Studio.
 ```sh
 git clone https://github.com/1visible/Watizit.git
 ```
@@ -67,13 +67,6 @@ The Javadoc files can be found [here](https://1visible.github.io/Watizit/index.h
 ## Roadmap
 
 See the [open issues](https://github.com/1visible/Watizit/issues) for a list of proposed features (and known issues).
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
 
 
 
