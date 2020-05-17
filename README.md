@@ -33,10 +33,10 @@
 ## About The Project
 
 Watizit is a mobile game available on Android whose goal is to find the name of an animal or an object from its shape. This project was carried out as a team during our training in L3 Computer Science at the University of Reunion.
-If you want more details on the realization of this project, do not hesitate to consult our project report in french.
+If you want more details on the realization of this project, do not hesitate to consult our project report in french [here](https://github.com/1visible/Watizit/blob/master/report/Watizit%20report.pdf).
 
 ### Tools used
-We used various tools to carry out our project, from communication to design to programming. Below is the list of the main tools that have served us:
+🔨 We used various tools to carry out our project, from communication to design to programming. Below is the list of the main tools that have served us:
 * [Android Studio](https://developer.android.com/studio) (for programming)
 * [Github](https://github.com) (for version control and source code management)
 * [Figma](https://www.figma.com) (for prototyping/design)
@@ -48,33 +48,37 @@ We used various tools to carry out our project, from communication to design to 
 <!-- INSTALLATION -->
 ## Installation
 
-If you want a local copy of the project, just clone the repo and open the project in Android Studio.
+💻 If you want a local copy of the project, just clone the repo and open the project in Android Studio.
 ```sh
 git clone https://github.com/1visible/Watizit.git
 ```
-The Javadoc files can be found [here](https://1visible.github.io/Watizit/index.html).
+📗 The Javadoc files can be found [here](https://1visible.github.io/Watizit/index.html).
 
 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-#TODO
+📱 Just download and install our game on your smartphone or tablet by clicking [here](https://www.dropbox.com/s/up754cywcfysrmc/Watizit.apk?dl=1)
+
+<p align="center">
+  <img alt="Demo" src="https://i.imgur.com/tmYSMvA.png" width="700">
+</p>
 
 
 
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/1visible/Watizit/issues) for a list of proposed features (and known issues).
+🔧 See the [open issues](https://github.com/1visible/Watizit/issues) for a list of proposed features (and known issues).
 
 
 
 <!-- CONTACT -->
 ## Contact
 
-Nicolas LAURET - redx.6345@gmail.com - [https://nicolaslauret.fr](https://nicolaslauret.fr)
+✉ Nicolas LAURET - redx.6345@gmail.com - [https://nicolaslauret.fr](https://nicolaslauret.fr)
 
-Rooly RANDRIANASOLO - randrianasolorooly@gmail.com
+✉ Rooly RANDRIANASOLO - randrianasolorooly@gmail.com
 
-Project Link: [https://github.com/1visible/Watizit](https://github.com/1visible/Watizit)
+🔗 Project Link: [https://github.com/1visible/Watizit](https://github.com/1visible/Watizit)
